@@ -165,7 +165,6 @@ namespace SAE2_1
             // cmd4
             // 
             this.cmd4.BackColor = System.Drawing.SystemColors.GrayText;
-            this.cmd4.Enabled = false;
             this.cmd4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmd4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd4.ForeColor = System.Drawing.SystemColors.Control;
