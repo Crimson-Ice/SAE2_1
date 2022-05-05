@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.txt1 = new System.Windows.Forms.TextBox();
-            this.btn1 = new System.Windows.Forms.Button();
+            this.cmd2 = new System.Windows.Forms.Button();
+            this.cmd1 = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl1
@@ -61,29 +65,48 @@
             this.txt1.Size = new System.Drawing.Size(144, 22);
             this.txt1.TabIndex = 2;
             // 
-            // btn1
+            // cmd2
             // 
-            this.btn1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btn1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn1.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn1.Location = new System.Drawing.Point(72, 212);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(144, 78);
-            this.btn1.TabIndex = 3;
-            this.btn1.Text = "Valider";
-            this.btn1.UseVisualStyleBackColor = false;
+            this.cmd2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.cmd2.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.cmd2.ForeColor = System.Drawing.SystemColors.Control;
+            this.cmd2.Location = new System.Drawing.Point(413, 201);
+            this.cmd2.Name = "cmd2";
+            this.cmd2.Size = new System.Drawing.Size(144, 78);
+            this.cmd2.TabIndex = 3;
+            this.cmd2.Text = "Valider";
+            this.cmd2.UseVisualStyleBackColor = false;
+            this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
+            // 
+            // cmd1
+            // 
+            this.cmd1.BackColor = System.Drawing.SystemColors.GrayText;
+            this.cmd1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cmd1.ForeColor = System.Drawing.SystemColors.Control;
+            this.cmd1.Location = new System.Drawing.Point(72, 201);
+            this.cmd1.Name = "cmd1";
+            this.cmd1.Size = new System.Drawing.Size(144, 78);
+            this.cmd1.TabIndex = 3;
+            this.cmd1.Text = "Retour";
+            this.cmd1.UseVisualStyleBackColor = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Frm_createArret
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(628, 311);
-            this.Controls.Add(this.btn1);
+            this.Controls.Add(this.cmd1);
+            this.Controls.Add(this.cmd2);
             this.Controls.Add(this.txt1);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
             this.Name = "Frm_createArret";
             this.Text = "Création d\'arret";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,7 +116,9 @@
 
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lbl2;
-        private System.Windows.Forms.Button btn1;
+        private System.Windows.Forms.Button cmd2;
         internal System.Windows.Forms.TextBox txt1;
+        private System.Windows.Forms.Button cmd1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
