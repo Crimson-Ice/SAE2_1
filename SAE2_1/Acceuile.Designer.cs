@@ -56,6 +56,7 @@ namespace SAE2_1
             this.cmd2.TabIndex = 1;
             this.cmd2.Text = "Liste Ligne";
             this.cmd2.UseVisualStyleBackColor = true;
+            this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
             // 
             // cmd3
             // 
@@ -107,7 +108,7 @@ namespace SAE2_1
             this.Controls.Add(this.cmd2);
             this.Controls.Add(this.cmd1);
             this.Name = "Acceuille";
-            this.Text = "Acceuille";
+            this.Text = "Accueil";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

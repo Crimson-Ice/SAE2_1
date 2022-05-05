@@ -163,7 +163,7 @@ namespace SAE2_1
             this.cmd1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.cmd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd1.ForeColor = System.Drawing.Color.White;
-            this.cmd1.Location = new System.Drawing.Point(495, 480);
+            this.cmd1.Location = new System.Drawing.Point(714, 491);
             this.cmd1.Name = "cmd1";
             this.cmd1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cmd1.Size = new System.Drawing.Size(204, 84);
@@ -177,7 +177,7 @@ namespace SAE2_1
             this.cmd2.BackColor = System.Drawing.SystemColors.GrayText;
             this.cmd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd2.ForeColor = System.Drawing.Color.White;
-            this.cmd2.Location = new System.Drawing.Point(259, 480);
+            this.cmd2.Location = new System.Drawing.Point(40, 491);
             this.cmd2.Name = "cmd2";
             this.cmd2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cmd2.Size = new System.Drawing.Size(204, 84);

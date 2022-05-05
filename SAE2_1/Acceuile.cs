@@ -30,5 +30,11 @@ namespace SAE2_1
             frmAjout.ShowDialog();
             frmAjout.Dispose();
         }
+
+        private void cmd2_Click(object sender, EventArgs e)
+        {
+            Liste_lignes form = new Liste_lignes();
+            form.ShowDialog();
+        }
     }
 }
