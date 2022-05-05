@@ -17,15 +17,16 @@ namespace SAE2_1
             InitializeComponent();
         }
 
-        private void cmd2_Click(object sender, EventArgs e)
+        private void txt1_TextChanged(object sender, EventArgs e)
         {
-            if(!string.IsNullOrWhiteSpace(txt1.Text))
+            if (!string.IsNullOrWhiteSpace(txt1.Text))
             {
-                this.Close();
                 errorProvider1.SetError(txt1, "");
+                cmd2.Enabled = true;
             }
             else
             {
+                cmd2.Enabled = false;
                 errorProvider1.SetError(txt1, "champ non remplie");
             }
         }

@@ -64,11 +64,13 @@
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(144, 22);
             this.txt1.TabIndex = 2;
+            this.txt1.TextChanged += new System.EventHandler(this.txt1_TextChanged);
             // 
             // cmd2
             // 
             this.cmd2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.cmd2.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.cmd2.Enabled = false;
             this.cmd2.ForeColor = System.Drawing.SystemColors.Control;
             this.cmd2.Location = new System.Drawing.Point(413, 201);
             this.cmd2.Name = "cmd2";
@@ -76,7 +78,6 @@
             this.cmd2.TabIndex = 3;
             this.cmd2.Text = "Valider";
             this.cmd2.UseVisualStyleBackColor = false;
-            this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
             // 
             // cmd1
             // 
