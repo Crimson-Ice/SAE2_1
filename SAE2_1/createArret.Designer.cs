@@ -66,7 +66,7 @@
             this.btn1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btn1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn1.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn1.Location = new System.Drawing.Point(72, 212);
+            this.btn1.Location = new System.Drawing.Point(430, 207);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(144, 78);
             this.btn1.TabIndex = 3;
