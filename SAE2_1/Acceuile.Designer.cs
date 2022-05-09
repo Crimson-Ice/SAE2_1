@@ -40,54 +40,61 @@ namespace SAE2_1
             // 
             // cmd1
             // 
+            this.cmd1.BackColor = System.Drawing.Color.White;
             this.cmd1.Location = new System.Drawing.Point(39, 25);
             this.cmd1.Name = "cmd1";
             this.cmd1.Size = new System.Drawing.Size(158, 76);
             this.cmd1.TabIndex = 0;
             this.cmd1.Text = "Recherche itinéraire";
-            this.cmd1.UseVisualStyleBackColor = true;
+            this.cmd1.UseVisualStyleBackColor = false;
             this.cmd1.Click += new System.EventHandler(this.cmd1_Click);
             // 
             // cmd2
             // 
+            this.cmd2.BackColor = System.Drawing.Color.White;
             this.cmd2.Location = new System.Drawing.Point(39, 107);
             this.cmd2.Name = "cmd2";
             this.cmd2.Size = new System.Drawing.Size(158, 76);
             this.cmd2.TabIndex = 1;
             this.cmd2.Text = "Liste Ligne";
-            this.cmd2.UseVisualStyleBackColor = true;
+            this.cmd2.UseVisualStyleBackColor = false;
             this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
             // 
             // cmd3
             // 
+            this.cmd3.BackColor = System.Drawing.Color.White;
             this.cmd3.Location = new System.Drawing.Point(39, 189);
             this.cmd3.Name = "cmd3";
             this.cmd3.Size = new System.Drawing.Size(158, 76);
             this.cmd3.TabIndex = 2;
             this.cmd3.Text = "Création Ligne";
-            this.cmd3.UseVisualStyleBackColor = true;
+            this.cmd3.UseVisualStyleBackColor = false;
             this.cmd3.Click += new System.EventHandler(this.cmd3_Click);
             // 
             // cmd4
             // 
+            this.cmd4.BackColor = System.Drawing.Color.White;
             this.cmd4.Location = new System.Drawing.Point(39, 271);
             this.cmd4.Name = "cmd4";
             this.cmd4.Size = new System.Drawing.Size(158, 76);
             this.cmd4.TabIndex = 3;
             this.cmd4.Text = "Modification Ligne";
-            this.cmd4.UseVisualStyleBackColor = true;
+            this.cmd4.UseVisualStyleBackColor = false;
+            this.cmd4.Click += new System.EventHandler(this.cmd4_Click);
             // 
             // cmd5
             // 
+            this.cmd5.BackColor = System.Drawing.Color.White;
             this.cmd5.Location = new System.Drawing.Point(39, 353);
             this.cmd5.Name = "cmd5";
             this.cmd5.Size = new System.Drawing.Size(158, 76);
             this.cmd5.TabIndex = 4;
             this.cmd5.Text = "Supression Ligne";
-            this.cmd5.UseVisualStyleBackColor = true;
+            this.cmd5.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::SAE2_1.Properties.Resources.tul_plan_simplifi_poteaux_2021_bat_page_0001;
             this.pictureBox1.Location = new System.Drawing.Point(232, 25);
             this.pictureBox1.Name = "pictureBox1";
@@ -100,6 +107,8 @@ namespace SAE2_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SAE2_1.Properties.Resources._6637000_simple_fond_bleu_abstraite_pour_la_conception_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmd5);

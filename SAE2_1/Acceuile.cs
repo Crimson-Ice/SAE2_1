@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SAE2_1
@@ -19,22 +12,29 @@ namespace SAE2_1
 
         private void cmd1_Click(object sender, EventArgs e)
         {
-            Itinéraire frmAjout = new Itinéraire();
-            frmAjout.ShowDialog();
-            frmAjout.Dispose();
+            Itinéraire frmItinéraire = new Itinéraire();
+            frmItinéraire.ShowDialog();
+            frmItinéraire.Dispose();
         }
 
         private void cmd3_Click(object sender, EventArgs e)
         {
-            CréationLigne frmAjout = new CréationLigne();
-            frmAjout.ShowDialog();
-            frmAjout.Dispose();
+            CréationLigne frmCreationLinge = new CréationLigne();
+            frmCreationLinge.ShowDialog();
+            frmCreationLinge.Dispose();
         }
 
         private void cmd2_Click(object sender, EventArgs e)
         {
-            Liste_lignes form = new Liste_lignes();
-            form.ShowDialog();
+            Liste_lignes formLigneAffiche = new Liste_lignes();
+            formLigneAffiche.ShowDialog();
+        }
+
+        private void cmd4_Click(object sender, EventArgs e)
+        {
+            ModificationLigne frmModif = new ModificationLigne();
+            frmModif.ShowDialog();
+            frmModif.Dispose();
         }
     }
 }
