@@ -91,6 +91,7 @@ namespace SAE2_1
             this.cmd5.TabIndex = 4;
             this.cmd5.Text = "Supression Ligne";
             this.cmd5.UseVisualStyleBackColor = false;
+            this.cmd5.Click += new System.EventHandler(this.cmd5_Click);
             // 
             // pictureBox1
             // 

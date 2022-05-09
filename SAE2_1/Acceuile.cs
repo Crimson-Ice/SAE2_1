@@ -36,5 +36,12 @@ namespace SAE2_1
             frmModif.ShowDialog();
             frmModif.Dispose();
         }
+
+        private void cmd5_Click(object sender, EventArgs e)
+        {
+            SuppresionLigne frmSuppLigne = new SuppresionLigne();
+            frmSuppLigne.ShowDialog();
+            frmSuppLigne.Dispose();
+        }
     }
 }

@@ -113,6 +113,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuppresionLigne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppresionLigne.Designer.cs">
+      <DependentUpon>SuppresionLigne.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Acceuile.resx">
       <DependentUpon>Acceuile.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +153,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SuppresionLigne.resx">
+      <DependentUpon>SuppresionLigne.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -166,7 +175,9 @@
   <ItemGroup>
     <None Include="Resources\6637000-simple-fond-bleu-abstraite-pour-la-conception-.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\hidden_danger_1392698.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"

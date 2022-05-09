@@ -73,6 +73,16 @@ namespace SAE2_1.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hidden_danger_1392698 {
+            get {
+                object obj = ResourceManager.GetObject("hidden_danger_1392698", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tul_plan_simplifi_poteaux_2021_bat_page_0001 {
             get {
                 object obj = ResourceManager.GetObject("tul_plan_simplifi_poteaux_2021_bat_page-0001", resourceCulture);
