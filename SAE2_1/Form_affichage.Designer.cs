@@ -28,27 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnl = new System.Windows.Forms.Panel();
             this.hSB = new System.Windows.Forms.HScrollBar();
             this.lbl_nom_ligne = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pnl
-            // 
-            this.pnl.BackColor = System.Drawing.Color.White;
-            this.pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl.Cursor = System.Windows.Forms.Cursors.No;
-            this.pnl.Location = new System.Drawing.Point(24, 182);
-            this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(982, 209);
-            this.pnl.TabIndex = 1;
-            this.pnl.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Paint);
             // 
             // hSB
             // 
-            this.hSB.Location = new System.Drawing.Point(24, 394);
+            this.hSB.Location = new System.Drawing.Point(24, 383);
             this.hSB.Name = "hSB";
-            this.hSB.Size = new System.Drawing.Size(982, 21);
+            this.hSB.Size = new System.Drawing.Size(991, 21);
             this.hSB.TabIndex = 2;
             this.hSB.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hSB_Scroll);
             // 
@@ -61,27 +51,36 @@
             this.lbl_nom_ligne.Size = new System.Drawing.Size(0, 54);
             this.lbl_nom_ligne.TabIndex = 3;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 196);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(991, 184);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form_affichage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_nom_ligne);
             this.Controls.Add(this.hSB);
-            this.Controls.Add(this.pnl);
             this.Name = "Form_affichage";
             this.Text = "Form_affichage";
             this.Load += new System.EventHandler(this.Form_affichage_Load);
             this.TextChanged += new System.EventHandler(this.Form_affichage_TextChanged);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnl;
         private System.Windows.Forms.HScrollBar hSB;
         private System.Windows.Forms.Label lbl_nom_ligne;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
