@@ -107,7 +107,6 @@ namespace SAE2_1
             this.chk1.TabIndex = 5;
             this.chk1.Text = "Filtre horaire debut :";
             this.chk1.UseVisualStyleBackColor = false;
-            this.chk1.Click += new System.EventHandler(this.chk1_Click);
             // 
             // chk2
             // 

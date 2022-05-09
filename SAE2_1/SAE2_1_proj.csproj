@@ -178,6 +178,12 @@
   <ItemGroup>
     <None Include="Resources\hidden_danger_1392698.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassSQL\ClassSQL.csproj">
+      <Project>{bb6eaa57-c388-45ac-89bd-3a758def849a}</Project>
+      <Name>ClassSQL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"

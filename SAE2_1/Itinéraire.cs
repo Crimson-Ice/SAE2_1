@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using ClassSQL;
 
 namespace SAE2_1
 {
@@ -16,35 +16,25 @@ namespace SAE2_1
         public Itinéraire()
         {
             InitializeComponent();
-            //création objet connexion 
-            MySqlConnection connexion = new MySqlConnection("database=baseb1; server=10.1.139.236; user id=b1; pwd=nouveau_mdp");
-            
-            //test connexion base de donnée
-            try
-            {
-                connexion.Open();
-                MessageBox.Show("connecté");
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show("non connecté");
-            }
+            //Connexion a la base
+            ClassMySql.connection();
+            //TEST de connexion
+            MessageBox.Show(ClassMySql.TestConnexion());
             
             //requete sql
-            MySqlCommand mysqlcom = new MySqlCommand("select * from Arret", connexion);
+            ClassMySql.RequeteSQl("select * from Arret");
 
             //lis la requete et recupère les données
-            MySqlDataReader mysqlread = mysqlcom.ExecuteReader(CommandBehavior.CloseConnection);
+            ClassMySql.Reading();
 
-            while (mysqlread.Read())
+            while (ClassMySql.ISread())
             {
-                
-                cbo1.Items.Add(mysqlread.GetString(1));
-                cbo2.Items.Add(mysqlread.GetString(1));
+                string nom = ClassMySql.Attribut(4);
+                cbo1.Items.Add(nom);
+                cbo2.Items.Add(nom);
             }
 
-            connexion.Close();
+            ClassMySql.CloseConnexion();
         }
 
         private void chk1_Click(object sender, EventArgs e)
