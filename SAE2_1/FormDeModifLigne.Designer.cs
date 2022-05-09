@@ -35,6 +35,8 @@
             this.lbl3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbl4 = new System.Windows.Forms.Label();
+            this.cmd1 = new System.Windows.Forms.Button();
+            this.cmd2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,6 +109,29 @@
             this.lbl4.TabIndex = 5;
             this.lbl4.Text = "Couleur de la ligne :";
             // 
+            // cmd1
+            // 
+            this.cmd1.BackColor = System.Drawing.Color.White;
+            this.cmd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd1.Location = new System.Drawing.Point(36, 356);
+            this.cmd1.Name = "cmd1";
+            this.cmd1.Size = new System.Drawing.Size(126, 66);
+            this.cmd1.TabIndex = 1;
+            this.cmd1.Text = "Retour";
+            this.cmd1.UseVisualStyleBackColor = false;
+            this.cmd1.Click += new System.EventHandler(this.cmd1_Click);
+            // 
+            // cmd2
+            // 
+            this.cmd2.BackColor = System.Drawing.Color.White;
+            this.cmd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd2.Location = new System.Drawing.Point(639, 356);
+            this.cmd2.Name = "cmd2";
+            this.cmd2.Size = new System.Drawing.Size(126, 66);
+            this.cmd2.TabIndex = 2;
+            this.cmd2.Text = "Valider";
+            this.cmd2.UseVisualStyleBackColor = false;
+            // 
             // FormDeModifLigne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -114,6 +139,8 @@
             this.BackgroundImage = global::SAE2_1.Properties.Resources._6637000_simple_fond_bleu_abstraite_pour_la_conception_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmd2);
+            this.Controls.Add(this.cmd1);
             this.Controls.Add(this.panel1);
             this.Name = "FormDeModifLigne";
             this.Text = "FormDeModifLigne";
@@ -132,5 +159,7 @@
         private System.Windows.Forms.TextBox txt1;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Button cmd1;
+        private System.Windows.Forms.Button cmd2;
     }
 }

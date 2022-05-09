@@ -16,5 +16,10 @@ namespace SAE2_1
         {
             InitializeComponent();
         }
+
+        private void cmd1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

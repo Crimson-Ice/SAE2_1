@@ -21,5 +21,12 @@ namespace SAE2_1
         {
             this.Close();
         }
+
+        private void cmd2_Click(object sender, EventArgs e)
+        {
+            FormDeModifLigne FrmDeModifLigne = new FormDeModifLigne();
+            FrmDeModifLigne.ShowDialog();
+            FrmDeModifLigne.Dispose();
+        }
     }
 }

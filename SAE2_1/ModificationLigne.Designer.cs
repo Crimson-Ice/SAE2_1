@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.lbl2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
             this.cmd1 = new System.Windows.Forms.Button();
             this.cmd2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -47,16 +47,13 @@
             this.panel1.Size = new System.Drawing.Size(704, 204);
             this.panel1.TabIndex = 0;
             // 
-            // lbl1
+            // comboBox1
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(169, 22);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(462, 54);
-            this.lbl1.TabIndex = 1;
-            this.lbl1.Text = "Modification de Ligne";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(261, 117);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(182, 24);
+            this.comboBox1.TabIndex = 3;
             // 
             // lbl2
             // 
@@ -69,13 +66,16 @@
             this.lbl2.TabIndex = 2;
             this.lbl2.Text = "Ligne à modifier :";
             // 
-            // comboBox1
+            // lbl1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(261, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 24);
-            this.comboBox1.TabIndex = 3;
+            this.lbl1.AutoSize = true;
+            this.lbl1.BackColor = System.Drawing.Color.Transparent;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(169, 22);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(462, 54);
+            this.lbl1.TabIndex = 1;
+            this.lbl1.Text = "Modification de Ligne";
             // 
             // cmd1
             // 
@@ -97,6 +97,7 @@
             this.cmd2.TabIndex = 3;
             this.cmd2.Text = "Modifier";
             this.cmd2.UseVisualStyleBackColor = false;
+            this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
             // 
             // ModificationLigne
             // 
