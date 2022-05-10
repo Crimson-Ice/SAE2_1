@@ -133,9 +133,9 @@
             // btnvisualiser
             // 
             this.btnvisualiser.BackColor = System.Drawing.Color.White;
-            this.btnvisualiser.Location = new System.Drawing.Point(351, 375);
+            this.btnvisualiser.Location = new System.Drawing.Point(334, 355);
             this.btnvisualiser.Name = "btnvisualiser";
-            this.btnvisualiser.Size = new System.Drawing.Size(96, 46);
+            this.btnvisualiser.Size = new System.Drawing.Size(113, 66);
             this.btnvisualiser.TabIndex = 6;
             this.btnvisualiser.Text = "Visualiser";
             this.btnvisualiser.UseVisualStyleBackColor = false;
