@@ -124,6 +124,7 @@
             this.cbo1.Name = "cbo1";
             this.cbo1.Size = new System.Drawing.Size(159, 24);
             this.cbo1.TabIndex = 5;
+            this.cbo1.SelectionChangeCommitted += new System.EventHandler(this.cbo1_SelectionChangeCommitted);
             // 
             // lbl3
             // 
@@ -179,8 +180,8 @@
         private System.Windows.Forms.Button cmd1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbo1;
         private System.Windows.Forms.Label lbl3;
-        private System.Windows.Forms.CheckBox chk1;
+        internal System.Windows.Forms.CheckBox chk1;
+        internal System.Windows.Forms.ComboBox cbo1;
     }
 }

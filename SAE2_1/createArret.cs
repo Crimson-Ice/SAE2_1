@@ -62,5 +62,10 @@ namespace SAE2_1
                 txt1.Enabled = true;
             }
         }
+
+        private void cbo1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            cmd2.Enabled = true;
+        }
     }
 }

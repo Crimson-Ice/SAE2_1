@@ -129,6 +129,7 @@ namespace SAE2_1
             this.txt3.Location = new System.Drawing.Point(629, 124);
             this.txt3.Multiline = true;
             this.txt3.Name = "txt3";
+            this.txt3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt3.Size = new System.Drawing.Size(202, 288);
             this.txt3.TabIndex = 9;
             // 
