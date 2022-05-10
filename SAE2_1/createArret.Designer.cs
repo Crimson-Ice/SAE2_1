@@ -36,9 +36,9 @@
             this.cmd1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chk1 = new System.Windows.Forms.CheckBox();
-            this.lbl3 = new System.Windows.Forms.Label();
             this.cbo1 = new System.Windows.Forms.ComboBox();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.chk1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +115,28 @@
             this.panel1.Size = new System.Drawing.Size(590, 131);
             this.panel1.TabIndex = 4;
             // 
+            // cbo1
+            // 
+            this.cbo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo1.Enabled = false;
+            this.cbo1.FormattingEnabled = true;
+            this.cbo1.Location = new System.Drawing.Point(405, 82);
+            this.cbo1.Name = "cbo1";
+            this.cbo1.Size = new System.Drawing.Size(159, 24);
+            this.cbo1.TabIndex = 5;
+            // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.BackColor = System.Drawing.Color.Transparent;
+            this.lbl3.Enabled = false;
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.Location = new System.Drawing.Point(401, 32);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(116, 22);
+            this.lbl3.TabIndex = 4;
+            this.lbl3.Text = "Arrêt existant";
+            // 
             // chk1
             // 
             this.chk1.AutoSize = true;
@@ -125,26 +147,7 @@
             this.chk1.TabIndex = 3;
             this.chk1.Text = "Arrêt existant";
             this.chk1.UseVisualStyleBackColor = true;
-            // 
-            // lbl3
-            // 
-            this.lbl3.AutoSize = true;
-            this.lbl3.BackColor = System.Drawing.Color.Transparent;
-            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(401, 32);
-            this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(103, 22);
-            this.lbl3.TabIndex = 4;
-            this.lbl3.Text = "Nom d\'arrêt";
-            // 
-            // cbo1
-            // 
-            this.cbo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo1.FormattingEnabled = true;
-            this.cbo1.Location = new System.Drawing.Point(405, 82);
-            this.cbo1.Name = "cbo1";
-            this.cbo1.Size = new System.Drawing.Size(159, 24);
-            this.cbo1.TabIndex = 5;
+            this.chk1.Click += new System.EventHandler(this.chk1_Click);
             // 
             // Frm_createArret
             // 

@@ -16,7 +16,6 @@ namespace SAE2_1
         public Frm_createArret()
         {
             InitializeComponent();
-            InitializeComponent();
 
             ClassMySql.connection();
 
@@ -63,7 +62,5 @@ namespace SAE2_1
                 txt1.Enabled = true;
             }
         }
-
-
     }
 }
