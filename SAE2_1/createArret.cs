@@ -19,7 +19,7 @@ namespace SAE2_1
 
             ClassMySql.connection();
 
-            
+            MessageBox.Show(ClassMySql.TestConnexion());
 
             ClassMySql.RequeteSQl("select * from Arret");
 

@@ -20,12 +20,26 @@ namespace ClassSQL
         public static void connection()
         {
             connexion = new MySqlConnection("database=baseb1; server=10.1.139.236; user id=b1; pwd=nouveau_mdp");
-            connexion.Open();
-
+            mysqlcom = null;
+            mysqlread = null;
         }
 
-        
-        
+        /// <summary>
+        /// Test la connexion de la base avec l'objet connexion initialement crée
+        /// </summary>
+        /// <returns>Une chaine de caractère qui donne l'état de la connexion</returns>
+        public static string TestConnexion()
+        {
+            try
+            {
+                connexion.Open();
+                return("connecté");
+            }
+            catch (MySqlException ex)
+            {
+                return(ex.Message + " non connecté");
+            }
+        }
 
         /// <summary>
         /// Crée une requete Sql
