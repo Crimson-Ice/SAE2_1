@@ -18,8 +18,6 @@ namespace SAE2_1
             InitializeComponent();
             //Connexion a la base
             ClassMySql.connection();
-            //TEST de connexion
-            MessageBox.Show(ClassMySql.TestConnexion());
             
             //requete sql
             ClassMySql.RequeteSQl("select * from Arret");

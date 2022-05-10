@@ -46,17 +46,8 @@ namespace SAE2_1
                         Button button = new Button();
                         button.Click += buttonArretClick;
                         button.Text = "Arrêt" + (i + 1).ToString();
-                        button.Width = flowLayoutPanel1.Width - 25;
+                        button.Width = flowLayoutPanel1.Width - 20;
                         button.Location = new Point(0, button.Height * i);
-                        if(i == 0)
-                        {
-                            button.Enabled = true;
-                        }
-                        else
-                        {
-                            button.Enabled = false;
-                        }
-                        button.Tag = i;
                         this.flowLayoutPanel1.Controls.Add(button);
                     }
                 }
@@ -77,19 +68,9 @@ namespace SAE2_1
 
             if (result == DialogResult.OK)
             {
-                if((int)btn.Tag != 0)
-                {
-                    txt3.Text += "**************************** \r\n";
-                }
                 txt3.Text += $" {name} : {frmCreateArret.txt1.Text} \r\n";
+                txt3.Text += "**************************** \r\n";
                 this.flowLayoutPanel1.Controls.Remove(btn);
-                foreach(Control c in this.flowLayoutPanel1.Controls)
-                {
-                    if((int)c.Tag == (int)btn.Tag+1)
-                    {
-                        c.Enabled = true;
-                    }
-                }
             }
 
             frmCreateArret.Dispose();

@@ -15,7 +15,7 @@ namespace ClassSQL
         static MySqlDataReader mysqlread;
 
         /// <summary>
-        /// Crée un objet connexion
+        /// Crée un objet connexion et ouvre la connexion
         /// </summary>
         public static void connection()
         {

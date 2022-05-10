@@ -27,12 +27,48 @@ namespace SAE2_1
 
         private void cmd2_Click(object sender, EventArgs e)
         {
+            connexion.Open();
+
+            MySqlCommand mysqlcom = new MySqlCommand($"select id_ligne from Ligne where nom_ligne = '{cboligne.SelectedItem}';", connexion);
+
+            MySqlDataReader mysqlread = mysqlcom.ExecuteReader(CommandBehavior.CloseConnection);
+
+            int id = 0;
+
+            if (mysqlread.Read())
+            {
+               id = int.Parse(mysqlread.GetString(0));
+            }
+            connexion.Close();
+
             string message = "Voulez vous vraiment supprimer cette Ligne ?";
             string caption = "Ete-vous sûr ?";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, caption, buttons);
+
+            connexion.Open();
+
+            MySqlDataReader MyReader2;
+
             if (result == DialogResult.Yes)
             {
+                MySqlCommand delete1 = new MySqlCommand($"delete from Correspondance where id_ligne = '{id}';", connexion);
+                MyReader2 = delete1.ExecuteReader();
+                while (MyReader2.Read())
+                {
+                }
+
+                connexion.Close();
+
+                connexion.Open();
+                MySqlCommand delete2 = new MySqlCommand($"delete from Ligne where id_ligne = '{id}';", connexion);
+                MyReader2 = delete2.ExecuteReader();
+                while (MyReader2.Read())
+                {
+                }
+
+                connexion.Close();
+
                 MessageBox.Show("Ligne supprimer");
                 this.Close();
             }
@@ -55,6 +91,8 @@ namespace SAE2_1
             {
                 cboligne.Items.Add(mysqlread.GetString(1));
             }
+
+            connexion.Close();
         }
 
         private void btnvisualiser_Click(object sender, EventArgs e)
