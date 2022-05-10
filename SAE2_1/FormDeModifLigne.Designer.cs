@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.lbl2 = new System.Windows.Forms.Label();
-            this.txt1 = new System.Windows.Forms.TextBox();
-            this.lbl3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbl4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.txt1 = new System.Windows.Forms.TextBox();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
             this.cmd1 = new System.Windows.Forms.Button();
             this.cmd2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -54,32 +54,23 @@
             this.panel1.Size = new System.Drawing.Size(729, 168);
             this.panel1.TabIndex = 0;
             // 
-            // lbl1
+            // lbl4
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(259, 11);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(209, 29);
-            this.lbl1.TabIndex = 0;
-            this.lbl1.Text = "Modification Ligne";
+            this.lbl4.AutoSize = true;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.Location = new System.Drawing.Point(404, 118);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(185, 25);
+            this.lbl4.TabIndex = 5;
+            this.lbl4.Text = "Couleur de la ligne :";
             // 
-            // lbl2
+            // comboBox1
             // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(15, 62);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(238, 25);
-            this.lbl2.TabIndex = 1;
-            this.lbl2.Text = "Nouveau nom de la ligne :";
-            // 
-            // txt1
-            // 
-            this.txt1.Location = new System.Drawing.Point(259, 65);
-            this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(164, 22);
-            this.txt1.TabIndex = 2;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(173, 122);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(57, 24);
+            this.comboBox1.TabIndex = 4;
             // 
             // lbl3
             // 
@@ -91,31 +82,42 @@
             this.lbl3.TabIndex = 3;
             this.lbl3.Text = "Nombre d\'arret :";
             // 
-            // comboBox1
+            // txt1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(173, 122);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(57, 24);
-            this.comboBox1.TabIndex = 4;
+            this.txt1.Location = new System.Drawing.Point(259, 65);
+            this.txt1.Name = "txt1";
+            this.txt1.Size = new System.Drawing.Size(164, 22);
+            this.txt1.TabIndex = 2;
             // 
-            // lbl4
+            // lbl2
             // 
-            this.lbl4.AutoSize = true;
-            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.Location = new System.Drawing.Point(404, 118);
-            this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(185, 25);
-            this.lbl4.TabIndex = 5;
-            this.lbl4.Text = "Couleur de la ligne :";
+            this.lbl2.AutoSize = true;
+            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl2.Location = new System.Drawing.Point(15, 62);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(238, 25);
+            this.lbl2.TabIndex = 1;
+            this.lbl2.Text = "Nouveau nom de la ligne :";
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(259, 11);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(209, 29);
+            this.lbl1.TabIndex = 0;
+            this.lbl1.Text = "Modification Ligne";
             // 
             // cmd1
             // 
-            this.cmd1.BackColor = System.Drawing.Color.White;
+            this.cmd1.BackColor = System.Drawing.Color.Gray;
+            this.cmd1.Cursor = System.Windows.Forms.Cursors.Default;
             this.cmd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmd1.Location = new System.Drawing.Point(36, 356);
+            this.cmd1.ForeColor = System.Drawing.Color.White;
+            this.cmd1.Location = new System.Drawing.Point(36, 341);
             this.cmd1.Name = "cmd1";
-            this.cmd1.Size = new System.Drawing.Size(126, 66);
+            this.cmd1.Size = new System.Drawing.Size(146, 81);
             this.cmd1.TabIndex = 1;
             this.cmd1.Text = "Retour";
             this.cmd1.UseVisualStyleBackColor = false;
@@ -123,11 +125,12 @@
             // 
             // cmd2
             // 
-            this.cmd2.BackColor = System.Drawing.Color.White;
+            this.cmd2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.cmd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmd2.Location = new System.Drawing.Point(639, 356);
+            this.cmd2.ForeColor = System.Drawing.Color.White;
+            this.cmd2.Location = new System.Drawing.Point(619, 341);
             this.cmd2.Name = "cmd2";
-            this.cmd2.Size = new System.Drawing.Size(126, 66);
+            this.cmd2.Size = new System.Drawing.Size(146, 81);
             this.cmd2.TabIndex = 2;
             this.cmd2.Text = "Valider";
             this.cmd2.UseVisualStyleBackColor = false;

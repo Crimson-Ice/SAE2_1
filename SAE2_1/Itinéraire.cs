@@ -29,7 +29,7 @@ namespace SAE2_1
 
             while (ClassMySql.ISread())
             {
-                string nom = ClassMySql.Attribut(4);
+                string nom = ClassMySql.Attribut(1);
                 cbo1.Items.Add(nom);
                 cbo2.Items.Add(nom);
             }
