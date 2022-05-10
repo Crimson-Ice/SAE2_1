@@ -30,12 +30,13 @@
         {
             this.lbl1 = new System.Windows.Forms.Label();
             this.pnl1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboligne = new System.Windows.Forms.ComboBox();
             this.lbl2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmd1 = new System.Windows.Forms.Button();
             this.cmd2 = new System.Windows.Forms.Button();
+            this.btnvisualiser = new System.Windows.Forms.Button();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -47,27 +48,28 @@
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.Location = new System.Drawing.Point(186, 33);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(428, 52);
+            this.lbl1.Size = new System.Drawing.Size(425, 51);
             this.lbl1.TabIndex = 0;
             this.lbl1.Text = "Suppression de ligne";
             // 
             // pnl1
             // 
             this.pnl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl1.Controls.Add(this.comboBox1);
+            this.pnl1.Controls.Add(this.cboligne);
             this.pnl1.Controls.Add(this.lbl2);
             this.pnl1.Location = new System.Drawing.Point(51, 119);
             this.pnl1.Name = "pnl1";
             this.pnl1.Size = new System.Drawing.Size(699, 141);
             this.pnl1.TabIndex = 1;
             // 
-            // comboBox1
+            // cboligne
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(366, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 24);
-            this.comboBox1.TabIndex = 3;
+            this.cboligne.FormattingEnabled = true;
+            this.cboligne.Location = new System.Drawing.Point(366, 59);
+            this.cboligne.Name = "cboligne";
+            this.cboligne.Size = new System.Drawing.Size(187, 24);
+            this.cboligne.TabIndex = 3;
+            this.cboligne.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // lbl2
             // 
@@ -125,6 +127,18 @@
             this.cmd2.UseVisualStyleBackColor = false;
             this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
             // 
+            // btnvisualiser
+            // 
+            this.btnvisualiser.BackColor = System.Drawing.Color.White;
+            this.btnvisualiser.Location = new System.Drawing.Point(351, 375);
+            this.btnvisualiser.Name = "btnvisualiser";
+            this.btnvisualiser.Size = new System.Drawing.Size(96, 46);
+            this.btnvisualiser.TabIndex = 6;
+            this.btnvisualiser.Text = "Visualiser";
+            this.btnvisualiser.UseVisualStyleBackColor = false;
+            this.btnvisualiser.Visible = false;
+            this.btnvisualiser.Click += new System.EventHandler(this.btnvisualiser_Click);
+            // 
             // SuppresionLigne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -132,6 +146,7 @@
             this.BackgroundImage = global::SAE2_1.Properties.Resources._6637000_simple_fond_bleu_abstraite_pour_la_conception_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnvisualiser);
             this.Controls.Add(this.cmd2);
             this.Controls.Add(this.cmd1);
             this.Controls.Add(this.pictureBox1);
@@ -140,6 +155,7 @@
             this.Controls.Add(this.lbl1);
             this.Name = "SuppresionLigne";
             this.Text = "SuppresionLigne";
+            this.Load += new System.EventHandler(this.SuppresionLigne_Load);
             this.pnl1.ResumeLayout(false);
             this.pnl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -152,11 +168,12 @@
 
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Panel pnl1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboligne;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmd1;
         private System.Windows.Forms.Button cmd2;
+        private System.Windows.Forms.Button btnvisualiser;
     }
 }
