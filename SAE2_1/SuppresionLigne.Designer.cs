@@ -120,6 +120,7 @@
             // cmd2
             // 
             this.cmd2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.cmd2.Enabled = false;
             this.cmd2.ForeColor = System.Drawing.Color.White;
             this.cmd2.Location = new System.Drawing.Point(630, 355);
             this.cmd2.Name = "cmd2";
@@ -132,9 +133,9 @@
             // btnvisualiser
             // 
             this.btnvisualiser.BackColor = System.Drawing.Color.White;
-            this.btnvisualiser.Location = new System.Drawing.Point(351, 375);
+            this.btnvisualiser.Location = new System.Drawing.Point(334, 355);
             this.btnvisualiser.Name = "btnvisualiser";
-            this.btnvisualiser.Size = new System.Drawing.Size(96, 46);
+            this.btnvisualiser.Size = new System.Drawing.Size(113, 66);
             this.btnvisualiser.TabIndex = 6;
             this.btnvisualiser.Text = "Visualiser";
             this.btnvisualiser.UseVisualStyleBackColor = false;
