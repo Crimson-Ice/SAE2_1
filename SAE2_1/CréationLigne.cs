@@ -46,9 +46,9 @@ namespace SAE2_1
                         Button button = new Button();
                         button.Click += buttonArretClick;
                         button.Text = "Arrêt" + (i + 1).ToString();
-                        button.Width = flowLayoutPanel1.Width - 20;
+                        button.Width = Flp1.Width - 20;
                         button.Location = new Point(0, button.Height * i);
-                        this.flowLayoutPanel1.Controls.Add(button);
+                        this.Flp1.Controls.Add(button);
                     }
                 }
                 else
@@ -70,7 +70,7 @@ namespace SAE2_1
             {
                 txt3.Text += $" {name} : {frmCreateArret.txt1.Text} \r\n";
                 txt3.Text += "**************************** \r\n";
-                this.flowLayoutPanel1.Controls.Remove(btn);
+                this.Flp1.Controls.Remove(btn);
             }
 
             frmCreateArret.Dispose();
@@ -91,7 +91,7 @@ namespace SAE2_1
             {
                 validerButton = false;
 
-                this.flowLayoutPanel1.Controls.Clear();
+                this.Flp1.Controls.Clear();
                 txt3.Text = "";
                 txt1.Text = "";
                 txt2.Text = "";
@@ -109,7 +109,7 @@ namespace SAE2_1
 
         private void flowLayoutPanel1_ControlRemoved(object sender, ControlEventArgs e)
         {
-            if (flowLayoutPanel1.Controls.Count == 0 && validerButton)
+            if (Flp1.Controls.Count == 0 && validerButton)
             {
                 cmd3.Enabled = true;
             }

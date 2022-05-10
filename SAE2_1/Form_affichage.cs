@@ -44,7 +44,7 @@ namespace SAE2_1
 
 
             Bitmap flag = new Bitmap(100000, 200);
-            pictureBox1.Width = 100000;
+            pb1.Width = 100000;
             Graphics flagGraphics = Graphics.FromImage(flag);
 
             Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
@@ -98,7 +98,7 @@ namespace SAE2_1
                     flagGraphics.DrawLine(pen, Xlignedebut, hauteur_panel / 2, Xlignefin, hauteur_panel / 2);
                 }
 
-                pictureBox1.Width = pictureBox1.Width - (pictureBox1.Width - (longeurligne + diametrecercle) * nb_arret) + 50;
+                pb1.Width = pb1.Width - (pb1.Width - (longeurligne + diametrecercle) * nb_arret) + 50;
 
                 Xronddeb = Xlignefin;
                 Xlignedebut = Xlignefin + diametrecercle;
@@ -110,9 +110,9 @@ namespace SAE2_1
 
             }
 
-            pictureBox1.Image = flag;
+            pb1.Image = flag;
 
-            hSB.Maximum = pictureBox1.Width - this.Size.Width;
+            hSB.Maximum = pb1.Width - this.Size.Width;
 
         }
 
@@ -120,7 +120,7 @@ namespace SAE2_1
         {
             //pnl.Location = new Point(pnl.Location.X - this.hSB.Value, pnl.Location.Y);
 
-            this.pictureBox1.Left = -this.hSB.Value;
+            this.pb1.Left = -this.hSB.Value;
         }
 
         private void Form_affichage_TextChanged(object sender, EventArgs e)
@@ -147,8 +147,8 @@ namespace SAE2_1
             }
 
 
-            int haut = pictureBox1.Height;
-            int larg = pictureBox1.Width;
+            int haut = pb1.Height;
+            int larg = pb1.Width;
             int nbarret = arret.Count();
 
 

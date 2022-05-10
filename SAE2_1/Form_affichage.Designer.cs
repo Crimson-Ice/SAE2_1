@@ -30,8 +30,8 @@
         {
             this.hSB = new System.Windows.Forms.HScrollBar();
             this.lbl_nom_ligne = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pb1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             this.SuspendLayout();
             // 
             // hSB
@@ -51,28 +51,28 @@
             this.lbl_nom_ligne.Size = new System.Drawing.Size(0, 54);
             this.lbl_nom_ligne.TabIndex = 3;
             // 
-            // pictureBox1
+            // pb1
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 196);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(991, 184);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pb1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb1.Location = new System.Drawing.Point(24, 196);
+            this.pb1.Name = "pb1";
+            this.pb1.Size = new System.Drawing.Size(991, 184);
+            this.pb1.TabIndex = 4;
+            this.pb1.TabStop = false;
             // 
             // Form_affichage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pb1);
             this.Controls.Add(this.lbl_nom_ligne);
             this.Controls.Add(this.hSB);
             this.Name = "Form_affichage";
             this.Text = "Form_affichage";
             this.Load += new System.EventHandler(this.Form_affichage_Load);
             this.TextChanged += new System.EventHandler(this.Form_affichage_TextChanged);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,6 +81,6 @@
         #endregion
         private System.Windows.Forms.HScrollBar hSB;
         private System.Windows.Forms.Label lbl_nom_ligne;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pb1;
     }
 }

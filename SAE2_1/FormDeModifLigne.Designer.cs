@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbo1 = new System.Windows.Forms.ComboBox();
             this.lbl3 = new System.Windows.Forms.Label();
             this.txt1 = new System.Windows.Forms.TextBox();
             this.lbl2 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lbl4);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbo1);
             this.panel1.Controls.Add(this.lbl3);
             this.panel1.Controls.Add(this.txt1);
             this.panel1.Controls.Add(this.lbl2);
@@ -64,13 +64,13 @@
             this.lbl4.TabIndex = 5;
             this.lbl4.Text = "Couleur de la ligne :";
             // 
-            // comboBox1
+            // cbo1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(173, 122);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(57, 24);
-            this.comboBox1.TabIndex = 4;
+            this.cbo1.FormattingEnabled = true;
+            this.cbo1.Location = new System.Drawing.Point(173, 122);
+            this.cbo1.Name = "cbo1";
+            this.cbo1.Size = new System.Drawing.Size(57, 24);
+            this.cbo1.TabIndex = 4;
             // 
             // lbl3
             // 
@@ -157,7 +157,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbo1;
         private System.Windows.Forms.Label lbl3;
         private System.Windows.Forms.TextBox txt1;
         private System.Windows.Forms.Label lbl2;

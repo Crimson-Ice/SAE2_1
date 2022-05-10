@@ -37,7 +37,7 @@ namespace SAE2_1
             this.txt2 = new System.Windows.Forms.TextBox();
             this.cmd1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Flp1 = new System.Windows.Forms.FlowLayoutPanel();
             this.txt3 = new System.Windows.Forms.TextBox();
             this.cmd3 = new System.Windows.Forms.Button();
             this.cmd2 = new System.Windows.Forms.Button();
@@ -114,15 +114,15 @@ namespace SAE2_1
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
-            // flowLayoutPanel1
+            // Flp1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(336, 124);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 288);
-            this.flowLayoutPanel1.TabIndex = 8;
-            this.flowLayoutPanel1.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanel1_ControlRemoved);
+            this.Flp1.AutoScroll = true;
+            this.Flp1.BackColor = System.Drawing.Color.Transparent;
+            this.Flp1.Location = new System.Drawing.Point(336, 124);
+            this.Flp1.Name = "Flp1";
+            this.Flp1.Size = new System.Drawing.Size(200, 288);
+            this.Flp1.TabIndex = 8;
+            this.Flp1.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.flowLayoutPanel1_ControlRemoved);
             // 
             // txt3
             // 
@@ -187,7 +187,7 @@ namespace SAE2_1
             this.Controls.Add(this.cmd2);
             this.Controls.Add(this.cmd3);
             this.Controls.Add(this.txt3);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.Flp1);
             this.Controls.Add(this.cmd1);
             this.Controls.Add(this.txt2);
             this.Controls.Add(this.lbl3);
@@ -212,7 +212,7 @@ namespace SAE2_1
         private System.Windows.Forms.TextBox txt2;
         private System.Windows.Forms.Button cmd1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel Flp1;
         private System.Windows.Forms.TextBox txt3;
         private System.Windows.Forms.Button cmd3;
         private System.Windows.Forms.Button cmd2;

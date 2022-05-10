@@ -34,8 +34,8 @@ namespace SAE2_1
             this.cmd3 = new System.Windows.Forms.Button();
             this.cmd4 = new System.Windows.Forms.Button();
             this.cmd5 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pb1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmd1
@@ -93,16 +93,16 @@ namespace SAE2_1
             this.cmd5.UseVisualStyleBackColor = false;
             this.cmd5.Click += new System.EventHandler(this.cmd5_Click);
             // 
-            // pictureBox1
+            // pb1
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::SAE2_1.Properties.Resources.tul_plan_simplifi_poteaux_2021_bat_page_0001;
-            this.pictureBox1.Location = new System.Drawing.Point(232, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(512, 404);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.pb1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb1.Image = global::SAE2_1.Properties.Resources.tul_plan_simplifi_poteaux_2021_bat_page_0001;
+            this.pb1.Location = new System.Drawing.Point(232, 25);
+            this.pb1.Name = "pb1";
+            this.pb1.Size = new System.Drawing.Size(512, 404);
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb1.TabIndex = 5;
+            this.pb1.TabStop = false;
             // 
             // Acceuille
             // 
@@ -111,7 +111,7 @@ namespace SAE2_1
             this.BackgroundImage = global::SAE2_1.Properties.Resources._6637000_simple_fond_bleu_abstraite_pour_la_conception_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pb1);
             this.Controls.Add(this.cmd5);
             this.Controls.Add(this.cmd4);
             this.Controls.Add(this.cmd3);
@@ -119,7 +119,7 @@ namespace SAE2_1
             this.Controls.Add(this.cmd1);
             this.Name = "Acceuille";
             this.Text = "Accueil";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,7 +131,7 @@ namespace SAE2_1
         private System.Windows.Forms.Button cmd3;
         private System.Windows.Forms.Button cmd4;
         private System.Windows.Forms.Button cmd5;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pb1;
     }
 }
 

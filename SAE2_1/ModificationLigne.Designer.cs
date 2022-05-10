@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl1 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
             this.cmd1 = new System.Windows.Forms.Button();
             this.cmd2 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnl1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.lbl2);
-            this.panel1.Location = new System.Drawing.Point(48, 118);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(704, 204);
-            this.panel1.TabIndex = 0;
+            this.pnl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl1.Controls.Add(this.comboBox1);
+            this.pnl1.Controls.Add(this.lbl2);
+            this.pnl1.Location = new System.Drawing.Point(48, 118);
+            this.pnl1.Name = "pnl1";
+            this.pnl1.Size = new System.Drawing.Size(704, 204);
+            this.pnl1.TabIndex = 0;
             // 
             // comboBox1
             // 
@@ -111,11 +111,11 @@
             this.Controls.Add(this.cmd2);
             this.Controls.Add(this.cmd1);
             this.Controls.Add(this.lbl1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl1);
             this.Name = "ModificationLigne";
             this.Text = "ModificationLigne";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnl1.ResumeLayout(false);
+            this.pnl1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,7 +123,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl1;
