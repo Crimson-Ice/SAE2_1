@@ -79,10 +79,11 @@
             // 
             // cmd1
             // 
-            this.cmd1.BackColor = System.Drawing.Color.White;
-            this.cmd1.Location = new System.Drawing.Point(88, 380);
+            this.cmd1.BackColor = System.Drawing.Color.Gray;
+            this.cmd1.ForeColor = System.Drawing.Color.White;
+            this.cmd1.Location = new System.Drawing.Point(48, 355);
             this.cmd1.Name = "cmd1";
-            this.cmd1.Size = new System.Drawing.Size(107, 41);
+            this.cmd1.Size = new System.Drawing.Size(120, 66);
             this.cmd1.TabIndex = 2;
             this.cmd1.Text = "Retour";
             this.cmd1.UseVisualStyleBackColor = false;
@@ -90,10 +91,11 @@
             // 
             // cmd2
             // 
-            this.cmd2.BackColor = System.Drawing.Color.White;
-            this.cmd2.Location = new System.Drawing.Point(601, 380);
+            this.cmd2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.cmd2.ForeColor = System.Drawing.Color.White;
+            this.cmd2.Location = new System.Drawing.Point(632, 355);
             this.cmd2.Name = "cmd2";
-            this.cmd2.Size = new System.Drawing.Size(107, 41);
+            this.cmd2.Size = new System.Drawing.Size(120, 66);
             this.cmd2.TabIndex = 3;
             this.cmd2.Text = "Modifier";
             this.cmd2.UseVisualStyleBackColor = false;

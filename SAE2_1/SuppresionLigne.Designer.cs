@@ -47,7 +47,7 @@
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.Location = new System.Drawing.Point(186, 33);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(428, 52);
+            this.lbl1.Size = new System.Drawing.Size(425, 51);
             this.lbl1.TabIndex = 0;
             this.lbl1.Text = "Suppression de ligne";
             // 
@@ -105,10 +105,11 @@
             // 
             // cmd1
             // 
-            this.cmd1.BackColor = System.Drawing.Color.White;
-            this.cmd1.Location = new System.Drawing.Point(51, 375);
+            this.cmd1.BackColor = System.Drawing.Color.Gray;
+            this.cmd1.ForeColor = System.Drawing.Color.White;
+            this.cmd1.Location = new System.Drawing.Point(51, 355);
             this.cmd1.Name = "cmd1";
-            this.cmd1.Size = new System.Drawing.Size(96, 46);
+            this.cmd1.Size = new System.Drawing.Size(120, 66);
             this.cmd1.TabIndex = 4;
             this.cmd1.Text = "Retour";
             this.cmd1.UseVisualStyleBackColor = false;
@@ -116,10 +117,11 @@
             // 
             // cmd2
             // 
-            this.cmd2.BackColor = System.Drawing.Color.White;
-            this.cmd2.Location = new System.Drawing.Point(654, 375);
+            this.cmd2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.cmd2.ForeColor = System.Drawing.Color.White;
+            this.cmd2.Location = new System.Drawing.Point(630, 355);
             this.cmd2.Name = "cmd2";
-            this.cmd2.Size = new System.Drawing.Size(96, 46);
+            this.cmd2.Size = new System.Drawing.Size(120, 66);
             this.cmd2.TabIndex = 5;
             this.cmd2.Text = "Valider";
             this.cmd2.UseVisualStyleBackColor = false;

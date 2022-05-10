@@ -63,12 +63,6 @@
     <Compile Include="Acceuile.Designer.cs">
       <DependentUpon>Acceuile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Affichage_ligne.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Affichage_ligne.Designer.cs">
-      <DependentUpon>Affichage_ligne.cs</DependentUpon>
-    </Compile>
     <Compile Include="createArret.cs">
       <SubType>Form</SubType>
     </Compile>

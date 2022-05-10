@@ -41,7 +41,9 @@ namespace SAE2_1
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmd1 = new System.Windows.Forms.Button();
             this.cmd2 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl1
@@ -59,7 +61,7 @@ namespace SAE2_1
             // 
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(41, 52);
+            this.lbl2.Location = new System.Drawing.Point(54, 54);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(185, 29);
             this.lbl2.TabIndex = 1;
@@ -69,7 +71,7 @@ namespace SAE2_1
             // 
             this.lbl3.AutoSize = true;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(547, 54);
+            this.lbl3.Location = new System.Drawing.Point(505, 54);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(141, 29);
             this.lbl3.TabIndex = 2;
@@ -83,17 +85,17 @@ namespace SAE2_1
             this.cbo1.Location = new System.Drawing.Point(249, 59);
             this.cbo1.MaxDropDownItems = 4;
             this.cbo1.Name = "cbo1";
-            this.cbo1.Size = new System.Drawing.Size(121, 24);
+            this.cbo1.Size = new System.Drawing.Size(166, 24);
             this.cbo1.TabIndex = 3;
             // 
             // cbo2
             // 
             this.cbo2.FormattingEnabled = true;
             this.cbo2.IntegralHeight = false;
-            this.cbo2.Location = new System.Drawing.Point(714, 59);
+            this.cbo2.Location = new System.Drawing.Point(664, 57);
             this.cbo2.MaxDropDownItems = 4;
             this.cbo2.Name = "cbo2";
-            this.cbo2.Size = new System.Drawing.Size(121, 24);
+            this.cbo2.Size = new System.Drawing.Size(158, 24);
             this.cbo2.TabIndex = 4;
             // 
             // chk1
@@ -101,19 +103,20 @@ namespace SAE2_1
             this.chk1.AutoSize = true;
             this.chk1.BackColor = System.Drawing.Color.Transparent;
             this.chk1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk1.Location = new System.Drawing.Point(79, 351);
+            this.chk1.Location = new System.Drawing.Point(34, 37);
             this.chk1.Name = "chk1";
             this.chk1.Size = new System.Drawing.Size(206, 29);
             this.chk1.TabIndex = 5;
             this.chk1.Text = "Filtre horaire debut :";
             this.chk1.UseVisualStyleBackColor = false;
+            this.chk1.Click += new System.EventHandler(this.chk1_Click);
             // 
             // chk2
             // 
             this.chk2.AutoSize = true;
             this.chk2.BackColor = System.Drawing.Color.Transparent;
             this.chk2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk2.Location = new System.Drawing.Point(539, 351);
+            this.chk2.Location = new System.Drawing.Point(497, 37);
             this.chk2.Name = "chk2";
             this.chk2.Size = new System.Drawing.Size(204, 29);
             this.chk2.TabIndex = 6;
@@ -126,7 +129,7 @@ namespace SAE2_1
             this.Dtp1.CustomFormat = "HH:mm";
             this.Dtp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dtp1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Dtp1.Location = new System.Drawing.Point(303, 346);
+            this.Dtp1.Location = new System.Drawing.Point(260, 28);
             this.Dtp1.Name = "Dtp1";
             this.Dtp1.ShowUpDown = true;
             this.Dtp1.Size = new System.Drawing.Size(111, 38);
@@ -138,7 +141,7 @@ namespace SAE2_1
             this.Dtp2.CustomFormat = "HH:mm";
             this.Dtp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dtp2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Dtp2.Location = new System.Drawing.Point(768, 346);
+            this.Dtp2.Location = new System.Drawing.Point(725, 28);
             this.Dtp2.Name = "Dtp2";
             this.Dtp2.ShowUpDown = true;
             this.Dtp2.Size = new System.Drawing.Size(111, 38);
@@ -185,6 +188,18 @@ namespace SAE2_1
             this.cmd2.UseVisualStyleBackColor = false;
             this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.chk1);
+            this.panel2.Controls.Add(this.Dtp1);
+            this.panel2.Controls.Add(this.chk2);
+            this.panel2.Controls.Add(this.Dtp2);
+            this.panel2.Location = new System.Drawing.Point(40, 334);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(878, 100);
+            this.panel2.TabIndex = 12;
+            // 
             // Itinéraire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -192,18 +207,17 @@ namespace SAE2_1
             this.BackgroundImage = global::SAE2_1.Properties.Resources._6637000_simple_fond_bleu_abstraite_pour_la_conception_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(958, 625);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.cmd2);
             this.Controls.Add(this.cmd1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Dtp2);
-            this.Controls.Add(this.Dtp1);
-            this.Controls.Add(this.chk2);
-            this.Controls.Add(this.chk1);
             this.Controls.Add(this.lbl1);
             this.Name = "Itinéraire";
             this.Text = "Itinéraire";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +237,6 @@ namespace SAE2_1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button cmd1;
         private System.Windows.Forms.Button cmd2;
+        private System.Windows.Forms.Panel panel2;
     }
 }
