@@ -30,5 +30,7 @@ namespace SAE2_1
                 errorProvider1.SetError(txt1, "champ non remplie");
             }
         }
+
+
     }
 }
