@@ -27,7 +27,7 @@ namespace SAE2_1
 
         private void cmd2_Click(object sender, EventArgs e)
         {
-            
+            connexion.Close();   
             connexion.Open();
 
             MySqlCommand mysqlcom = new MySqlCommand($"select id_ligne from Ligne where nom_ligne = '{cboligne.SelectedItem}';", connexion);
@@ -78,6 +78,7 @@ namespace SAE2_1
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             btnvisualiser.Visible = true;
+            cmd2.Enabled = true;
         }
 
         private void SuppresionLigne_Load(object sender, EventArgs e)

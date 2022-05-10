@@ -120,6 +120,7 @@
             // cmd2
             // 
             this.cmd2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.cmd2.Enabled = false;
             this.cmd2.ForeColor = System.Drawing.Color.White;
             this.cmd2.Location = new System.Drawing.Point(630, 355);
             this.cmd2.Name = "cmd2";
