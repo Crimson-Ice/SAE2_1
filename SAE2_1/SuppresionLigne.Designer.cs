@@ -36,6 +36,7 @@
             this.pb1 = new System.Windows.Forms.PictureBox();
             this.cmd1 = new System.Windows.Forms.Button();
             this.cmd2 = new System.Windows.Forms.Button();
+            this.btnvisualiser = new System.Windows.Forms.Button();
             this.pnl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +128,18 @@
             this.cmd2.UseVisualStyleBackColor = false;
             this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
             // 
+            // btnvisualiser
+            // 
+            this.btnvisualiser.BackColor = System.Drawing.Color.White;
+            this.btnvisualiser.Location = new System.Drawing.Point(351, 375);
+            this.btnvisualiser.Name = "btnvisualiser";
+            this.btnvisualiser.Size = new System.Drawing.Size(96, 46);
+            this.btnvisualiser.TabIndex = 6;
+            this.btnvisualiser.Text = "Visualiser";
+            this.btnvisualiser.UseVisualStyleBackColor = false;
+            this.btnvisualiser.Visible = false;
+            this.btnvisualiser.Click += new System.EventHandler(this.btnvisualiser_Click);
+            // 
             // SuppresionLigne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -134,6 +147,7 @@
             this.BackgroundImage = global::SAE2_1.Properties.Resources._6637000_simple_fond_bleu_abstraite_pour_la_conception_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnvisualiser);
             this.Controls.Add(this.cmd2);
             this.Controls.Add(this.cmd1);
             this.Controls.Add(this.pb1);
@@ -142,6 +156,7 @@
             this.Controls.Add(this.lbl1);
             this.Name = "SuppresionLigne";
             this.Text = "SuppresionLigne";
+            this.Load += new System.EventHandler(this.SuppresionLigne_Load);
             this.pnl1.ResumeLayout(false);
             this.pnl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
@@ -160,5 +175,6 @@
         private System.Windows.Forms.PictureBox pb1;
         private System.Windows.Forms.Button cmd1;
         private System.Windows.Forms.Button cmd2;
+        private System.Windows.Forms.Button btnvisualiser;
     }
 }

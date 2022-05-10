@@ -156,6 +156,9 @@ namespace SAE2_1
 
             ligne(nbarret, haut, larg, 100, 30, 30, arret);
 
+            lbl_arret_depart.Text = arret[0];
+            lbl_arret_fin.Text = arret[arret.Count()-1];
+
         }
     }
 }
