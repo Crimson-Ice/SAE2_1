@@ -24,12 +24,6 @@ namespace ClassSQL
         }
 
         /// <summary>
-        /// Test la connexion de la base avec l'objet connexion initialement crée
-        /// </summary>
-        /// <returns>Une chaine de caractère qui donne l'état de la connexion</returns>
-        
-
-        /// <summary>
         /// Crée une requete Sql
         /// </summary>
         /// <param name="requete">Chaine de caractère de la requete</param>
