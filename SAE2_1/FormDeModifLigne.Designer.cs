@@ -32,9 +32,9 @@
             this.lbl4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbl3 = new System.Windows.Forms.Label();
-            this.txt1 = new System.Windows.Forms.TextBox();
+            this.txt_new_nom = new System.Windows.Forms.TextBox();
             this.lbl2 = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl_titre = new System.Windows.Forms.Label();
             this.cmd1 = new System.Windows.Forms.Button();
             this.cmd2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -46,9 +46,9 @@
             this.panel1.Controls.Add(this.lbl4);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.lbl3);
-            this.panel1.Controls.Add(this.txt1);
+            this.panel1.Controls.Add(this.txt_new_nom);
             this.panel1.Controls.Add(this.lbl2);
-            this.panel1.Controls.Add(this.lbl1);
+            this.panel1.Controls.Add(this.lbl_titre);
             this.panel1.Location = new System.Drawing.Point(36, 26);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(729, 168);
@@ -82,12 +82,12 @@
             this.lbl3.TabIndex = 3;
             this.lbl3.Text = "Nombre d\'arret :";
             // 
-            // txt1
+            // txt_new_nom
             // 
-            this.txt1.Location = new System.Drawing.Point(259, 65);
-            this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(164, 22);
-            this.txt1.TabIndex = 2;
+            this.txt_new_nom.Location = new System.Drawing.Point(259, 65);
+            this.txt_new_nom.Name = "txt_new_nom";
+            this.txt_new_nom.Size = new System.Drawing.Size(164, 22);
+            this.txt_new_nom.TabIndex = 2;
             // 
             // lbl2
             // 
@@ -99,15 +99,15 @@
             this.lbl2.TabIndex = 1;
             this.lbl2.Text = "Nouveau nom de la ligne :";
             // 
-            // lbl1
+            // lbl_titre
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(259, 11);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(209, 29);
-            this.lbl1.TabIndex = 0;
-            this.lbl1.Text = "Modification Ligne";
+            this.lbl_titre.AutoSize = true;
+            this.lbl_titre.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titre.Location = new System.Drawing.Point(200, 10);
+            this.lbl_titre.Name = "lbl_titre";
+            this.lbl_titre.Size = new System.Drawing.Size(209, 29);
+            this.lbl_titre.TabIndex = 0;
+            this.lbl_titre.Text = "Modification Ligne";
             // 
             // cmd1
             // 
@@ -134,6 +134,7 @@
             this.cmd2.TabIndex = 2;
             this.cmd2.Text = "Valider";
             this.cmd2.UseVisualStyleBackColor = false;
+            this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
             // 
             // FormDeModifLigne
             // 
@@ -147,6 +148,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormDeModifLigne";
             this.Text = "FormDeModifLigne";
+            this.Load += new System.EventHandler(this.FormDeModifLigne_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -159,9 +161,9 @@
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbl3;
-        private System.Windows.Forms.TextBox txt1;
+        private System.Windows.Forms.TextBox txt_new_nom;
         private System.Windows.Forms.Label lbl2;
-        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lbl_titre;
         private System.Windows.Forms.Button cmd1;
         private System.Windows.Forms.Button cmd2;
     }
