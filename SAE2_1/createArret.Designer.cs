@@ -129,6 +129,7 @@
             // 
             // cbo1
             // 
+            this.cbo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo1.Enabled = false;
             this.cbo1.FormattingEnabled = true;
             this.cbo1.IntegralHeight = false;

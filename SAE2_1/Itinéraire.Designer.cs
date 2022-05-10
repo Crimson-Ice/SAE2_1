@@ -79,6 +79,7 @@ namespace SAE2_1
             // 
             // cbo1
             // 
+            this.cbo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo1.FormattingEnabled = true;
             this.cbo1.IntegralHeight = false;
             this.cbo1.ItemHeight = 16;
@@ -90,6 +91,7 @@ namespace SAE2_1
             // 
             // cbo2
             // 
+            this.cbo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo2.FormattingEnabled = true;
             this.cbo2.IntegralHeight = false;
             this.cbo2.Location = new System.Drawing.Point(664, 57);
