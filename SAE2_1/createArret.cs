@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassSQL;
 
 namespace SAE2_1
 {
@@ -15,6 +16,21 @@ namespace SAE2_1
         public Frm_createArret()
         {
             InitializeComponent();
+
+            ClassMySql.connection();
+
+            MessageBox.Show(ClassMySql.TestConnexion());
+
+            ClassMySql.RequeteSQl("select * from Arret");
+
+            ClassMySql.Reading();
+
+            while(ClassMySql.ISread())
+            {
+                cbo1.Items.Add(ClassMySql.Attribut(1));
+            }
+
+            ClassMySql.CloseConnexion();
         }
 
         private void txt1_TextChanged(object sender, EventArgs e)
@@ -28,6 +44,24 @@ namespace SAE2_1
             {
                 cmd2.Enabled = false;
                 errorProvider1.SetError(txt1, "champ non remplie");
+            }
+        }
+
+        private void chk1_Click(object sender, EventArgs e)
+        {
+            if(chk1.Checked)
+            {
+                lbl3.Enabled = true;
+                cbo1.Enabled = true;
+                lbl2.Enabled = false;
+                txt1.Enabled = false;
+            }
+            else
+            {
+                lbl3.Enabled = false;
+                cbo1.Enabled = false;
+                lbl2.Enabled = true;
+                txt1.Enabled = true;
             }
         }
     }

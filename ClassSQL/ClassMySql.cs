@@ -20,7 +20,8 @@ namespace ClassSQL
         public static void connection()
         {
             connexion = new MySqlConnection("database=baseb1; server=10.1.139.236; user id=b1; pwd=nouveau_mdp");
-            
+            mysqlcom = null;
+            mysqlread = null;
         }
 
         /// <summary>
