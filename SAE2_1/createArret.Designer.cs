@@ -36,13 +36,16 @@
             this.cmd1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtp1 = new System.Windows.Forms.DateTimePicker();
+            this.lbl4 = new System.Windows.Forms.Label();
             this.cbo1 = new System.Windows.Forms.ComboBox();
             this.lbl3 = new System.Windows.Forms.Label();
             this.chk1 = new System.Windows.Forms.CheckBox();
-            this.lbl4 = new System.Windows.Forms.Label();
-            this.dtp1 = new System.Windows.Forms.DateTimePicker();
+            this.lbl5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl1
@@ -80,7 +83,7 @@
             this.cmd2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.cmd2.Enabled = false;
             this.cmd2.ForeColor = System.Drawing.SystemColors.Control;
-            this.cmd2.Location = new System.Drawing.Point(544, 322);
+            this.cmd2.Location = new System.Drawing.Point(544, 333);
             this.cmd2.Name = "cmd2";
             this.cmd2.Size = new System.Drawing.Size(144, 78);
             this.cmd2.TabIndex = 3;
@@ -93,7 +96,7 @@
             this.cmd1.BackColor = System.Drawing.SystemColors.GrayText;
             this.cmd1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cmd1.ForeColor = System.Drawing.SystemColors.Control;
-            this.cmd1.Location = new System.Drawing.Point(39, 322);
+            this.cmd1.Location = new System.Drawing.Point(39, 333);
             this.cmd1.Name = "cmd1";
             this.cmd1.Size = new System.Drawing.Size(144, 78);
             this.cmd1.TabIndex = 3;
@@ -107,6 +110,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.lbl5);
             this.panel1.Controls.Add(this.dtp1);
             this.panel1.Controls.Add(this.lbl4);
             this.panel1.Controls.Add(this.cbo1);
@@ -116,8 +121,33 @@
             this.panel1.Controls.Add(this.txt1);
             this.panel1.Location = new System.Drawing.Point(39, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(649, 206);
+            this.panel1.Size = new System.Drawing.Size(649, 235);
             this.panel1.TabIndex = 4;
+            // 
+            // dtp1
+            // 
+            this.dtp1.CustomFormat = "hh:mm";
+            this.dtp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp1.Location = new System.Drawing.Point(364, 140);
+            this.dtp1.MaxDate = new System.DateTime(9998, 12, 3, 0, 0, 0, 0);
+            this.dtp1.MinDate = new System.DateTime(1753, 1, 4, 0, 0, 0, 0);
+            this.dtp1.Name = "dtp1";
+            this.dtp1.ShowUpDown = true;
+            this.dtp1.Size = new System.Drawing.Size(78, 28);
+            this.dtp1.TabIndex = 7;
+            this.dtp1.Value = new System.DateTime(2022, 5, 11, 0, 0, 0, 0);
+            // 
+            // lbl4
+            // 
+            this.lbl4.AutoSize = true;
+            this.lbl4.BackColor = System.Drawing.Color.Transparent;
+            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl4.Location = new System.Drawing.Point(165, 140);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(193, 25);
+            this.lbl4.TabIndex = 6;
+            this.lbl4.Text = "Horaire premier bus :";
             // 
             // cbo1
             // 
@@ -154,30 +184,27 @@
             this.chk1.UseVisualStyleBackColor = true;
             this.chk1.Click += new System.EventHandler(this.chk1_Click);
             // 
-            // lbl4
+            // lbl5
             // 
-            this.lbl4.AutoSize = true;
-            this.lbl4.BackColor = System.Drawing.Color.Transparent;
-            this.lbl4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl4.Location = new System.Drawing.Point(145, 149);
-            this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(193, 25);
-            this.lbl4.TabIndex = 6;
-            this.lbl4.Text = "Horaire premier bus :";
+            this.lbl5.AutoSize = true;
+            this.lbl5.BackColor = System.Drawing.Color.Transparent;
+            this.lbl5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl5.Location = new System.Drawing.Point(122, 185);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(394, 20);
+            this.lbl5.TabIndex = 8;
+            this.lbl5.Text = "L\'horaire du premier bus doit être supérieur à 5 : 00";
             // 
-            // dtp1
+            // pictureBox1
             // 
-            this.dtp1.CustomFormat = "hh:mm";
-            this.dtp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp1.Location = new System.Drawing.Point(344, 149);
-            this.dtp1.MaxDate = new System.DateTime(9998, 12, 3, 0, 0, 0, 0);
-            this.dtp1.MinDate = new System.DateTime(1753, 1, 4, 0, 0, 0, 0);
-            this.dtp1.Name = "dtp1";
-            this.dtp1.ShowUpDown = true;
-            this.dtp1.Size = new System.Drawing.Size(78, 28);
-            this.dtp1.TabIndex = 7;
-            this.dtp1.Value = new System.DateTime(2022, 5, 11, 0, 0, 0, 0);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::SAE2_1.Properties.Resources.hidden_danger_1392698;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(92, 179);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 26);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // Frm_createArret
             // 
@@ -195,6 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,7 +240,9 @@
         private System.Windows.Forms.Label lbl3;
         internal System.Windows.Forms.CheckBox chk1;
         internal System.Windows.Forms.ComboBox cbo1;
-        private System.Windows.Forms.DateTimePicker dtp1;
         private System.Windows.Forms.Label lbl4;
+        internal System.Windows.Forms.DateTimePicker dtp1;
+        private System.Windows.Forms.Label lbl5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
