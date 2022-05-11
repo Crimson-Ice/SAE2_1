@@ -64,8 +64,9 @@
             // 
             // cboligne
             // 
+            this.cboligne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboligne.FormattingEnabled = true;
-            this.cboligne.Location = new System.Drawing.Point(366, 59);
+            this.cboligne.Location = new System.Drawing.Point(372, 57);
             this.cboligne.Name = "cboligne";
             this.cboligne.Size = new System.Drawing.Size(187, 24);
             this.cboligne.TabIndex = 3;
