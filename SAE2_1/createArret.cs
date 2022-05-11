@@ -67,5 +67,34 @@ namespace SAE2_1
         {
             cmd2.Enabled = true;
         }
+
+        private void cmd2_Click(object sender, EventArgs e)
+        {
+            string[] t = dtp1.Text.Split(':');
+
+            if (double.Parse(t[0]) >= CréationLigne.time.Hours)
+            {
+                if(double.Parse(t[1]) >= CréationLigne.time.Minutes)
+                {
+                    MessageBox.Show("valid");
+                    this.DialogResult = DialogResult.OK;
+                    CréationLigne.time = new TimeSpan(int.Parse(t[0]),int.Parse(t[1]), 00);
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("non valid minute");
+                    errorProvider1.SetError(dtp1, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} : {CréationLigne.time.Minutes}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("non valid heure");
+                errorProvider1.SetError(dtp1, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} : {CréationLigne.time.Minutes}");
+            }
+
+
+        }
     }
 }

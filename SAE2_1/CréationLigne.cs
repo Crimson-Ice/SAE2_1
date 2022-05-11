@@ -12,7 +12,8 @@ namespace SAE2_1
 {
     public partial class CréationLigne : Form
     {
-        public bool validerButton = false;
+        private bool validerButton;
+        public static TimeSpan time = new TimeSpan(05,00,00);
         public CréationLigne()
         {
             InitializeComponent();
