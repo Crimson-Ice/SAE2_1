@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace SAE2_1
 {
@@ -17,7 +18,7 @@ namespace SAE2_1
         public static List<(string, string)> listArret = new List<(string, string)>();
         public static List<string> arretCree = new List<string> ();
 
-
+        public MySqlConnection connexion = new MySqlConnection("database=baseb1; server=10.1.139.236; user id=b1; pwd=nouveau_mdp");
         public CréationLigne()
         {
             InitializeComponent();
@@ -169,7 +170,58 @@ namespace SAE2_1
 
         private void cmd3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Création d'arret");
+
+            int id_ligne=0;
+            connexion.Open();
+            MySqlCommand delete1;
+            foreach (string arret in arretCree)
+            {
+                
+
+                delete1 = new MySqlCommand($"INSERT INTO Arret (nom_arret,nb_ligne_desservi) VALUES('{arret}',1);", connexion);
+
+                delete1.ExecuteNonQuery();
+
+            }
+            connexion.Close();
+
+            List<string> arret_intervalle = get_id_arret_fin(listArret);
+            connexion.Open();
+
+            delete1 = new MySqlCommand($"INSERT INTO Ligne (nom_ligne,nb_arret,id_arret_depart,id_arret_fin) VALUES('{txt1.Text}',{listArret.Count()},{arret_intervalle[0]},{arret_intervalle[arret_intervalle.Count()-1]});", connexion);
+
+            delete1.ExecuteNonQuery();
+
+            connexion.Close();
+
+            
+
+            connexion.Open();
+
+            MySqlCommand mysqlcom = new MySqlCommand("select * from Ligne;", connexion);
+            MySqlDataReader mysqlread = mysqlcom.ExecuteReader(CommandBehavior.CloseConnection);
+
+            while (mysqlread.Read())
+            {
+                if (mysqlread.GetString(1) == txt1.Text)
+                {
+                    id_ligne = mysqlread.GetInt32(0);
+                }
+
+            }
+            connexion.Close();
+
+            connexion.Open();
+
+            for(int i = 0; i < listArret.Count; i++)
+            {
+                delete1 = new MySqlCommand($"INSERT INTO Correspondance (id_arret,id_ligne,rang_arret_ligne,heure_premier_bus,heure_dernier_bus) VALUES({arret_intervalle[i]},{id_ligne},{i+1},'{listArret[i].Item2}','20:21');", connexion);
+
+                delete1.ExecuteNonQuery();
+
+            }
+
+            connexion.Close();
         }
 
         private void flowLayoutPanel1_ControlRemoved(object sender, ControlEventArgs e)
@@ -184,5 +236,37 @@ namespace SAE2_1
         {
             this.Close();
         }
+
+        private List<string> get_id_arret_fin(List<(string,string)> Arret)
+        {
+            int i = 0;
+            List<string> arret = new List<string>();
+            MySqlCommand mysqlcom = new MySqlCommand($"select * from Arret;", connexion); ;
+
+            connexion.Open();
+
+            MySqlDataReader mysqlread = mysqlcom.ExecuteReader(CommandBehavior.CloseConnection);
+
+            while (mysqlread.Read())
+            {
+                foreach ((string,string) c in listArret)
+                {
+                    if (c.Item1 == mysqlread.GetString(1))
+                    {
+                        arret.Add(mysqlread.GetString(0));
+                    }
+                }
+                    
+            }
+
+
+
+            connexion.Close();
+
+
+
+
+            return arret;
+        } 
     }
 }
