@@ -14,6 +14,10 @@ namespace SAE2_1
     {
         private bool validerButton;
         public static TimeSpan time = new TimeSpan(05,00,00);
+        public static List<(string, string)> listArret = new List<(string, string)>();
+        public static List<string> arretCree = new List<string> ();
+
+
         public CréationLigne()
         {
             InitializeComponent();
@@ -117,10 +121,13 @@ namespace SAE2_1
             if (frmCreateArret.chk1.Checked)
             {
                 txt3.Text += $" {name} : {frmCreateArret.cbo1.SelectedItem} \r\n";
+                listArret.Add((frmCreateArret.cbo1.SelectedItem.ToString(), frmCreateArret.dtp1.Text));
             }
             else
             {
                 txt3.Text += $" {name} : {frmCreateArret.txt1.Text} \r\n";
+                listArret.Add((frmCreateArret.txt1.Text, frmCreateArret.dtp1.Text));
+                arretCree.Add(frmCreateArret.txt1.Text);
             }
 
             this.flowLayoutPanel1.Controls.Remove(btn);

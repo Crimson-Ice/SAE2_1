@@ -17,6 +17,13 @@ namespace SAE2_1
         {
             InitializeComponent();
 
+            foreach(string s in CréationLigne.arretCree)
+            {
+                cbo1.Items.Add(s);
+            }
+            lbl5.Text = $"L'horaire du premier bus doit être supérieur à {CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes)}";
+            dtp1.Text = $"{ CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes+1)}";
+
             ClassMySql.connection();
 
             ClassMySql.RequeteSQl("select * from Arret");
@@ -35,8 +42,16 @@ namespace SAE2_1
         {
             if (!string.IsNullOrWhiteSpace(txt1.Text))
             {
-                errorProvider1.SetError(txt1, "");
-                cmd2.Enabled = true;
+                if(cbo1.Items.Contains(txt1.Text))
+                {
+                    cmd2.Enabled = false;
+                    errorProvider1.SetError(txt1, "Arret deja existant");
+                }
+                else
+                {
+                    errorProvider1.SetError(txt1, "");
+                    cmd2.Enabled = true;
+                }
             }
             else
             {
@@ -72,26 +87,34 @@ namespace SAE2_1
         {
             string[] t = dtp1.Text.Split(':');
 
-            if (double.Parse(t[0]) >= CréationLigne.time.Hours)
+            if (double.Parse(t[0]) > CréationLigne.time.Hours)
             {
-                if(double.Parse(t[1]) >= CréationLigne.time.Minutes)
+                MessageBox.Show("valid");
+                this.DialogResult = DialogResult.OK;
+                CréationLigne.time = new TimeSpan(int.Parse(t[0]), int.Parse(t[1]), 00);
+
+                this.Close();
+            }
+            else if(double.Parse(t[0]) == CréationLigne.time.Hours)
+            {
+                if (double.Parse(t[1]) > CréationLigne.time.Minutes)
                 {
                     MessageBox.Show("valid");
                     this.DialogResult = DialogResult.OK;
-                    CréationLigne.time = new TimeSpan(int.Parse(t[0]),int.Parse(t[1]), 00);
+                    CréationLigne.time = new TimeSpan(int.Parse(t[0]), int.Parse(t[1]), 00);
 
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show("non valid minute");
-                    errorProvider1.SetError(dtp1, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} : {CréationLigne.time.Minutes}");
+                    errorProvider1.SetError(dtp1, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} :  {string.Format("{0:00}", CréationLigne.time.Minutes)}");
                 }
             }
             else
             {
                 MessageBox.Show("non valid heure");
-                errorProvider1.SetError(dtp1, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} : {CréationLigne.time.Minutes}");
+                errorProvider1.SetError(dtp1, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} :  {string.Format("{0:00}", CréationLigne.time.Minutes)}");
             }
 
 
