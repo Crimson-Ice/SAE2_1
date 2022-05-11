@@ -24,6 +24,14 @@ namespace SAE2_1
             lbl5.Text = $"L'horaire du premier bus doit être supérieur à {CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes)}";
             dtp1.Text = $"{ CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes+1)}";
 
+            RemplisageComboBox();
+        }
+
+        /// <summary>
+        /// Rempli la comboBox avec tout les arrets de la base
+        /// </summary>
+        private void RemplisageComboBox()
+        {
             ClassMySql.connection();
 
             ClassMySql.RequeteSQl("select * from Arret");
@@ -87,6 +95,15 @@ namespace SAE2_1
         {
             string[] t = dtp1.Text.Split(':');
 
+            ValidationArret(t);
+        }
+
+        /// <summary>
+        /// valide l'arret si les condition sont rempli
+        /// </summary>
+        /// <param name="t"></param>
+        private void ValidationArret(string[] t)
+        {
             if (double.Parse(t[0]) > CréationLigne.time.Hours)
             {
                 MessageBox.Show("valid");
@@ -95,7 +112,7 @@ namespace SAE2_1
 
                 this.Close();
             }
-            else if(double.Parse(t[0]) == CréationLigne.time.Hours)
+            else if (double.Parse(t[0]) == CréationLigne.time.Hours)
             {
                 if (double.Parse(t[1]) > CréationLigne.time.Minutes)
                 {
@@ -116,8 +133,6 @@ namespace SAE2_1
                 MessageBox.Show("non valid heure");
                 errorProvider1.SetError(dtp1, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} :  {string.Format("{0:00}", CréationLigne.time.Minutes)}");
             }
-
-
         }
     }
 }
