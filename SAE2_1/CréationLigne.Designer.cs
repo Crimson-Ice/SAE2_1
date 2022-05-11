@@ -173,7 +173,7 @@ namespace SAE2_1
             this.cmd4.Name = "cmd4";
             this.cmd4.Size = new System.Drawing.Size(123, 79);
             this.cmd4.TabIndex = 12;
-            this.cmd4.Text = "Accueil";
+            this.cmd4.Text = "Retour";
             this.cmd4.UseVisualStyleBackColor = false;
             this.cmd4.Click += new System.EventHandler(this.cmd4_Click);
             // 
