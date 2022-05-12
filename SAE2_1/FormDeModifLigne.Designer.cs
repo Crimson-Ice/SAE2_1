@@ -112,12 +112,13 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(207, 176);
             this.flowLayoutPanel1.TabIndex = 3;
-            this.flowLayoutPanel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.flowLayoutPanel1_DragEnter);
+            this.flowLayoutPanel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.flowLayoutPanel1_DragDrop);
             this.flowLayoutPanel1.DragOver += new System.Windows.Forms.DragEventHandler(this.flowLayoutPanel1_DragOver);
+            this.flowLayoutPanel1.DragLeave += new System.EventHandler(this.flowLayoutPanel1_DragLeave);
             // 
             // new_arret_btn
             // 
-            this.new_arret_btn.Location = new System.Drawing.Point(393, 192);
+            this.new_arret_btn.Location = new System.Drawing.Point(444, 192);
             this.new_arret_btn.Name = "new_arret_btn";
             this.new_arret_btn.Size = new System.Drawing.Size(145, 26);
             this.new_arret_btn.TabIndex = 4;

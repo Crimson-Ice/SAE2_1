@@ -17,7 +17,6 @@ namespace SAE2_1
         public MySqlConnection connexion = new MySqlConnection("database=baseb1; server=10.1.139.236; user id=b1; pwd=nouveau_mdp");
 
         private bool appuie = false;
-        private bool dedans = false;
         public FormDeModifLigne()
         {
             InitializeComponent();
@@ -83,45 +82,95 @@ namespace SAE2_1
             
         }
 
+        private void SpawnNouveauxArret_button()
+        {
+            Button button = new Button();
+            button.Text = "Nouvelle Arret";
+            button.MouseDown += new MouseEventHandler(this.new_arret_btn_MouseDown);
+            button.Size = new Size(flowLayoutPanel1.Width - 25, 23);
+            button.Location = new Point(444, 192); ;
+            this.Controls.Add(button);
+        }
+
         private void spawnButton(List<string> Arret)
         {
             for (int i = 0; i < Arret.Count(); i++)
             {
                 Button button = new Button();
-                //button.Click += buttonArretClick;
                 button.Text = Arret[i];
                 button.Width = flowLayoutPanel1.Width - 25;
                 button.Tag = i;
                 button.Location = new Point(0, button.Height * i);
                 this.flowLayoutPanel1.Controls.Add(button);
-
-                
             }
         }
 
         private void new_arret_btn_MouseDown(object sender, MouseEventArgs e)
         {
-            
-            new_arret_btn.DoDragDrop(new_arret_btn, DragDropEffects.Move);
-            appuie = true;
+            Button btn = sender as Button;
+            btn.DoDragDrop(btn, DragDropEffects.Move);
         }
 
-        private void flowLayoutPanel1_DragEnter(object sender, DragEventArgs e)
+
+        private void flowLayoutPanel1_DragDrop(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Move;
-            if (!appuie )
-            {
-                flowLayoutPanel1.Controls.Add(new_arret_btn);
-            }
-            
+            Button data = (Button)e.Data.GetData(typeof(Button));
+            data.Enabled = true;
+            SpawnNouveauxArret_button();
+            data.Parent = (Panel)sender;
         }
 
         private void flowLayoutPanel1_DragOver(object sender, DragEventArgs e)
         {
-            dedans = true;
+            e.Effect = DragDropEffects.Move;
+
+            Button data = (Button)e.Data.GetData(typeof(Button));
+            data.Enabled = false;
+            data.Parent = (Panel)sender;
+
+            Point p = flowLayoutPanel1.PointToClient(new Point(e.X, e.Y));
+            var item = flowLayoutPanel1.GetChildAtPoint(p);
+            List<Button> list = flowLayoutPanel1.Controls.OfType<Button>().ToList();
+
+            int min = 10000;
+            Button btnNear = null;
+            foreach (Button child in list)
+            {
+                if (child.Location.Y >= p.Y && child.Location.Y < min)
+                {
+                    min = child.Location.Y;
+                    btnNear = child;
+                }
+            }
+
+            int index = flowLayoutPanel1.Controls.GetChildIndex(btnNear, false);
+            flowLayoutPanel1.Controls.SetChildIndex(data, index);
+
+            flowLayoutPanel1.Invalidate();
+
         }
 
+        private void flowLayoutPanel1_DragLeave(object sender, EventArgs e)
+        {
+            List<Button> list = flowLayoutPanel1.Controls.OfType<Button>().ToList();
 
-        
+            Button btnFantome = null;
+
+            foreach (Button child in list)
+            {
+                if (child.Enabled == false)
+                {
+                    btnFantome = child;
+                }
+            }
+
+            int indexFantome = flowLayoutPanel1.Controls.GetChildIndex(btnFantome, false);
+            flowLayoutPanel1.Controls.RemoveAt(indexFantome);
+
+            flowLayoutPanel1.Invalidate();
+            btnFantome.Parent = this;
+            btnFantome.Enabled = true;
+            btnFantome.Location = new Point(444, 192) ;
+        }
     }
 }
