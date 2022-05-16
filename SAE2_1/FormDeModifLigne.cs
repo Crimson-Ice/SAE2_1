@@ -164,17 +164,20 @@ namespace SAE2_1
                 }
             }
 
-            int indexFantome = flowLayoutPanel1.Controls.GetChildIndex(btnFantome, false);
-            flowLayoutPanel1.Controls.RemoveAt(indexFantome);
-
-            flowLayoutPanel1.Invalidate();
-
-            if(Arret.Contains(btnFantome.Text))
+            if(btnFantome != null)
             {
-                btnFantome.Parent = flowLayoutPanel1;
-                flowLayoutPanel1.Controls.SetChildIndex(btnFantome, indexFantome);
-                btnFantome.Enabled = true;
+                int indexFantome = flowLayoutPanel1.Controls.GetChildIndex(btnFantome, false);
+                flowLayoutPanel1.Controls.RemoveAt(indexFantome);
+
                 flowLayoutPanel1.Invalidate();
+
+                if (Arret.Contains(btnFantome.Text))
+                {
+                    btnFantome.Parent = flowLayoutPanel1;
+                    flowLayoutPanel1.Controls.SetChildIndex(btnFantome, indexFantome);
+                    btnFantome.Enabled = true;
+                    flowLayoutPanel1.Invalidate();
+                }
             }
         }
 

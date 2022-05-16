@@ -50,15 +50,22 @@ namespace SAE2_1
         {
             if (!string.IsNullOrWhiteSpace(txt1.Text))
             {
-                if(cbo1.Items.Contains(txt1.Text))
+                if(!verifTextValid(txt1.Text))
                 {
-                    cmd2.Enabled = false;
-                    errorProvider1.SetError(txt1, "Arret deja existant");
+                    errorProvider1.SetError(txt1, "Le nom doit etre composer de lettre ou de chiffre");
                 }
                 else
                 {
-                    errorProvider1.SetError(txt1, "");
-                    cmd2.Enabled = true;
+                    if (cbo1.Items.Contains(txt1.Text))
+                    {
+                        cmd2.Enabled = false;
+                        errorProvider1.SetError(txt1, "Arret deja existant");
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(txt1, "");
+                        cmd2.Enabled = true;
+                    }
                 }
             }
             else
@@ -66,6 +73,18 @@ namespace SAE2_1
                 cmd2.Enabled = false;
                 errorProvider1.SetError(txt1, "champ non remplie");
             }
+        }
+
+        private bool verifTextValid(string text)
+        {
+            foreach (char c in txt1.Text)
+            {
+                if (!char.IsLetterOrDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private void chk1_Click(object sender, EventArgs e)

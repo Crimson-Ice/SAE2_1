@@ -38,6 +38,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.new_arret_btn = new System.Windows.Forms.Button();
             this.flp2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbl3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +111,7 @@
             // 
             this.flowLayoutPanel1.AllowDrop = true;
             this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(46, 192);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(207, 176);
@@ -135,12 +137,23 @@
             this.flp2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flp2.BackgroundImage")));
             this.flp2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flp2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flp2.Location = new System.Drawing.Point(411, 324);
+            this.flp2.Location = new System.Drawing.Point(411, 341);
             this.flp2.Name = "flp2";
-            this.flp2.Size = new System.Drawing.Size(90, 98);
+            this.flp2.Size = new System.Drawing.Size(74, 81);
             this.flp2.TabIndex = 6;
             this.flp2.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel2_DragDrop);
             this.flp2.DragOver += new System.Windows.Forms.DragEventHandler(this.panel2_DragOver);
+            // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.BackColor = System.Drawing.Color.Transparent;
+            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl3.Location = new System.Drawing.Point(366, 244);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(328, 20);
+            this.lbl3.TabIndex = 7;
+            this.lbl3.Text = "Gliser-déposer dans l\'enplacement gauche";
             // 
             // FormDeModifLigne
             // 
@@ -149,6 +162,7 @@
             this.BackgroundImage = global::SAE2_1.Properties.Resources._6637000_simple_fond_bleu_abstraite_pour_la_conception_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl3);
             this.Controls.Add(this.flp2);
             this.Controls.Add(this.new_arret_btn);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -161,6 +175,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,5 +190,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button new_arret_btn;
         private System.Windows.Forms.FlowLayoutPanel flp2;
+        private System.Windows.Forms.Label lbl3;
     }
 }
