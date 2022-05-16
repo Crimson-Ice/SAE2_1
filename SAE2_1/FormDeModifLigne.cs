@@ -108,46 +108,51 @@ namespace SAE2_1
 
         private void flowLayoutPanel1_DragDrop(object sender, DragEventArgs e)
         {
-            Button data = (Button)e.Data.GetData(typeof(Button));
-            data.Enabled = true;
-
-            SpawnNouveauxArret_button();
-
-            data.Parent = (Panel)sender;
-            if(!Arret.Contains(data.Text))
+            if (e.Data.GetDataPresent(typeof(Button)))
             {
-                Arret.Add(data.Text);
+                Button data = (Button)e.Data.GetData(typeof(Button));
+                data.Enabled = true;
+
+                SpawnNouveauxArret_button();
+
+                data.Parent = (Panel)sender;
+                if (!Arret.Contains(data.Text))
+                {
+                    Arret.Add(data.Text);
+                }
             }
         }
 
         private void flowLayoutPanel1_DragOver(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Move;
-
-            Button data = (Button)e.Data.GetData(typeof(Button));
-            data.Enabled = false;
-            data.Parent = (Panel)sender;
-
-            Point p = flowLayoutPanel1.PointToClient(new Point(e.X, e.Y));
-
-            List<Button> list = flowLayoutPanel1.Controls.OfType<Button>().ToList();
-
-            int min = 10000;
-            Button btnNear = null;
-            foreach (Button child in list)
+            if (e.Data.GetDataPresent(typeof(Button)))
             {
-                if (child.Location.Y >= p.Y && child.Location.Y < min)
+                e.Effect = DragDropEffects.Move;
+
+                Button data = (Button)e.Data.GetData(typeof(Button));
+                data.Enabled = false;
+                data.Parent = (Panel)sender;
+
+                Point p = flowLayoutPanel1.PointToClient(new Point(e.X, e.Y));
+
+                List<Button> list = flowLayoutPanel1.Controls.OfType<Button>().ToList();
+
+                int min = 10000;
+                Button btnNear = null;
+                foreach (Button child in list)
                 {
-                    min = child.Location.Y;
-                    btnNear = child;
+                    if (child.Location.Y >= p.Y && child.Location.Y < min)
+                    {
+                        min = child.Location.Y;
+                        btnNear = child;
+                    }
                 }
+
+                int index = flowLayoutPanel1.Controls.GetChildIndex(btnNear, false);
+                flowLayoutPanel1.Controls.SetChildIndex(data, index);
+
+                flowLayoutPanel1.Invalidate();
             }
-
-            int index = flowLayoutPanel1.Controls.GetChildIndex(btnNear, false);
-            flowLayoutPanel1.Controls.SetChildIndex(data, index);
-
-            flowLayoutPanel1.Invalidate();
-
         }
 
         private void flowLayoutPanel1_DragLeave(object sender, EventArgs e)
@@ -183,17 +188,23 @@ namespace SAE2_1
 
         private void panel2_DragDrop(object sender, DragEventArgs e)
         {
-            Button data = (Button)e.Data.GetData(typeof(Button));
-            if(flowLayoutPanel1.Contains(data))
+            if (e.Data.GetDataPresent(typeof(Button)))
             {
-                int indexBtn = flowLayoutPanel1.Controls.GetChildIndex(data, false);
-                flowLayoutPanel1.Controls.RemoveAt(indexBtn);
+                Button data = (Button)e.Data.GetData(typeof(Button));
+                if (flowLayoutPanel1.Contains(data))
+                {
+                    int indexBtn = flowLayoutPanel1.Controls.GetChildIndex(data, false);
+                    flowLayoutPanel1.Controls.RemoveAt(indexBtn);
+                }
             }
         }
 
         private void panel2_DragOver(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Move;
+            if (e.Data.GetDataPresent(typeof(Button)))
+            {
+                e.Effect = DragDropEffects.Move;
+            }
         }
     }
 }
