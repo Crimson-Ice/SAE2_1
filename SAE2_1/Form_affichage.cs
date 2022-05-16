@@ -17,7 +17,7 @@ namespace SAE2_1
 
         public bool verif = true;
 
-        public List<string> arret = new List<string>();
+        public static List<string> arret = new List<string>();
 
         private Random rnd = new Random();
         public Form_affichage()
@@ -27,8 +27,6 @@ namespace SAE2_1
 
 
         }
-
-
 
 
         void ligne(int nb_arret, int hauteur_panel, int largeur_panel, int longeurligne, int diametrecercle, int marge_gauche, List<string> arret)
@@ -159,6 +157,13 @@ namespace SAE2_1
             lbl_arret_depart.Text = arret[0];
             lbl_arret_fin.Text = arret[arret.Count()-1];
 
+        }
+
+        private void cmd_horaire_Click(object sender, EventArgs e)
+        {
+            affichage_horraire horraire_from = new affichage_horraire();
+            horraire_from.Text = this.Text;
+            horraire_from.ShowDialog();
         }
     }
 }

@@ -66,6 +66,12 @@
     <Compile Include="Acceuile.Designer.cs">
       <DependentUpon>Acceuile.cs</DependentUpon>
     </Compile>
+    <Compile Include="affichage horraire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="affichage horraire.Designer.cs">
+      <DependentUpon>affichage horraire.cs</DependentUpon>
+    </Compile>
     <Compile Include="createArret.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </Compile>
     <EmbeddedResource Include="Acceuile.resx">
       <DependentUpon>Acceuile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="affichage horraire.resx">
+      <DependentUpon>affichage horraire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="createArret.resx">
       <DependentUpon>createArret.cs</DependentUpon>
