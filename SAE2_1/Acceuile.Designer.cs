@@ -29,69 +29,69 @@ namespace SAE2_1
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmd1 = new System.Windows.Forms.Button();
-            this.cmd2 = new System.Windows.Forms.Button();
-            this.cmd3 = new System.Windows.Forms.Button();
-            this.cmd4 = new System.Windows.Forms.Button();
-            this.cmd5 = new System.Windows.Forms.Button();
+            this.cmdRechercheItineraire = new System.Windows.Forms.Button();
+            this.cmdListeLigne = new System.Windows.Forms.Button();
+            this.cmdCréationLigne = new System.Windows.Forms.Button();
+            this.cmdModifLigne = new System.Windows.Forms.Button();
+            this.cmdSuppLigne = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // cmd1
+            // cmdRechercheItineraire
             // 
-            this.cmd1.BackColor = System.Drawing.Color.White;
-            this.cmd1.Location = new System.Drawing.Point(39, 25);
-            this.cmd1.Name = "cmd1";
-            this.cmd1.Size = new System.Drawing.Size(158, 76);
-            this.cmd1.TabIndex = 0;
-            this.cmd1.Text = "Recherche itinéraire";
-            this.cmd1.UseVisualStyleBackColor = false;
-            this.cmd1.Click += new System.EventHandler(this.cmd1_Click);
+            this.cmdRechercheItineraire.BackColor = System.Drawing.Color.White;
+            this.cmdRechercheItineraire.Location = new System.Drawing.Point(39, 25);
+            this.cmdRechercheItineraire.Name = "cmdRechercheItineraire";
+            this.cmdRechercheItineraire.Size = new System.Drawing.Size(158, 76);
+            this.cmdRechercheItineraire.TabIndex = 0;
+            this.cmdRechercheItineraire.Text = "Recherche itinéraire";
+            this.cmdRechercheItineraire.UseVisualStyleBackColor = false;
+            this.cmdRechercheItineraire.Click += new System.EventHandler(this.cmdRechercheItineraire_Click);
             // 
-            // cmd2
+            // cmdListeLigne
             // 
-            this.cmd2.BackColor = System.Drawing.Color.White;
-            this.cmd2.Location = new System.Drawing.Point(39, 107);
-            this.cmd2.Name = "cmd2";
-            this.cmd2.Size = new System.Drawing.Size(158, 76);
-            this.cmd2.TabIndex = 1;
-            this.cmd2.Text = "Liste Ligne";
-            this.cmd2.UseVisualStyleBackColor = false;
-            this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
+            this.cmdListeLigne.BackColor = System.Drawing.Color.White;
+            this.cmdListeLigne.Location = new System.Drawing.Point(39, 107);
+            this.cmdListeLigne.Name = "cmdListeLigne";
+            this.cmdListeLigne.Size = new System.Drawing.Size(158, 76);
+            this.cmdListeLigne.TabIndex = 1;
+            this.cmdListeLigne.Text = "Liste Ligne";
+            this.cmdListeLigne.UseVisualStyleBackColor = false;
+            this.cmdListeLigne.Click += new System.EventHandler(this.cmd_ListeLigne_Click);
             // 
-            // cmd3
+            // cmdCréationLigne
             // 
-            this.cmd3.BackColor = System.Drawing.Color.White;
-            this.cmd3.Location = new System.Drawing.Point(39, 189);
-            this.cmd3.Name = "cmd3";
-            this.cmd3.Size = new System.Drawing.Size(158, 76);
-            this.cmd3.TabIndex = 2;
-            this.cmd3.Text = "Création Ligne";
-            this.cmd3.UseVisualStyleBackColor = false;
-            this.cmd3.Click += new System.EventHandler(this.cmd3_Click);
+            this.cmdCréationLigne.BackColor = System.Drawing.Color.White;
+            this.cmdCréationLigne.Location = new System.Drawing.Point(39, 189);
+            this.cmdCréationLigne.Name = "cmdCréationLigne";
+            this.cmdCréationLigne.Size = new System.Drawing.Size(158, 76);
+            this.cmdCréationLigne.TabIndex = 2;
+            this.cmdCréationLigne.Text = "Création Ligne";
+            this.cmdCréationLigne.UseVisualStyleBackColor = false;
+            this.cmdCréationLigne.Click += new System.EventHandler(this.cmd_CreationLigne_Click);
             // 
-            // cmd4
+            // cmdModifLigne
             // 
-            this.cmd4.BackColor = System.Drawing.Color.White;
-            this.cmd4.Location = new System.Drawing.Point(39, 271);
-            this.cmd4.Name = "cmd4";
-            this.cmd4.Size = new System.Drawing.Size(158, 76);
-            this.cmd4.TabIndex = 3;
-            this.cmd4.Text = "Modification Ligne";
-            this.cmd4.UseVisualStyleBackColor = false;
-            this.cmd4.Click += new System.EventHandler(this.cmd4_Click);
+            this.cmdModifLigne.BackColor = System.Drawing.Color.White;
+            this.cmdModifLigne.Location = new System.Drawing.Point(39, 271);
+            this.cmdModifLigne.Name = "cmdModifLigne";
+            this.cmdModifLigne.Size = new System.Drawing.Size(158, 76);
+            this.cmdModifLigne.TabIndex = 3;
+            this.cmdModifLigne.Text = "Modification Ligne";
+            this.cmdModifLigne.UseVisualStyleBackColor = false;
+            this.cmdModifLigne.Click += new System.EventHandler(this.cmd_ModifLigne_Click);
             // 
-            // cmd5
+            // cmdSuppLigne
             // 
-            this.cmd5.BackColor = System.Drawing.Color.White;
-            this.cmd5.Location = new System.Drawing.Point(39, 353);
-            this.cmd5.Name = "cmd5";
-            this.cmd5.Size = new System.Drawing.Size(158, 76);
-            this.cmd5.TabIndex = 4;
-            this.cmd5.Text = "Supression Ligne";
-            this.cmd5.UseVisualStyleBackColor = false;
-            this.cmd5.Click += new System.EventHandler(this.cmd5_Click);
+            this.cmdSuppLigne.BackColor = System.Drawing.Color.White;
+            this.cmdSuppLigne.Location = new System.Drawing.Point(39, 353);
+            this.cmdSuppLigne.Name = "cmdSuppLigne";
+            this.cmdSuppLigne.Size = new System.Drawing.Size(158, 76);
+            this.cmdSuppLigne.TabIndex = 4;
+            this.cmdSuppLigne.Text = "Supression Ligne";
+            this.cmdSuppLigne.UseVisualStyleBackColor = false;
+            this.cmdSuppLigne.Click += new System.EventHandler(this.cmd_SuppLigne_Click);
             // 
             // pictureBox1
             // 
@@ -112,11 +112,11 @@ namespace SAE2_1
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cmd5);
-            this.Controls.Add(this.cmd4);
-            this.Controls.Add(this.cmd3);
-            this.Controls.Add(this.cmd2);
-            this.Controls.Add(this.cmd1);
+            this.Controls.Add(this.cmdSuppLigne);
+            this.Controls.Add(this.cmdModifLigne);
+            this.Controls.Add(this.cmdCréationLigne);
+            this.Controls.Add(this.cmdListeLigne);
+            this.Controls.Add(this.cmdRechercheItineraire);
             this.Name = "Acceuille";
             this.Text = "Accueil";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -126,11 +126,11 @@ namespace SAE2_1
 
         #endregion
 
-        private System.Windows.Forms.Button cmd1;
-        private System.Windows.Forms.Button cmd2;
-        private System.Windows.Forms.Button cmd3;
-        private System.Windows.Forms.Button cmd4;
-        private System.Windows.Forms.Button cmd5;
+        private System.Windows.Forms.Button cmdRechercheItineraire;
+        private System.Windows.Forms.Button cmdListeLigne;
+        private System.Windows.Forms.Button cmdCréationLigne;
+        private System.Windows.Forms.Button cmdModifLigne;
+        private System.Windows.Forms.Button cmdSuppLigne;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
