@@ -38,6 +38,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.cmd_horaire = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -110,6 +111,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Controls.Add(this.cmd_horaire);
             this.panel1.Controls.Add(this.lbl_arret_fin);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbl_arret_depart);
@@ -134,6 +136,16 @@
             this.pictureBox3.Size = new System.Drawing.Size(60, 184);
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
+            // 
+            // cmd_horaire
+            // 
+            this.cmd_horaire.Location = new System.Drawing.Point(748, 123);
+            this.cmd_horaire.Name = "cmd_horaire";
+            this.cmd_horaire.Size = new System.Drawing.Size(185, 43);
+            this.cmd_horaire.TabIndex = 9;
+            this.cmd_horaire.Text = "Afficher les horaires";
+            this.cmd_horaire.UseVisualStyleBackColor = true;
+            this.cmd_horaire.Click += new System.EventHandler(this.cmd_horaire_Click);
             // 
             // Form_affichage
             // 
@@ -171,5 +183,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button cmd_horaire;
     }
 }

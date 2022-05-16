@@ -19,17 +19,7 @@ namespace SAE2_1
         {
             InitializeComponent();
 
-
-            try
-            {
-                connexion.Open();
-                MessageBox.Show("connecté");
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show("non connecté");
-            }
+            connexion.Open();
         }
 
         private void Liste_lignes_Load(object sender, EventArgs e)
