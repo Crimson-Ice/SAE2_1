@@ -169,7 +169,9 @@
             this.Controls.Add(this.cmd2);
             this.Controls.Add(this.cmd1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormDeModifLigne";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDeModifLigne";
             this.Load += new System.EventHandler(this.FormDeModifLigne_Load);
             this.panel1.ResumeLayout(false);

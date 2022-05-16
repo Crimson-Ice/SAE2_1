@@ -36,9 +36,9 @@
             this.lbl_arret_depart = new System.Windows.Forms.Label();
             this.lbl_arret_fin = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmd_horaire = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.cmd_horaire = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -121,6 +121,16 @@
             this.panel1.Size = new System.Drawing.Size(991, 197);
             this.panel1.TabIndex = 9;
             // 
+            // cmd_horaire
+            // 
+            this.cmd_horaire.Location = new System.Drawing.Point(748, 123);
+            this.cmd_horaire.Name = "cmd_horaire";
+            this.cmd_horaire.Size = new System.Drawing.Size(185, 43);
+            this.cmd_horaire.TabIndex = 9;
+            this.cmd_horaire.Text = "Afficher les horaires";
+            this.cmd_horaire.UseVisualStyleBackColor = true;
+            this.cmd_horaire.Click += new System.EventHandler(this.cmd_horaire_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(1013, 215);
@@ -137,16 +147,6 @@
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
-            // cmd_horaire
-            // 
-            this.cmd_horaire.Location = new System.Drawing.Point(748, 123);
-            this.cmd_horaire.Name = "cmd_horaire";
-            this.cmd_horaire.Size = new System.Drawing.Size(185, 43);
-            this.cmd_horaire.TabIndex = 9;
-            this.cmd_horaire.Text = "Afficher les horaires";
-            this.cmd_horaire.UseVisualStyleBackColor = true;
-            this.cmd_horaire.Click += new System.EventHandler(this.cmd_horaire_Click);
-            // 
             // Form_affichage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,7 +158,9 @@
             this.Controls.Add(this.lbl_nom_ligne);
             this.Controls.Add(this.hSB);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form_affichage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_affichage";
             this.Load += new System.EventHandler(this.Form_affichage_Load);
             this.TextChanged += new System.EventHandler(this.Form_affichage_TextChanged);

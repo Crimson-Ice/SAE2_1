@@ -43,5 +43,10 @@ namespace SAE2_1
             frmSuppLigne.ShowDialog();
             frmSuppLigne.Dispose();
         }
+
+        private void Acceuille_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.FixedDialog ;
+        }
     }
 }

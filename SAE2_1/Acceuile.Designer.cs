@@ -117,7 +117,10 @@ namespace SAE2_1
             this.Controls.Add(this.cmd3);
             this.Controls.Add(this.cmd2);
             this.Controls.Add(this.cmd1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Acceuille";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accueil";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -115,7 +115,9 @@
             this.Controls.Add(this.cmd1);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ModificationLigne";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificationLigne";
             this.Load += new System.EventHandler(this.ModificationLigne_Load);
             this.panel1.ResumeLayout(false);

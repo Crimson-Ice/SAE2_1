@@ -157,7 +157,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnl1);
             this.Controls.Add(this.lbl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "SuppresionLigne";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SuppresionLigne";
             this.Load += new System.EventHandler(this.SuppresionLigne_Load);
             this.pnl1.ResumeLayout(false);
