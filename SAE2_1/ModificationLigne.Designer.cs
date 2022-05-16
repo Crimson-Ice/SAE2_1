@@ -49,6 +49,7 @@
             // 
             // cbo_choix_ligne
             // 
+            this.cbo_choix_ligne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_choix_ligne.FormattingEnabled = true;
             this.cbo_choix_ligne.Location = new System.Drawing.Point(261, 117);
             this.cbo_choix_ligne.Name = "cbo_choix_ligne";

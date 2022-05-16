@@ -16,7 +16,6 @@ namespace SAE2_1
         public List<string> Arret = new List<string>();
         public MySqlConnection connexion = new MySqlConnection("database=baseb1; server=10.1.139.236; user id=b1; pwd=nouveau_mdp");
 
-        private bool appuie = false;
         public FormDeModifLigne()
         {
             InitializeComponent();
@@ -62,18 +61,12 @@ namespace SAE2_1
             {
                 connexion.Open();
 
-                MySqlDataReader MyReader;
 
                 MySqlCommand update = new MySqlCommand($"UPDATE Ligne SET nom_ligne = '{txt_new_nom.Text} ' WHERE nom_ligne = '{this.Text} '; ", connexion);
 
+                update.ExecuteNonQuery();
+
                 
-
-                MyReader = update.ExecuteReader();
-
-                while (MyReader.Read())
-                {
-                }
-                MyReader.Close();
                 connexion.Close();
             }
 
@@ -86,9 +79,9 @@ namespace SAE2_1
         {
             Button button = new Button();
             button.Text = "Nouvelle Arret";
-            button.MouseDown += new MouseEventHandler(this.new_arret_btn_MouseDown);
+            button.MouseDown += new MouseEventHandler(this.MouseDown);
             button.Size = new Size(flowLayoutPanel1.Width - 25, 23);
-            button.Location = new Point(444, 192); ;
+            button.Location = new Point(344, 150); ;
             this.Controls.Add(button);
         }
 
@@ -101,11 +94,12 @@ namespace SAE2_1
                 button.Width = flowLayoutPanel1.Width - 25;
                 button.Tag = i;
                 button.Location = new Point(0, button.Height * i);
+                button.MouseDown += new MouseEventHandler(this.MouseDown);
                 this.flowLayoutPanel1.Controls.Add(button);
             }
         }
 
-        private void new_arret_btn_MouseDown(object sender, MouseEventArgs e)
+        private void MouseDown(object sender, MouseEventArgs e)
         {
             Button btn = sender as Button;
             btn.DoDragDrop(btn, DragDropEffects.Move);
@@ -116,8 +110,14 @@ namespace SAE2_1
         {
             Button data = (Button)e.Data.GetData(typeof(Button));
             data.Enabled = true;
+
             SpawnNouveauxArret_button();
+
             data.Parent = (Panel)sender;
+            if(!Arret.Contains(data.Text))
+            {
+                Arret.Add(data.Text);
+            }
         }
 
         private void flowLayoutPanel1_DragOver(object sender, DragEventArgs e)
@@ -129,7 +129,7 @@ namespace SAE2_1
             data.Parent = (Panel)sender;
 
             Point p = flowLayoutPanel1.PointToClient(new Point(e.X, e.Y));
-            var item = flowLayoutPanel1.GetChildAtPoint(p);
+
             List<Button> list = flowLayoutPanel1.Controls.OfType<Button>().ToList();
 
             int min = 10000;
@@ -164,13 +164,36 @@ namespace SAE2_1
                 }
             }
 
-            int indexFantome = flowLayoutPanel1.Controls.GetChildIndex(btnFantome, false);
-            flowLayoutPanel1.Controls.RemoveAt(indexFantome);
+            if(btnFantome != null)
+            {
+                int indexFantome = flowLayoutPanel1.Controls.GetChildIndex(btnFantome, false);
+                flowLayoutPanel1.Controls.RemoveAt(indexFantome);
 
-            flowLayoutPanel1.Invalidate();
-            btnFantome.Parent = this;
-            btnFantome.Enabled = true;
-            btnFantome.Location = new Point(444, 192) ;
+                flowLayoutPanel1.Invalidate();
+
+                if (Arret.Contains(btnFantome.Text))
+                {
+                    btnFantome.Parent = flowLayoutPanel1;
+                    flowLayoutPanel1.Controls.SetChildIndex(btnFantome, indexFantome);
+                    btnFantome.Enabled = true;
+                    flowLayoutPanel1.Invalidate();
+                }
+            }
+        }
+
+        private void panel2_DragDrop(object sender, DragEventArgs e)
+        {
+            Button data = (Button)e.Data.GetData(typeof(Button));
+            if(flowLayoutPanel1.Contains(data))
+            {
+                int indexBtn = flowLayoutPanel1.Controls.GetChildIndex(data, false);
+                flowLayoutPanel1.Controls.RemoveAt(indexBtn);
+            }
+        }
+
+        private void panel2_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
         }
     }
 }

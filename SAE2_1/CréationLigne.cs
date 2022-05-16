@@ -48,8 +48,16 @@ namespace SAE2_1
                 {
                     if(int.Parse(txt2.Text) <= 50)
                     {
-                        errorProvider1.SetError(txt2, "");
-                        spawnButton(n);
+                        if(verifTextValid(txt1.Text))
+                        {
+                            errorProvider1.SetError(txt2, "");
+                            spawnButton(n);
+                            cmd1.Enabled = false;
+                        }
+                        else
+                        {
+                            errorProvider1.SetError(txt1, "Le nom doit etre composer de lettre ou de chiffre");
+                        }
                     }
                     else
                     {
@@ -61,6 +69,23 @@ namespace SAE2_1
                     errorProvider1.SetError(txt2, "Ceci n'est pas un nombre");
                 }
             }
+        }
+
+        /// <summary>
+        /// verif si le text contain que des lettres et chiffres
+        /// </summary>
+        /// <param name="text">texte a verif</param>
+        /// <returns>returne un booléen</returns>
+        private bool verifTextValid(string text)
+        {
+            foreach (char c in txt1.Text)
+            {
+                if (!char.IsLetterOrDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         /// <summary>
