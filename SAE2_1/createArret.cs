@@ -51,6 +51,37 @@ namespace SAE2_1
             ClassMySql.CloseConnexion();
         }
 
+        private void txt_NomArret_TextChanged(object sender, EventArgs e)
+        {
+            //verification de la saisi du nom de arret(vide, arret existant et composé de lettre et/ou de chiffre) 
+            if (!string.IsNullOrWhiteSpace(txt_NomArret.Text))
+            {
+                if(verifTextValid(txt_NomArret.Text))
+                {
+                    if(!cbo_ArretExistant.Items.Contains(txt_NomArret.Text))
+                    {
+                        errorProvider1.SetError(txt_NomArret, "");
+                        cmd_Valider.Enabled = true;
+                    }
+                    else
+                    {
+                        cmd_Valider.Enabled = false;
+                        errorProvider1.SetError(txt_NomArret, "Arret deja existant");
+                    }
+                }
+                else
+                {
+                    cmd_Valider.Enabled = false;
+                    errorProvider1.SetError(txt_NomArret, "Le nom remlie doit être composé de lettre et/ou de chiffre");
+                }
+            }
+            else
+            {
+                cmd_Valider.Enabled = false;
+                errorProvider1.SetError(txt_NomArret, "champ non remplie");
+            }
+        }
+
         /// <summary>
         /// verifi si tous les caratères rentrée sont des lettres ou des chiffres
         /// </summary>
@@ -68,7 +99,7 @@ namespace SAE2_1
             return true;
         }
 
-        private void chk1_Click(object sender, EventArgs e)
+        private void chk_ArretExistant_Click(object sender, EventArgs e)
         {
             //quand la checkbox arretExistant est check desactive et active les bon élements du formulaire
             if (chk_ArretExistant.Checked)
@@ -86,10 +117,8 @@ namespace SAE2_1
                 txt_NomArret.Enabled = true;
             }
         }
-        private void txt_NomArret_TextChanged(object sender, EventArgs e)
-        {
 
-        }
+
 
         private void cbo_ArretExistant_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -97,7 +126,7 @@ namespace SAE2_1
             cmd_Valider.Enabled = true;
         }
 
-        private void cmd2_Click(object sender, EventArgs e)
+        private void cmd_Valider_Click(object sender, EventArgs e)
         {
             //split de l'horaire en deux (heure, minute
             string[] t = dtp_HorairePremierBus.Text.Split(':');

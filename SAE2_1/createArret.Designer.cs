@@ -89,7 +89,7 @@
             this.cmd_Valider.TabIndex = 3;
             this.cmd_Valider.Text = "Valider";
             this.cmd_Valider.UseVisualStyleBackColor = false;
-            this.cmd_Valider.Click += new System.EventHandler(this.cmd2_Click);
+            this.cmd_Valider.Click += new System.EventHandler(this.cmd_Valider_Click);
             // 
             // cmd_Retour
             // 
@@ -204,7 +204,7 @@
             this.chk_ArretExistant.TabIndex = 3;
             this.chk_ArretExistant.Text = "Arrêt existant";
             this.chk_ArretExistant.UseVisualStyleBackColor = true;
-            this.chk_ArretExistant.Click += new System.EventHandler(this.chk1_Click);
+            this.chk_ArretExistant.Click += new System.EventHandler(this.chk_ArretExistant_Click);
             // 
             // Frm_createArret
             // 
