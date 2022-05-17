@@ -195,7 +195,6 @@ namespace SAE2_1
 
         private void cmd3_Click(object sender, EventArgs e)
         {
-
             int id_ligne=0;
             connexion.Open();
             MySqlCommand delete1;
@@ -210,7 +209,7 @@ namespace SAE2_1
             }
             connexion.Close();
 
-            List<string> arret_intervalle = get_id_arret_fin(listArret);
+            List<string> arret_intervalle = get_id_arret_fin();
             connexion.Open();
 
             delete1 = new MySqlCommand($"INSERT INTO Ligne (nom_ligne,nb_arret,id_arret_depart,id_arret_fin) VALUES('{txt1.Text}',{listArret.Count()},{arret_intervalle[0]},{arret_intervalle[arret_intervalle.Count()-1]});", connexion);
@@ -262,9 +261,9 @@ namespace SAE2_1
             this.Close();
         }
 
-        private List<string> get_id_arret_fin(List<(string,string)> Arret)
+        private List<string> get_id_arret_fin()
         {
-            int i = 0;
+
             List<string> arret = new List<string>();
             MySqlCommand mysqlcom = new MySqlCommand($"select * from Arret;", connexion); ;
 
@@ -284,12 +283,7 @@ namespace SAE2_1
                     
             }
 
-
-
             connexion.Close();
-
-
-
 
             return arret;
         } 

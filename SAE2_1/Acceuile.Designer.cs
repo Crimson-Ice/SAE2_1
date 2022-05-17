@@ -117,7 +117,9 @@ namespace SAE2_1
             this.Controls.Add(this.cmdCréationLigne);
             this.Controls.Add(this.cmdListeLigne);
             this.Controls.Add(this.cmdRechercheItineraire);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Acceuille";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accueil";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

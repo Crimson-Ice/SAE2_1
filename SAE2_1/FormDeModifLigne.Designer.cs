@@ -48,9 +48,9 @@
             this.panel1.Controls.Add(this.txt_new_nom);
             this.panel1.Controls.Add(this.lbl2);
             this.panel1.Controls.Add(this.lbl_titre);
-            this.panel1.Location = new System.Drawing.Point(36, 26);
+            this.panel1.Location = new System.Drawing.Point(12, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(729, 126);
+            this.panel1.Size = new System.Drawing.Size(776, 126);
             this.panel1.TabIndex = 0;
             // 
             // txt_new_nom
@@ -86,9 +86,9 @@
             this.cmd1.Cursor = System.Windows.Forms.Cursors.Default;
             this.cmd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd1.ForeColor = System.Drawing.Color.White;
-            this.cmd1.Location = new System.Drawing.Point(36, 391);
+            this.cmd1.Location = new System.Drawing.Point(29, 381);
             this.cmd1.Name = "cmd1";
-            this.cmd1.Size = new System.Drawing.Size(101, 47);
+            this.cmd1.Size = new System.Drawing.Size(108, 57);
             this.cmd1.TabIndex = 1;
             this.cmd1.Text = "Retour";
             this.cmd1.UseVisualStyleBackColor = false;
@@ -99,9 +99,9 @@
             this.cmd2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.cmd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd2.ForeColor = System.Drawing.Color.White;
-            this.cmd2.Location = new System.Drawing.Point(619, 341);
+            this.cmd2.Location = new System.Drawing.Point(642, 381);
             this.cmd2.Name = "cmd2";
-            this.cmd2.Size = new System.Drawing.Size(146, 81);
+            this.cmd2.Size = new System.Drawing.Size(146, 57);
             this.cmd2.TabIndex = 2;
             this.cmd2.Text = "Valider";
             this.cmd2.UseVisualStyleBackColor = false;
@@ -112,7 +112,7 @@
             this.flowLayoutPanel1.AllowDrop = true;
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(46, 192);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 181);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(207, 176);
             this.flowLayoutPanel1.TabIndex = 3;
@@ -122,7 +122,7 @@
             // 
             // new_arret_btn
             // 
-            this.new_arret_btn.Location = new System.Drawing.Point(444, 192);
+            this.new_arret_btn.Location = new System.Drawing.Point(411, 239);
             this.new_arret_btn.Name = "new_arret_btn";
             this.new_arret_btn.Size = new System.Drawing.Size(145, 26);
             this.new_arret_btn.TabIndex = 4;
@@ -137,9 +137,9 @@
             this.flp2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flp2.BackgroundImage")));
             this.flp2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.flp2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flp2.Location = new System.Drawing.Point(411, 341);
+            this.flp2.Location = new System.Drawing.Point(283, 381);
             this.flp2.Name = "flp2";
-            this.flp2.Size = new System.Drawing.Size(74, 81);
+            this.flp2.Size = new System.Drawing.Size(44, 41);
             this.flp2.TabIndex = 6;
             this.flp2.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel2_DragDrop);
             this.flp2.DragOver += new System.Windows.Forms.DragEventHandler(this.panel2_DragOver);
@@ -149,7 +149,7 @@
             this.lbl3.AutoSize = true;
             this.lbl3.BackColor = System.Drawing.Color.Transparent;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(366, 244);
+            this.lbl3.Location = new System.Drawing.Point(407, 181);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(328, 20);
             this.lbl3.TabIndex = 7;
