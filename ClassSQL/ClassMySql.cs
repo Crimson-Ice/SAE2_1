@@ -52,6 +52,14 @@ namespace ClassSQL
         }
 
         /// <summary>
+        /// Execute une commande Sql sans reader
+        /// </summary>
+        public static void CommandeExecute()
+        {
+            mysqlcom.ExecuteNonQuery();
+        }
+
+        /// <summary>
         /// Donne un attribut de la ligne actuel
         /// </summary>
         /// <param name="nb">entier qui représente l'attribut de la ligne</param>

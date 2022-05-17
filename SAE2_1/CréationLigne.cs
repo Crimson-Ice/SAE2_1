@@ -4,10 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using ClassSQL;
 
 namespace SAE2_1
 {
@@ -18,22 +16,24 @@ namespace SAE2_1
         public static List<(string, string)> listArret = new List<(string, string)>();
         public static List<string> arretCree = new List<string> ();
 
-        public MySqlConnection connexion = new MySqlConnection("database=baseb1; server=10.1.139.236; user id=b1; pwd=nouveau_mdp");
         public CréationLigne()
         {
             InitializeComponent();
         }
 
-        private void cmd1_Click(object sender, EventArgs e)
+        private void cmd_Valider_Click(object sender, EventArgs e)
         {
+            //clear les éléments des listes destockage d'arret
             arretCree.Clear();
             listArret.Clear();
 
             validerButton = true;
             bool empty = false;
+
+            //verifi que les textboxs du control non sont pas vide (sauf celle d'affichage des arrets crée)
             foreach (TextBox tb in this.Controls.OfType<TextBox>())
             {
-                if (string.IsNullOrWhiteSpace(tb.Text) && tb != txt3)
+                if (string.IsNullOrWhiteSpace(tb.Text) && tb != txt_AfficheArretCree)
                 {
                     empty = true;
                     errorProvider1.SetError(tb, "Champ non saisi");
@@ -43,33 +43,35 @@ namespace SAE2_1
                     errorProvider1.SetError(tb, "");
                 }
             }
+
+            //verification des saisies classic
             if (empty == false)
             {
                 int n;
-                bool isNumeric = int.TryParse(txt2.Text, out n);
+                bool isNumeric = int.TryParse(txt_NombreArret.Text, out n);
                 if (isNumeric)
                 {
-                    if(int.Parse(txt2.Text) <= 50)
+                    if(int.Parse(txt_NombreArret.Text) <= 50)
                     {
-                        if(verifTextValid(txt1.Text))
+                        if(verifTextValid(txt_NomLigneCree.Text))
                         {
-                            errorProvider1.SetError(txt2, "");
+                            errorProvider1.SetError(txt_NombreArret, "");
                             spawnButton(n);
-                            cmd1.Enabled = false;
+                            cmd_Valider.Enabled = false;
                         }
                         else
                         {
-                            errorProvider1.SetError(txt1, "Le nom doit etre composer de lettre ou de chiffre");
+                            errorProvider1.SetError(txt_NomLigneCree, "Le nom doit etre composer de lettre et/ou de chiffre");
                         }
                     }
                     else
                     {
-                        errorProvider1.SetError(txt2, "Le nombre est trop grand");
+                        errorProvider1.SetError(txt_NombreArret, "Le nombre est trop grand");
                     }
                 }
                 else
                 {
-                    errorProvider1.SetError(txt2, "Ceci n'est pas un nombre");
+                    errorProvider1.SetError(txt_NombreArret, "Ceci n'est pas un nombre");
                 }
             }
         }
@@ -81,7 +83,7 @@ namespace SAE2_1
         /// <returns>returne un booléen</returns>
         private bool verifTextValid(string text)
         {
-            foreach (char c in txt1.Text)
+            foreach (char c in txt_NomLigneCree.Text)
             {
                 if (!char.IsLetterOrDigit(c))
                 {
@@ -92,7 +94,7 @@ namespace SAE2_1
         }
 
         /// <summary>
-        /// fait spawn les button dans le panel des arrets
+        /// fait spawn les buttons dans le panel des arrets
         /// </summary>
         /// <param name="n">nombre de button a faire spawn</param>
         private void spawnButton(int n)
@@ -102,10 +104,10 @@ namespace SAE2_1
                 Button button = new Button();
                 button.Click += buttonArretClick;
                 button.Text = "Arrêt" + (i + 1).ToString();
-                button.Width = flowLayoutPanel1.Width - 25;
+                button.Width = flp_ArretCree.Width - 25;
                 button.Tag = i;
                 button.Location = new Point(0, button.Height * i);
-                this.flowLayoutPanel1.Controls.Add(button);
+                this.flp_ArretCree.Controls.Add(button);
 
                 if (i == 0)
                 {
@@ -118,6 +120,11 @@ namespace SAE2_1
             }
         }
 
+        /// <summary>
+        /// Fonction rajouter a chaque button crée pour faire les arrets
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonArretClick(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -144,24 +151,26 @@ namespace SAE2_1
 
             if ((int)btn.Tag != 0)
             {
-                txt3.Text += "**************************** \r\n";
+                txt_AfficheArretCree.Text += "**************************** \r\n";
             }
 
             if (frmCreateArret.chk_ArretExistant.Checked)
             {
-                txt3.Text += $" {name} : {frmCreateArret.cbo_ArretExistant.SelectedItem} \r\n";
+                txt_AfficheArretCree.Text += $" {name} : {frmCreateArret.cbo_ArretExistant.SelectedItem} \r\n";
                 listArret.Add((frmCreateArret.cbo_ArretExistant.SelectedItem.ToString(), frmCreateArret.dtp_HorairePremierBus.Text));
             }
             else
             {
-                txt3.Text += $" {name} : {frmCreateArret.txt_NomArret.Text} \r\n";
+                txt_AfficheArretCree.Text += $" {name} : {frmCreateArret.txt_NomArret.Text} \r\n";
                 listArret.Add((frmCreateArret.txt_NomArret.Text, frmCreateArret.dtp_HorairePremierBus.Text));
                 arretCree.Add(frmCreateArret.txt_NomArret.Text);
             }
 
-            this.flowLayoutPanel1.Controls.Remove(btn);
+            //supprime le button du dernier arret crée
+            this.flp_ArretCree.Controls.Remove(btn);
 
-            foreach (Control control in this.flowLayoutPanel1.Controls)
+            //Rend le button suivant Actif
+            foreach (Control control in this.flp_ArretCree.Controls)
             {
                 if ((int)control.Tag == (int)btn.Tag + 1)
                 {
@@ -170,124 +179,125 @@ namespace SAE2_1
             }
         }
 
-        private void txt_Enter(object sender, EventArgs e)
+        private void txt_NomLigneCree_Enter(object sender, EventArgs e)
         {
-            if(!string.IsNullOrWhiteSpace(txt1.Text) || !string.IsNullOrWhiteSpace(txt2.Text))
+            //les textboxs des informations de la ligne sont rempli active les button annuler et valider
+            if(!string.IsNullOrWhiteSpace(txt_NomLigneCree.Text) || !string.IsNullOrWhiteSpace(txt_NombreArret.Text))
             {
-                cmd1.Enabled = true;
-                cmd2.Enabled = true;
+                cmd_Valider.Enabled = true;
+                cmd_Annuler.Enabled = true;
             }
         }
 
-        private void cmd2_Click(object sender, EventArgs e)
+        private void cmd_Annuler_Click(object sender, EventArgs e)
         {
+            //si le button valider a deja été clicker ont reset les informations remplie dans la sur le formulaire 
             if(validerButton)
             {
                 validerButton = false;
 
-                this.flowLayoutPanel1.Controls.Clear();
-                txt3.Text = "";
-                txt1.Text = "";
-                txt2.Text = "";
-                cmd1.Enabled = false;
-                cmd2.Enabled = false;
-                cmd3.Enabled = false;
+                this.flp_ArretCree.Controls.Clear();
+                txt_AfficheArretCree.Text = "";
+                txt_NomLigneCree.Text = "";
+                txt_NombreArret.Text = "";
+                cmd_Valider.Enabled = false;
+                cmd_Annuler.Enabled = false;
+                cmd_Terminer.Enabled = false;
 
+                arretCree.Clear();
+                listArret.Clear();
             }
         }
 
-        private void cmd3_Click(object sender, EventArgs e)
+        private void cmd_Terminer_Click(object sender, EventArgs e)
         {
+            //crée la ligne dans la base de  donnée
             int id_ligne=0;
-            connexion.Open();
-            MySqlCommand delete1;
+            ClassMySql.connection();
+
+            //insére les arrets crée dans la base de donnée
             foreach (string arret in arretCree)
             {
-                
+                ClassMySql.RequeteSQl($"INSERT INTO Arret (nom_arret,nb_ligne_desservi) VALUES('{arret}', 1);");
 
-                delete1 = new MySqlCommand($"INSERT INTO Arret (nom_arret,nb_ligne_desservi) VALUES('{arret}', 1);", connexion);
-
-                delete1.ExecuteNonQuery();
-
+                ClassMySql.CommandeExecute();
             }
-            connexion.Close();
+            ClassMySql.CloseConnexion();
+            ClassMySql.connection();
 
-            List<string> arret_intervalle = get_id_arret_fin();
-            connexion.Open();
+            List<string> arret_intervalle = getAll_id_arret();
 
-            delete1 = new MySqlCommand($"INSERT INTO Ligne (nom_ligne,nb_arret,id_arret_depart,id_arret_fin) VALUES('{txt1.Text}',{listArret.Count()},{arret_intervalle[0]},{arret_intervalle[arret_intervalle.Count()-1]});", connexion);
+            ClassMySql.CloseConnexion();
+            ClassMySql.connection();
 
-            delete1.ExecuteNonQuery();
+            //insére les id arret dans la tablea ligne
+            ClassMySql.RequeteSQl($"INSERT INTO Ligne (nom_ligne,nb_arret,id_arret_depart,id_arret_fin) VALUES('{txt_NomLigneCree.Text}',{listArret.Count()},{arret_intervalle[0]},{arret_intervalle[arret_intervalle.Count() - 1]});");
 
-            connexion.Close();
+            ClassMySql.CommandeExecute();
 
-            
+            ClassMySql.CloseConnexion();
+            ClassMySql.connection();
 
-            connexion.Open();
+            //Récuppère l'id de la ligne crée
+            ClassMySql.RequeteSQl("select * from Ligne;");
 
-            MySqlCommand mysqlcom = new MySqlCommand("select * from Ligne;", connexion);
-            MySqlDataReader mysqlread = mysqlcom.ExecuteReader(CommandBehavior.CloseConnection);
+            ClassMySql.Reading();
 
-            while (mysqlread.Read())
+            while (ClassMySql.ISread())
             {
-                if (mysqlread.GetString(1) == txt1.Text)
+                if (ClassMySql.Attribut(1) == txt_NomLigneCree.Text)
                 {
-                    id_ligne = mysqlread.GetInt32(0);
+                    id_ligne = int.Parse(ClassMySql.Attribut(0)); //mysqlread.GetInt32(0);
                 }
-
             }
-            connexion.Close();
 
-            connexion.Open();
+            ClassMySql.CloseConnexion();
+            ClassMySql.connection();
 
-            for(int i = 0; i < listArret.Count; i++)
+            //insére tout les donnée recuppérer dans la table correspondance
+            for (int i = 0; i < listArret.Count; i++)
             {
-                delete1 = new MySqlCommand($"INSERT INTO Correspondance (id_arret,id_ligne,rang_arret_ligne,heure_premier_bus,heure_dernier_bus) VALUES({arret_intervalle[i]},{id_ligne},{i+1},'{listArret[i].Item2}','20:21');", connexion);
+                ClassMySql.RequeteSQl($"INSERT INTO Correspondance (id_arret,id_ligne,rang_arret_ligne,heure_premier_bus,heure_dernier_bus) VALUES({arret_intervalle[i]},{id_ligne},{i + 1},'{listArret[i].Item2}','20:21');");
 
-                delete1.ExecuteNonQuery();
+                ClassMySql.CommandeExecute();
 
             }
 
-            connexion.Close();
-
+            ClassMySql.CloseConnexion();
         }
 
-        private void flowLayoutPanel1_ControlRemoved(object sender, ControlEventArgs e)
+        private void flp_ArretCree_ControlRemoved(object sender, ControlEventArgs e)
         {
-            if (flowLayoutPanel1.Controls.Count == 0 && validerButton)
+            //si le panel des arrets a crée est vide alors active le button terminer
+            if (flp_ArretCree.Controls.Count == 0 && validerButton)
             {
-                cmd3.Enabled = true;
+                cmd_Terminer.Enabled = true;
             }
         }
 
-        private void cmd4_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Reccupère tous les id des arret de la ligne crée
+        /// </summary>
+        /// <returns></returns>
+        private List<string> getAll_id_arret()
         {
-            this.Close();
-        }
-
-        private List<string> get_id_arret_fin()
-        {
-
             List<string> arret = new List<string>();
-            MySqlCommand mysqlcom = new MySqlCommand($"select * from Arret;", connexion); ;
 
-            connexion.Open();
+            ClassMySql.RequeteSQl($"select * from Arret;");
 
-            MySqlDataReader mysqlread = mysqlcom.ExecuteReader(CommandBehavior.CloseConnection);
+            ClassMySql.Reading();
 
-            while (mysqlread.Read())
+            while (ClassMySql.ISread())
             {
                 foreach ((string,string) c in listArret)
                 {
-                    if (c.Item1 == mysqlread.GetString(1))
+                    if (c.Item1 == ClassMySql.Attribut(1))
                     {
-                        arret.Add(mysqlread.GetString(0));
+                        arret.Add(ClassMySql.Attribut(0));
                     }
                 }
                     
             }
-
-            connexion.Close();
 
             return arret;
         } 
