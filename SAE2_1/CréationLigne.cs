@@ -144,16 +144,16 @@ namespace SAE2_1
                 txt3.Text += "**************************** \r\n";
             }
 
-            if (frmCreateArret.chk1.Checked)
+            if (frmCreateArret.chk_ArretExistant.Checked)
             {
-                txt3.Text += $" {name} : {frmCreateArret.cbo1.SelectedItem} \r\n";
-                listArret.Add((frmCreateArret.cbo1.SelectedItem.ToString(), frmCreateArret.dtp1.Text));
+                txt3.Text += $" {name} : {frmCreateArret.cbo_ArretExistant.SelectedItem} \r\n";
+                listArret.Add((frmCreateArret.cbo_ArretExistant.SelectedItem.ToString(), frmCreateArret.dtp_HorairePremierBus.Text));
             }
             else
             {
-                txt3.Text += $" {name} : {frmCreateArret.txt1.Text} \r\n";
-                listArret.Add((frmCreateArret.txt1.Text, frmCreateArret.dtp1.Text));
-                arretCree.Add(frmCreateArret.txt1.Text);
+                txt3.Text += $" {name} : {frmCreateArret.txt_NomArret.Text} \r\n";
+                listArret.Add((frmCreateArret.txt_NomArret.Text, frmCreateArret.dtp_HorairePremierBus.Text));
+                arretCree.Add(frmCreateArret.txt_NomArret.Text);
             }
 
             this.flowLayoutPanel1.Controls.Remove(btn);

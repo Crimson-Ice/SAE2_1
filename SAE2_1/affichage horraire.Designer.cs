@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvHoraire = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoraire)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvHoraire
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(50, 40);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(719, 383);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvHoraire.AllowUserToAddRows = false;
+            this.dgvHoraire.AllowUserToDeleteRows = false;
+            this.dgvHoraire.AllowUserToResizeColumns = false;
+            this.dgvHoraire.AllowUserToResizeRows = false;
+            this.dgvHoraire.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHoraire.Location = new System.Drawing.Point(50, 40);
+            this.dgvHoraire.Name = "dgvHoraire";
+            this.dgvHoraire.ReadOnly = true;
+            this.dgvHoraire.RowHeadersWidth = 51;
+            this.dgvHoraire.RowTemplate.Height = 24;
+            this.dgvHoraire.Size = new System.Drawing.Size(719, 383);
+            this.dgvHoraire.TabIndex = 0;
             // 
             // affichage_horraire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvHoraire);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "affichage_horraire";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "affichage_horraire";
             this.Load += new System.EventHandler(this.affichage_horraire_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoraire)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHoraire;
     }
 }

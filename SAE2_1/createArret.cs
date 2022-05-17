@@ -16,13 +16,18 @@ namespace SAE2_1
         public Frm_createArret()
         {
             InitializeComponent();
+        }
 
-            foreach(string s in CréationLigne.arretCree)
+        private void Frm_createArret_Load(object sender, EventArgs e)
+        {
+            //Remplisage de la comboBox ArretExistant avec les arrets crée précédamment
+            foreach (string s in CréationLigne.arretCree)
             {
-                cbo1.Items.Add(s);
+                cbo_ArretExistant.Items.Add(s);
             }
-            lbl5.Text = $"L'horaire du premier bus doit être supérieur à {CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes)}";
-            dtp1.Text = $"{ CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes+1)}";
+            //Affiche l'horaire minimum à rentré sur le label précision et la selection d'horaire 
+            lbl_PrecisionPremierHoraire.Text = $"L'horaire du premier bus doit être supérieur à {CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes)}";
+            dtp_HorairePremierBus.Text = $"{ CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes + 1)}";
 
             RemplisageComboBox();
         }
@@ -40,44 +45,20 @@ namespace SAE2_1
 
             while (ClassMySql.ISread())
             {
-                cbo1.Items.Add(ClassMySql.Attribut(1));
+                cbo_ArretExistant.Items.Add(ClassMySql.Attribut(1));
             }
 
             ClassMySql.CloseConnexion();
         }
 
-        private void txt1_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(txt1.Text))
-            {
-                if(!verifTextValid(txt1.Text))
-                {
-                    errorProvider1.SetError(txt1, "Le nom doit etre composer de lettre ou de chiffre");
-                }
-                else
-                {
-                    if (cbo1.Items.Contains(txt1.Text))
-                    {
-                        cmd2.Enabled = false;
-                        errorProvider1.SetError(txt1, "Arret deja existant");
-                    }
-                    else
-                    {
-                        errorProvider1.SetError(txt1, "");
-                        cmd2.Enabled = true;
-                    }
-                }
-            }
-            else
-            {
-                cmd2.Enabled = false;
-                errorProvider1.SetError(txt1, "champ non remplie");
-            }
-        }
-
+        /// <summary>
+        /// verifi si tous les caratères rentrée sont des lettres ou des chiffres
+        /// </summary>
+        /// <param name="text">chaine de caractère à verifier</param>
+        /// <returns>return un booléen true si la chaine est composé de lettre et/ou de chiffre sinon false</returns>
         private bool verifTextValid(string text)
         {
-            foreach (char c in txt1.Text)
+            foreach (char c in txt_NomArret.Text)
             {
                 if (!char.IsLetterOrDigit(c))
                 {
@@ -89,43 +70,49 @@ namespace SAE2_1
 
         private void chk1_Click(object sender, EventArgs e)
         {
-            if (chk1.Checked)
+            //quand la checkbox arretExistant est check desactive et active les bon élements du formulaire
+            if (chk_ArretExistant.Checked)
             {
-                lbl3.Enabled = true;
-                cbo1.Enabled = true;
-                lbl2.Enabled = false;
-                txt1.Enabled = false;
+                lbl_ArretExistant.Enabled = true;
+                cbo_ArretExistant.Enabled = true;
+                lbl_NomArret.Enabled = false;
+                txt_NomArret.Enabled = false;
             }
             else
             {
-                lbl3.Enabled = false;
-                cbo1.Enabled = false;
-                lbl2.Enabled = true;
-                txt1.Enabled = true;
+                lbl_ArretExistant.Enabled = false;
+                cbo_ArretExistant.Enabled = false;
+                lbl_NomArret.Enabled = true;
+                txt_NomArret.Enabled = true;
             }
         }
-
-        private void cbo1_SelectionChangeCommitted(object sender, EventArgs e)
+        private void txt_NomArret_TextChanged(object sender, EventArgs e)
         {
-            cmd2.Enabled = true;
+
+        }
+
+        private void cbo_ArretExistant_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //Active le button valider si un élément est selectionner dans la combobox
+            cmd_Valider.Enabled = true;
         }
 
         private void cmd2_Click(object sender, EventArgs e)
         {
-            string[] t = dtp1.Text.Split(':');
+            //split de l'horaire en deux (heure, minute
+            string[] t = dtp_HorairePremierBus.Text.Split(':');
 
             ValidationArret(t);
         }
 
         /// <summary>
-        /// valide l'arret si les condition sont rempli
+        /// valide l'arret si l'horaire remplie est valider
         /// </summary>
         /// <param name="t"></param>
         private void ValidationArret(string[] t)
         {
             if (double.Parse(t[0]) > CréationLigne.time.Hours)
             {
-                MessageBox.Show("valid");
                 this.DialogResult = DialogResult.OK;
                 CréationLigne.time = new TimeSpan(int.Parse(t[0]), int.Parse(t[1]), 00);
 
@@ -135,7 +122,6 @@ namespace SAE2_1
             {
                 if (double.Parse(t[1]) > CréationLigne.time.Minutes)
                 {
-                    MessageBox.Show("valid");
                     this.DialogResult = DialogResult.OK;
                     CréationLigne.time = new TimeSpan(int.Parse(t[0]), int.Parse(t[1]), 00);
 
@@ -144,13 +130,13 @@ namespace SAE2_1
                 else
                 {
                     MessageBox.Show("non valid minute");
-                    errorProvider1.SetError(dtp1, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} :  {string.Format("{0:00}", CréationLigne.time.Minutes)}");
+                    errorProvider1.SetError(dtp_HorairePremierBus, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} :  {string.Format("{0:00}", CréationLigne.time.Minutes)}");
                 }
             }
             else
             {
                 MessageBox.Show("non valid heure");
-                errorProvider1.SetError(dtp1, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} :  {string.Format("{0:00}", CréationLigne.time.Minutes)}");
+                errorProvider1.SetError(dtp_HorairePremierBus, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} :  {string.Format("{0:00}", CréationLigne.time.Minutes)}");
             }
         }
     }
