@@ -26,6 +26,9 @@ namespace SAE2_1
 
         private void cmd1_Click(object sender, EventArgs e)
         {
+            arretCree.Clear();
+            listArret.Clear();
+
             validerButton = true;
             bool empty = false;
             foreach (TextBox tb in this.Controls.OfType<TextBox>())
@@ -202,7 +205,7 @@ namespace SAE2_1
             {
                 
 
-                delete1 = new MySqlCommand($"INSERT INTO Arret (nom_arret,nb_ligne_desservi) VALUES('{arret}',1);", connexion);
+                delete1 = new MySqlCommand($"INSERT INTO Arret (nom_arret,nb_ligne_desservi) VALUES('{arret}', 1);", connexion);
 
                 delete1.ExecuteNonQuery();
 
@@ -246,6 +249,7 @@ namespace SAE2_1
             }
 
             connexion.Close();
+
         }
 
         private void flowLayoutPanel1_ControlRemoved(object sender, ControlEventArgs e)
