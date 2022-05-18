@@ -149,7 +149,7 @@
             this.lbl3.AutoSize = true;
             this.lbl3.BackColor = System.Drawing.Color.Transparent;
             this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(407, 181);
+            this.lbl3.Location = new System.Drawing.Point(407, 299);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(328, 20);
             this.lbl3.TabIndex = 7;

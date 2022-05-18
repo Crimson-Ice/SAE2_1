@@ -70,8 +70,11 @@ namespace SAE2_1
                 flagGraphics.DrawString(arret[i], drawFont, Brushes.Black, location);
 
                 pen = new Pen(brushrond, 3);
+
                 
-                    flagGraphics.DrawEllipse(pen, Xronddeb, (hauteur_panel / 2) - (diametrecercle / 2), diametrecercle, diametrecercle);
+                flagGraphics.DrawEllipse(pen, Xronddeb, (hauteur_panel / 2) - (diametrecercle / 2), diametrecercle, diametrecercle);
+                
+                    
                 
                 
 

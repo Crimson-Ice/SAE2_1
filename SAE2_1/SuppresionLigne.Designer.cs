@@ -87,10 +87,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(105, 298);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(134, 303);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(660, 20);
+            this.label1.Size = new System.Drawing.Size(577, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Attention, toute suppression est définitive , vous ne pourrez donc pas revenir en" +
     " arrière.";
@@ -100,7 +100,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::SAE2_1.Properties.Resources.hidden_danger_1392698;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(67, 286);
+            this.pictureBox1.Location = new System.Drawing.Point(73, 289);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 3;

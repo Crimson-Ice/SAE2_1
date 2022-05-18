@@ -101,9 +101,9 @@ namespace SAE2_1
             this.cmd_Valider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmd_Valider.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_Valider.ForeColor = System.Drawing.SystemColors.Control;
-            this.cmd_Valider.Location = new System.Drawing.Point(141, 333);
+            this.cmd_Valider.Location = new System.Drawing.Point(151, 333);
             this.cmd_Valider.Name = "cmd_Valider";
-            this.cmd_Valider.Size = new System.Drawing.Size(122, 62);
+            this.cmd_Valider.Size = new System.Drawing.Size(94, 45);
             this.cmd_Valider.TabIndex = 6;
             this.cmd_Valider.Text = "Valider";
             this.cmd_Valider.UseVisualStyleBackColor = false;
@@ -140,9 +140,9 @@ namespace SAE2_1
             this.cmd_Terminer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmd_Terminer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_Terminer.ForeColor = System.Drawing.SystemColors.Control;
-            this.cmd_Terminer.Location = new System.Drawing.Point(511, 450);
+            this.cmd_Terminer.Location = new System.Drawing.Point(629, 476);
             this.cmd_Terminer.Name = "cmd_Terminer";
-            this.cmd_Terminer.Size = new System.Drawing.Size(320, 79);
+            this.cmd_Terminer.Size = new System.Drawing.Size(202, 53);
             this.cmd_Terminer.TabIndex = 10;
             this.cmd_Terminer.Text = "Terminer";
             this.cmd_Terminer.UseVisualStyleBackColor = false;
@@ -155,9 +155,9 @@ namespace SAE2_1
             this.cmd_Annuler.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmd_Annuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_Annuler.ForeColor = System.Drawing.SystemColors.Control;
-            this.cmd_Annuler.Location = new System.Drawing.Point(28, 333);
+            this.cmd_Annuler.Location = new System.Drawing.Point(51, 333);
             this.cmd_Annuler.Name = "cmd_Annuler";
-            this.cmd_Annuler.Size = new System.Drawing.Size(107, 62);
+            this.cmd_Annuler.Size = new System.Drawing.Size(94, 45);
             this.cmd_Annuler.TabIndex = 11;
             this.cmd_Annuler.Text = "Annuler";
             this.cmd_Annuler.UseVisualStyleBackColor = false;
@@ -170,9 +170,9 @@ namespace SAE2_1
             this.cmd_Retour.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmd_Retour.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_Retour.ForeColor = System.Drawing.SystemColors.Control;
-            this.cmd_Retour.Location = new System.Drawing.Point(67, 450);
+            this.cmd_Retour.Location = new System.Drawing.Point(52, 476);
             this.cmd_Retour.Name = "cmd_Retour";
-            this.cmd_Retour.Size = new System.Drawing.Size(123, 79);
+            this.cmd_Retour.Size = new System.Drawing.Size(123, 53);
             this.cmd_Retour.TabIndex = 12;
             this.cmd_Retour.Text = "Retour";
             this.cmd_Retour.UseVisualStyleBackColor = false;
