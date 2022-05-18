@@ -129,7 +129,7 @@
             this.pb_Attention.BackColor = System.Drawing.Color.Transparent;
             this.pb_Attention.BackgroundImage = global::SAE2_1.Properties.Resources.hidden_danger_1392698;
             this.pb_Attention.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pb_Attention.Location = new System.Drawing.Point(92, 179);
+            this.pb_Attention.Location = new System.Drawing.Point(156, 198);
             this.pb_Attention.Name = "pb_Attention";
             this.pb_Attention.Size = new System.Drawing.Size(24, 26);
             this.pb_Attention.TabIndex = 9;
@@ -139,10 +139,10 @@
             // 
             this.lbl_PrecisionPremierHoraire.AutoSize = true;
             this.lbl_PrecisionPremierHoraire.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_PrecisionPremierHoraire.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PrecisionPremierHoraire.Location = new System.Drawing.Point(122, 185);
+            this.lbl_PrecisionPremierHoraire.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PrecisionPremierHoraire.Location = new System.Drawing.Point(186, 208);
             this.lbl_PrecisionPremierHoraire.Name = "lbl_PrecisionPremierHoraire";
-            this.lbl_PrecisionPremierHoraire.Size = new System.Drawing.Size(394, 20);
+            this.lbl_PrecisionPremierHoraire.Size = new System.Drawing.Size(305, 16);
             this.lbl_PrecisionPremierHoraire.TabIndex = 8;
             this.lbl_PrecisionPremierHoraire.Text = "L\'horaire du premier bus doit être supérieur à 5 : 00";
             // 
@@ -217,7 +217,10 @@
             this.Controls.Add(this.cmd_Retour);
             this.Controls.Add(this.cmd_Valider);
             this.Controls.Add(this.lbl_CreationArret);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Frm_createArret";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Création d\'arret";
             this.Load += new System.EventHandler(this.Frm_createArret_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

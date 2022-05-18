@@ -196,6 +196,7 @@ namespace SAE2_1
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.lbl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "CréationLigne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CréationLigne";

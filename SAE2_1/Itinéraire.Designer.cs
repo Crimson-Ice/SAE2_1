@@ -51,7 +51,7 @@ namespace SAE2_1
             this.lbl1.AutoSize = true;
             this.lbl1.BackColor = System.Drawing.Color.Transparent;
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(87, 56);
+            this.lbl1.Location = new System.Drawing.Point(279, 30);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(408, 46);
             this.lbl1.TabIndex = 0;
@@ -116,7 +116,7 @@ namespace SAE2_1
             this.chk2.AutoSize = true;
             this.chk2.BackColor = System.Drawing.Color.Transparent;
             this.chk2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk2.Location = new System.Drawing.Point(497, 37);
+            this.chk2.Location = new System.Drawing.Point(473, 37);
             this.chk2.Name = "chk2";
             this.chk2.Size = new System.Drawing.Size(204, 29);
             this.chk2.TabIndex = 6;
@@ -141,7 +141,7 @@ namespace SAE2_1
             this.Dtp2.CustomFormat = "HH:mm";
             this.Dtp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dtp2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Dtp2.Location = new System.Drawing.Point(725, 28);
+            this.Dtp2.Location = new System.Drawing.Point(712, 28);
             this.Dtp2.Name = "Dtp2";
             this.Dtp2.ShowUpDown = true;
             this.Dtp2.Size = new System.Drawing.Size(111, 38);
@@ -155,7 +155,7 @@ namespace SAE2_1
             this.panel1.Controls.Add(this.cbo1);
             this.panel1.Controls.Add(this.lbl3);
             this.panel1.Controls.Add(this.cbo2);
-            this.panel1.Location = new System.Drawing.Point(40, 160);
+            this.panel1.Location = new System.Drawing.Point(40, 106);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(878, 133);
             this.panel1.TabIndex = 9;
@@ -165,10 +165,10 @@ namespace SAE2_1
             this.cmd1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.cmd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd1.ForeColor = System.Drawing.Color.White;
-            this.cmd1.Location = new System.Drawing.Point(714, 491);
+            this.cmd1.Location = new System.Drawing.Point(739, 409);
             this.cmd1.Name = "cmd1";
             this.cmd1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmd1.Size = new System.Drawing.Size(204, 84);
+            this.cmd1.Size = new System.Drawing.Size(179, 60);
             this.cmd1.TabIndex = 10;
             this.cmd1.Text = "Valider";
             this.cmd1.UseVisualStyleBackColor = false;
@@ -179,10 +179,10 @@ namespace SAE2_1
             this.cmd2.BackColor = System.Drawing.SystemColors.GrayText;
             this.cmd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd2.ForeColor = System.Drawing.Color.White;
-            this.cmd2.Location = new System.Drawing.Point(40, 491);
+            this.cmd2.Location = new System.Drawing.Point(40, 413);
             this.cmd2.Name = "cmd2";
             this.cmd2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmd2.Size = new System.Drawing.Size(204, 84);
+            this.cmd2.Size = new System.Drawing.Size(179, 56);
             this.cmd2.TabIndex = 11;
             this.cmd2.Text = "Retour";
             this.cmd2.UseVisualStyleBackColor = false;
@@ -195,7 +195,7 @@ namespace SAE2_1
             this.panel2.Controls.Add(this.Dtp1);
             this.panel2.Controls.Add(this.chk2);
             this.panel2.Controls.Add(this.Dtp2);
-            this.panel2.Location = new System.Drawing.Point(40, 334);
+            this.panel2.Location = new System.Drawing.Point(40, 271);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(878, 100);
             this.panel2.TabIndex = 12;
@@ -206,13 +206,14 @@ namespace SAE2_1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SAE2_1.Properties.Resources._6637000_simple_fond_bleu_abstraite_pour_la_conception_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(958, 625);
+            this.ClientSize = new System.Drawing.Size(958, 532);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.cmd2);
             this.Controls.Add(this.cmd1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Itinéraire";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Itinéraire";
