@@ -14,6 +14,7 @@ namespace SAE2_1
     public partial class FormDeModifLigne : Form
     {
         public List<string> Arret = new List<string>();
+        public List<string> HoraireArret = new List<string>();
         public MySqlConnection connexion = new MySqlConnection("database=baseb1; server=10.1.139.236; user id=b1; pwd=nouveau_mdp");
 
         public FormDeModifLigne()
@@ -34,7 +35,7 @@ namespace SAE2_1
 
             
             
-            MySqlCommand arretcom = new MySqlCommand("select Arret.nom_arret from Correspondance,Ligne,Arret where Correspondance.id_ligne = Ligne.id_ligne and Correspondance.id_arret = Arret.id_arret and Ligne.nom_ligne =" + '\u0022' + this.Text + '\u0022' + " order by rang_arret_ligne;", connexion);
+            MySqlCommand arretcom = new MySqlCommand("select Arret.nom_arret,heure_premier_bus from Correspondance,Ligne,Arret where Correspondance.id_ligne = Ligne.id_ligne and Correspondance.id_arret = Arret.id_arret and Ligne.nom_ligne =" + '\u0022' + this.Text + '\u0022' + " order by rang_arret_ligne;", connexion);
 
             connexion.Open();
 
@@ -43,35 +44,107 @@ namespace SAE2_1
             while (mysqlread.Read())
             {
                 string nom = mysqlread.GetString(0);
+                string horaire = mysqlread.GetString(1);
+                HoraireArret.Add(horaire);
                 Arret.Add(nom);
 
             }
 
-            spawnButton(Arret);
+            spawnButton(Arret, HoraireArret);
 
            connexion.Close();
 
             
         }
+        private void spawnButton(List<string> Arret, List<string> HoraireArret)
+        {
+            for (int i = 0; i < Arret.Count(); i++)
+            {
+                Button button = new Button();
+                button.MouseUp += new MouseEventHandler(btnMouseUp);
+                button.Text = Arret[i];
+                button.Width = flowLayoutPanel1.Width - 25;
+                button.Tag = HoraireArret[i];
+                button.Location = new Point(0, button.Height * i);
+                button.MouseDown += new MouseEventHandler(btnMouseDown);
+           
+                this.flowLayoutPanel1.Controls.Add(button);
+            }
+        }
+
+        private void btnMouseUp(object sender, MouseEventArgs e)
+        {
+            Button btn = (Button)sender;
+            Frm_createArret frmCreateArret = new Frm_createArret();
+
+            MessageBox.Show("click");
+
+            DialogResult result = frmCreateArret.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                /*
+                if (frmCreateArret.chk_ArretExistant.Checked)
+                {
+                    txt_AfficheArretCree.Text += $" {name} : {frmCreateArret.cbo_ArretExistant.SelectedItem} \r\n";
+                    listArret.Add((frmCreateArret.cbo_ArretExistant.SelectedItem.ToString(), frmCreateArret.dtp_HorairePremierBus.Text));
+                }
+                else
+                {
+                    txt_AfficheArretCree.Text += $" {name} : {frmCreateArret.txt_NomArret.Text} \r\n";
+                    listArret.Add((frmCreateArret.txt_NomArret.Text, frmCreateArret.dtp_HorairePremierBus.Text));
+                    arretCree.Add(frmCreateArret.txt_NomArret.Text);
+                }
+                */
+            }
+
+            frmCreateArret.Dispose();
+        }
 
         private void cmd2_Click(object sender, EventArgs e)
         {
+            List<(string, string)> arretLigneModif = new List<(string,string)>();
+            bool ModifValide = true;
 
-            if (!String.IsNullOrEmpty(txt_new_nom.Text))
+            foreach (Button btnArret in flowLayoutPanel1.Controls)
             {
-                connexion.Open();
-
-
-                MySqlCommand update = new MySqlCommand($"UPDATE Ligne SET nom_ligne = '{txt_new_nom.Text} ' WHERE nom_ligne = '{this.Text} '; ", connexion);
-
-                update.ExecuteNonQuery();
-
-                
-                connexion.Close();
+                if (btnArret.Tag == null || btnArret.Text == "Nouvelle Arret")
+                {
+                    ModifValide = false;
+                }
             }
 
+            if(ModifValide)
+            {
+                foreach (Button btnArret in flowLayoutPanel1.Controls)
+                {
+                    arretLigneModif.Add((btnArret.Text, (string)btnArret.Tag));
+                }
 
-            this.Close();
+                MessageBox.Show("vaider");
+
+                //changement de nom
+                if (!String.IsNullOrEmpty(txt_new_nom.Text))
+                {
+                    connexion.Open();
+
+
+                    MySqlCommand update = new MySqlCommand($"UPDATE Ligne SET nom_ligne = '{txt_new_nom.Text} ' WHERE nom_ligne = '{this.Text} '; ", connexion);
+
+                    update.ExecuteNonQuery();
+
+
+                    connexion.Close();
+                }
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Des Arret de la rajouter ne sont pas remplie");
+            }
+
+            
             
         }
 
@@ -79,30 +152,19 @@ namespace SAE2_1
         {
             Button button = new Button();
             button.Text = "Nouvelle Arret";
-            button.MouseDown += new MouseEventHandler(this.MouseDown);
+            button.MouseDown += new MouseEventHandler(btnMouseDown);
+            button.MouseUp += btnMouseUp;
             button.Size = new Size(flowLayoutPanel1.Width - 25, 23);
             button.Location = new Point(344, 150); ;
             this.Controls.Add(button);
         }
 
-        private void spawnButton(List<string> Arret)
-        {
-            for (int i = 0; i < Arret.Count(); i++)
-            {
-                Button button = new Button();
-                button.Text = Arret[i];
-                button.Width = flowLayoutPanel1.Width - 25;
-                button.Tag = i;
-                button.Location = new Point(0, button.Height * i);
-                button.MouseDown += new MouseEventHandler(this.MouseDown);
-                this.flowLayoutPanel1.Controls.Add(button);
-            }
-        }
 
-        private void MouseDown(object sender, MouseEventArgs e)
+        private void btnMouseDown(object sender, MouseEventArgs e)
         {
             Button btn = sender as Button;
             btn.DoDragDrop(btn, DragDropEffects.Move);
+            MessageBox.Show("clickDown");
         }
 
 
