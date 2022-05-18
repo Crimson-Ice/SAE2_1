@@ -26,8 +26,11 @@ namespace SAE2_1
                 cbo_ArretExistant.Items.Add(s);
             }
             //Affiche l'horaire minimum à rentré sur le label précision et la selection d'horaire 
-            lbl_PrecisionPremierHoraire.Text = $"L'horaire du premier bus doit être supérieur à {CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes)}";
-            dtp_HorairePremierBus.Text = $"{ CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes + 1)}";
+            if(CréationLigne.time != null)
+            {
+                lbl_PrecisionPremierHoraire.Text = $"L'horaire du premier bus doit être supérieur à {CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes)}";
+                dtp_HorairePremierBus.Text = $"{ CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes + 1)}";
+            }
 
             RemplisageComboBox();
         }

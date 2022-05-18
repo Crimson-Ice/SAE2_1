@@ -126,9 +126,10 @@
             this.new_arret_btn.Name = "new_arret_btn";
             this.new_arret_btn.Size = new System.Drawing.Size(145, 26);
             this.new_arret_btn.TabIndex = 4;
-            this.new_arret_btn.Text = "nouveau_arret";
+            this.new_arret_btn.Text = "Nouvelle Arret";
             this.new_arret_btn.UseVisualStyleBackColor = true;
-            this.new_arret_btn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown);
+            this.new_arret_btn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMouseDown);
+            this.new_arret_btn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMouseUp);
             // 
             // flp2
             // 
