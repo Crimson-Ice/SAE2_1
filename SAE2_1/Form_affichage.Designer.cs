@@ -56,6 +56,7 @@
             // lbl_nom_ligne
             // 
             this.lbl_nom_ligne.AutoSize = true;
+            this.lbl_nom_ligne.BackColor = System.Drawing.Color.Transparent;
             this.lbl_nom_ligne.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_nom_ligne.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nom_ligne.Location = new System.Drawing.Point(35, 24);
@@ -118,7 +119,7 @@
             this.pnl_Info_Ligne.Controls.Add(this.lbl_ArretFin);
             this.pnl_Info_Ligne.Location = new System.Drawing.Point(24, 12);
             this.pnl_Info_Ligne.Name = "pnl_Info_Ligne";
-            this.pnl_Info_Ligne.Size = new System.Drawing.Size(991, 197);
+            this.pnl_Info_Ligne.Size = new System.Drawing.Size(991, 184);
             this.pnl_Info_Ligne.TabIndex = 9;
             // 
             // cmd_horaire
@@ -133,17 +134,21 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(1013, 215);
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(1015, 215);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 184);
+            this.pictureBox2.Size = new System.Drawing.Size(48, 184);
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(-35, 215);
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(-27, 215);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(60, 184);
+            this.pictureBox3.Size = new System.Drawing.Size(51, 184);
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
             // 
@@ -159,6 +164,7 @@
             this.Controls.Add(this.hSB);
             this.Controls.Add(this.pnl_Info_Ligne);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Form_affichage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_affichage";
