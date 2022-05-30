@@ -29,172 +29,172 @@ namespace SAE2_1
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.lbl2 = new System.Windows.Forms.Label();
-            this.lbl3 = new System.Windows.Forms.Label();
-            this.cbo1 = new System.Windows.Forms.ComboBox();
-            this.cbo2 = new System.Windows.Forms.ComboBox();
-            this.chk1 = new System.Windows.Forms.CheckBox();
-            this.chk2 = new System.Windows.Forms.CheckBox();
-            this.Dtp1 = new System.Windows.Forms.DateTimePicker();
-            this.Dtp2 = new System.Windows.Forms.DateTimePicker();
+            this.lbl_Recherche_itinéraire = new System.Windows.Forms.Label();
+            this.lblç_arret_depart = new System.Windows.Forms.Label();
+            this.lbl_arret_fin = new System.Windows.Forms.Label();
+            this.cbo_arretDepart = new System.Windows.Forms.ComboBox();
+            this.cbo_arret_fin = new System.Windows.Forms.ComboBox();
+            this.chk_FiltreHoraireDebut = new System.Windows.Forms.CheckBox();
+            this.chk_FiltreHoraireFin = new System.Windows.Forms.CheckBox();
+            this.Dtp_hroaireDebut = new System.Windows.Forms.DateTimePicker();
+            this.Dtp_HoraireFin = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmd1 = new System.Windows.Forms.Button();
-            this.cmd2 = new System.Windows.Forms.Button();
+            this.cmd_Valider = new System.Windows.Forms.Button();
+            this.cmd_Retour = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbl1
+            // lbl_Recherche_itinéraire
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(279, 30);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(408, 46);
-            this.lbl1.TabIndex = 0;
-            this.lbl1.Text = "Recherche d\'itinéraire";
+            this.lbl_Recherche_itinéraire.AutoSize = true;
+            this.lbl_Recherche_itinéraire.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Recherche_itinéraire.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Recherche_itinéraire.Location = new System.Drawing.Point(279, 30);
+            this.lbl_Recherche_itinéraire.Name = "lbl_Recherche_itinéraire";
+            this.lbl_Recherche_itinéraire.Size = new System.Drawing.Size(408, 46);
+            this.lbl_Recherche_itinéraire.TabIndex = 0;
+            this.lbl_Recherche_itinéraire.Text = "Recherche d\'itinéraire";
             // 
-            // lbl2
+            // lblç_arret_depart
             // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(54, 54);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(185, 29);
-            this.lbl2.TabIndex = 1;
-            this.lbl2.Text = "Arrêt de départ :";
+            this.lblç_arret_depart.AutoSize = true;
+            this.lblç_arret_depart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblç_arret_depart.Location = new System.Drawing.Point(54, 54);
+            this.lblç_arret_depart.Name = "lblç_arret_depart";
+            this.lblç_arret_depart.Size = new System.Drawing.Size(185, 29);
+            this.lblç_arret_depart.TabIndex = 1;
+            this.lblç_arret_depart.Text = "Arrêt de départ :";
             // 
-            // lbl3
+            // lbl_arret_fin
             // 
-            this.lbl3.AutoSize = true;
-            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(505, 54);
-            this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(141, 29);
-            this.lbl3.TabIndex = 2;
-            this.lbl3.Text = "Arrêt de fin :";
+            this.lbl_arret_fin.AutoSize = true;
+            this.lbl_arret_fin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_arret_fin.Location = new System.Drawing.Point(505, 54);
+            this.lbl_arret_fin.Name = "lbl_arret_fin";
+            this.lbl_arret_fin.Size = new System.Drawing.Size(141, 29);
+            this.lbl_arret_fin.TabIndex = 2;
+            this.lbl_arret_fin.Text = "Arrêt de fin :";
             // 
-            // cbo1
+            // cbo_arretDepart
             // 
-            this.cbo1.FormattingEnabled = true;
-            this.cbo1.IntegralHeight = false;
-            this.cbo1.ItemHeight = 16;
-            this.cbo1.Location = new System.Drawing.Point(249, 59);
-            this.cbo1.MaxDropDownItems = 4;
-            this.cbo1.Name = "cbo1";
-            this.cbo1.Size = new System.Drawing.Size(166, 24);
-            this.cbo1.TabIndex = 3;
+            this.cbo_arretDepart.FormattingEnabled = true;
+            this.cbo_arretDepart.IntegralHeight = false;
+            this.cbo_arretDepart.ItemHeight = 16;
+            this.cbo_arretDepart.Location = new System.Drawing.Point(249, 59);
+            this.cbo_arretDepart.MaxDropDownItems = 4;
+            this.cbo_arretDepart.Name = "cbo_arretDepart";
+            this.cbo_arretDepart.Size = new System.Drawing.Size(166, 24);
+            this.cbo_arretDepart.TabIndex = 3;
             // 
-            // cbo2
+            // cbo_arret_fin
             // 
-            this.cbo2.FormattingEnabled = true;
-            this.cbo2.IntegralHeight = false;
-            this.cbo2.Location = new System.Drawing.Point(664, 57);
-            this.cbo2.MaxDropDownItems = 4;
-            this.cbo2.Name = "cbo2";
-            this.cbo2.Size = new System.Drawing.Size(158, 24);
-            this.cbo2.TabIndex = 4;
+            this.cbo_arret_fin.FormattingEnabled = true;
+            this.cbo_arret_fin.IntegralHeight = false;
+            this.cbo_arret_fin.Location = new System.Drawing.Point(664, 57);
+            this.cbo_arret_fin.MaxDropDownItems = 4;
+            this.cbo_arret_fin.Name = "cbo_arret_fin";
+            this.cbo_arret_fin.Size = new System.Drawing.Size(158, 24);
+            this.cbo_arret_fin.TabIndex = 4;
             // 
-            // chk1
+            // chk_FiltreHoraireDebut
             // 
-            this.chk1.AutoSize = true;
-            this.chk1.BackColor = System.Drawing.Color.Transparent;
-            this.chk1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk1.Location = new System.Drawing.Point(34, 37);
-            this.chk1.Name = "chk1";
-            this.chk1.Size = new System.Drawing.Size(206, 29);
-            this.chk1.TabIndex = 5;
-            this.chk1.Text = "Filtre horaire debut :";
-            this.chk1.UseVisualStyleBackColor = false;
-            this.chk1.Click += new System.EventHandler(this.chk1_Click);
+            this.chk_FiltreHoraireDebut.AutoSize = true;
+            this.chk_FiltreHoraireDebut.BackColor = System.Drawing.Color.Transparent;
+            this.chk_FiltreHoraireDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_FiltreHoraireDebut.Location = new System.Drawing.Point(34, 37);
+            this.chk_FiltreHoraireDebut.Name = "chk_FiltreHoraireDebut";
+            this.chk_FiltreHoraireDebut.Size = new System.Drawing.Size(206, 29);
+            this.chk_FiltreHoraireDebut.TabIndex = 5;
+            this.chk_FiltreHoraireDebut.Text = "Filtre horaire debut :";
+            this.chk_FiltreHoraireDebut.UseVisualStyleBackColor = false;
+            this.chk_FiltreHoraireDebut.Click += new System.EventHandler(this.chk_FiltreHoraireDebut_Click);
             // 
-            // chk2
+            // chk_FiltreHoraireFin
             // 
-            this.chk2.AutoSize = true;
-            this.chk2.BackColor = System.Drawing.Color.Transparent;
-            this.chk2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk2.Location = new System.Drawing.Point(473, 37);
-            this.chk2.Name = "chk2";
-            this.chk2.Size = new System.Drawing.Size(204, 29);
-            this.chk2.TabIndex = 6;
-            this.chk2.Text = "Filtre horaire de fin :";
-            this.chk2.UseVisualStyleBackColor = false;
-            this.chk2.Click += new System.EventHandler(this.chk2_Click);
+            this.chk_FiltreHoraireFin.AutoSize = true;
+            this.chk_FiltreHoraireFin.BackColor = System.Drawing.Color.Transparent;
+            this.chk_FiltreHoraireFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_FiltreHoraireFin.Location = new System.Drawing.Point(473, 37);
+            this.chk_FiltreHoraireFin.Name = "chk_FiltreHoraireFin";
+            this.chk_FiltreHoraireFin.Size = new System.Drawing.Size(204, 29);
+            this.chk_FiltreHoraireFin.TabIndex = 6;
+            this.chk_FiltreHoraireFin.Text = "Filtre horaire de fin :";
+            this.chk_FiltreHoraireFin.UseVisualStyleBackColor = false;
+            this.chk_FiltreHoraireFin.Click += new System.EventHandler(this.chk_FiltreHoraireFin_Click);
             // 
-            // Dtp1
+            // Dtp_hroaireDebut
             // 
-            this.Dtp1.CustomFormat = "HH:mm";
-            this.Dtp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Dtp1.Location = new System.Drawing.Point(260, 28);
-            this.Dtp1.Name = "Dtp1";
-            this.Dtp1.ShowUpDown = true;
-            this.Dtp1.Size = new System.Drawing.Size(111, 38);
-            this.Dtp1.TabIndex = 7;
-            this.Dtp1.Visible = false;
+            this.Dtp_hroaireDebut.CustomFormat = "HH:mm";
+            this.Dtp_hroaireDebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtp_hroaireDebut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Dtp_hroaireDebut.Location = new System.Drawing.Point(260, 28);
+            this.Dtp_hroaireDebut.Name = "Dtp_hroaireDebut";
+            this.Dtp_hroaireDebut.ShowUpDown = true;
+            this.Dtp_hroaireDebut.Size = new System.Drawing.Size(111, 38);
+            this.Dtp_hroaireDebut.TabIndex = 7;
+            this.Dtp_hroaireDebut.Visible = false;
             // 
-            // Dtp2
+            // Dtp_HoraireFin
             // 
-            this.Dtp2.CustomFormat = "HH:mm";
-            this.Dtp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dtp2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Dtp2.Location = new System.Drawing.Point(712, 28);
-            this.Dtp2.Name = "Dtp2";
-            this.Dtp2.ShowUpDown = true;
-            this.Dtp2.Size = new System.Drawing.Size(111, 38);
-            this.Dtp2.TabIndex = 8;
-            this.Dtp2.Visible = false;
+            this.Dtp_HoraireFin.CustomFormat = "HH:mm";
+            this.Dtp_HoraireFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtp_HoraireFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Dtp_HoraireFin.Location = new System.Drawing.Point(712, 28);
+            this.Dtp_HoraireFin.Name = "Dtp_HoraireFin";
+            this.Dtp_HoraireFin.ShowUpDown = true;
+            this.Dtp_HoraireFin.Size = new System.Drawing.Size(111, 38);
+            this.Dtp_HoraireFin.TabIndex = 8;
+            this.Dtp_HoraireFin.Visible = false;
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lbl2);
-            this.panel1.Controls.Add(this.cbo1);
-            this.panel1.Controls.Add(this.lbl3);
-            this.panel1.Controls.Add(this.cbo2);
+            this.panel1.Controls.Add(this.lblç_arret_depart);
+            this.panel1.Controls.Add(this.cbo_arretDepart);
+            this.panel1.Controls.Add(this.lbl_arret_fin);
+            this.panel1.Controls.Add(this.cbo_arret_fin);
             this.panel1.Location = new System.Drawing.Point(40, 106);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(878, 133);
             this.panel1.TabIndex = 9;
             // 
-            // cmd1
+            // cmd_Valider
             // 
-            this.cmd1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.cmd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmd1.ForeColor = System.Drawing.Color.White;
-            this.cmd1.Location = new System.Drawing.Point(739, 409);
-            this.cmd1.Name = "cmd1";
-            this.cmd1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmd1.Size = new System.Drawing.Size(179, 60);
-            this.cmd1.TabIndex = 10;
-            this.cmd1.Text = "Valider";
-            this.cmd1.UseVisualStyleBackColor = false;
-            this.cmd1.Click += new System.EventHandler(this.cmd1_Click);
+            this.cmd_Valider.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.cmd_Valider.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_Valider.ForeColor = System.Drawing.Color.White;
+            this.cmd_Valider.Location = new System.Drawing.Point(739, 409);
+            this.cmd_Valider.Name = "cmd_Valider";
+            this.cmd_Valider.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmd_Valider.Size = new System.Drawing.Size(179, 60);
+            this.cmd_Valider.TabIndex = 10;
+            this.cmd_Valider.Text = "Valider";
+            this.cmd_Valider.UseVisualStyleBackColor = false;
+            this.cmd_Valider.Click += new System.EventHandler(this.cmd1_Click);
             // 
-            // cmd2
+            // cmd_Retour
             // 
-            this.cmd2.BackColor = System.Drawing.SystemColors.GrayText;
-            this.cmd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmd2.ForeColor = System.Drawing.Color.White;
-            this.cmd2.Location = new System.Drawing.Point(40, 413);
-            this.cmd2.Name = "cmd2";
-            this.cmd2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmd2.Size = new System.Drawing.Size(179, 56);
-            this.cmd2.TabIndex = 11;
-            this.cmd2.Text = "Retour";
-            this.cmd2.UseVisualStyleBackColor = false;
-            this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
+            this.cmd_Retour.BackColor = System.Drawing.SystemColors.GrayText;
+            this.cmd_Retour.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cmd_Retour.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_Retour.ForeColor = System.Drawing.Color.White;
+            this.cmd_Retour.Location = new System.Drawing.Point(40, 413);
+            this.cmd_Retour.Name = "cmd_Retour";
+            this.cmd_Retour.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmd_Retour.Size = new System.Drawing.Size(179, 56);
+            this.cmd_Retour.TabIndex = 11;
+            this.cmd_Retour.Text = "Retour";
+            this.cmd_Retour.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.chk1);
-            this.panel2.Controls.Add(this.Dtp1);
-            this.panel2.Controls.Add(this.chk2);
-            this.panel2.Controls.Add(this.Dtp2);
+            this.panel2.Controls.Add(this.chk_FiltreHoraireDebut);
+            this.panel2.Controls.Add(this.Dtp_hroaireDebut);
+            this.panel2.Controls.Add(this.chk_FiltreHoraireFin);
+            this.panel2.Controls.Add(this.Dtp_HoraireFin);
             this.panel2.Location = new System.Drawing.Point(40, 271);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(878, 100);
@@ -208,15 +208,16 @@ namespace SAE2_1
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(958, 532);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.cmd2);
-            this.Controls.Add(this.cmd1);
+            this.Controls.Add(this.cmd_Retour);
+            this.Controls.Add(this.cmd_Valider);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lbl1);
+            this.Controls.Add(this.lbl_Recherche_itinéraire);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Itinéraire";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Itinéraire";
+            this.Load += new System.EventHandler(this.Itinéraire_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -228,18 +229,18 @@ namespace SAE2_1
 
         #endregion
 
-        private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Label lbl2;
-        private System.Windows.Forms.Label lbl3;
-        private System.Windows.Forms.ComboBox cbo1;
-        private System.Windows.Forms.ComboBox cbo2;
-        private System.Windows.Forms.CheckBox chk1;
-        private System.Windows.Forms.CheckBox chk2;
-        private System.Windows.Forms.DateTimePicker Dtp1;
-        private System.Windows.Forms.DateTimePicker Dtp2;
+        private System.Windows.Forms.Label lbl_Recherche_itinéraire;
+        private System.Windows.Forms.Label lblç_arret_depart;
+        private System.Windows.Forms.Label lbl_arret_fin;
+        private System.Windows.Forms.ComboBox cbo_arretDepart;
+        private System.Windows.Forms.ComboBox cbo_arret_fin;
+        private System.Windows.Forms.CheckBox chk_FiltreHoraireDebut;
+        private System.Windows.Forms.CheckBox chk_FiltreHoraireFin;
+        private System.Windows.Forms.DateTimePicker Dtp_hroaireDebut;
+        private System.Windows.Forms.DateTimePicker Dtp_HoraireFin;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button cmd1;
-        private System.Windows.Forms.Button cmd2;
+        private System.Windows.Forms.Button cmd_Valider;
+        private System.Windows.Forms.Button cmd_Retour;
         private System.Windows.Forms.Panel panel2;
     }
 }

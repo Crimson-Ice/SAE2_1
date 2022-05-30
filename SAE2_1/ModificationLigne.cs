@@ -18,13 +18,9 @@ namespace SAE2_1
             InitializeComponent();
         }
 
-        private void cmd1_Click(object sender, EventArgs e)
+        private void cmd_modifier_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void cmd2_Click(object sender, EventArgs e)
-        {
+            //créer le formulaire FormDeModifLigne
             FormDeModifLigne FrmDeModifLigne = new FormDeModifLigne();
             FrmDeModifLigne.Text = cbo_choix_ligne.SelectedItem.ToString();
             FrmDeModifLigne.ShowDialog();
@@ -32,18 +28,19 @@ namespace SAE2_1
             this.Close();
         }
 
-        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cbo_choix_ligne_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            //Si un element est selectionner dans la comboBox alors active le boutton modifier
             cmd_modifier.Enabled = true;
         }
 
         private void ModificationLigne_Load(object sender, EventArgs e)
         {
+            //Met les lignes de la base de donnée dans la comboBox cbo_choix_ligne
             ClassMySql.connection();
             ClassMySql.RequeteSQl("select * from Ligne;");
             ClassMySql.Reading();
             
-
             while (ClassMySql.ISread())
             {
                 cbo_choix_ligne.Items.Add(ClassMySql.Attribut(1));

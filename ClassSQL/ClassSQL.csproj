@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassStockage.cs" />
     <Compile Include="ClassMySql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

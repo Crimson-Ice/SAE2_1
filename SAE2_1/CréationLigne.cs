@@ -12,9 +12,7 @@ namespace SAE2_1
     public partial class CréationLigne : Form
     {
         private bool validerButton;
-        public static TimeSpan time = new TimeSpan(05,00,00);
-        public static List<(string, string)> listArret = new List<(string, string)>();
-        public static List<string> arretCree = new List<string> ();
+        
 
         public CréationLigne()
         {
@@ -24,8 +22,8 @@ namespace SAE2_1
         private void cmd_Valider_Click(object sender, EventArgs e)
         {
             //clear les éléments des listes destockage d'arret
-            arretCree.Clear();
-            listArret.Clear();
+            ClassStockage.arretCree.Clear();
+            ClassStockage.listArret.Clear();
 
             validerButton = true;
             bool empty = false;
@@ -130,7 +128,7 @@ namespace SAE2_1
             Button btn = (Button)sender;
             Frm_createArret frmCreateArret = new Frm_createArret();
 
-            DialogResult result = frmCreateArret.ShowDialog();
+            DialogResult result = frmCreateArret.ShowDialog(this);
 
             if (result == DialogResult.OK)
             {
@@ -157,13 +155,13 @@ namespace SAE2_1
             if (frmCreateArret.chk_ArretExistant.Checked)
             {
                 txt_AfficheArretCree.Text += $" {name} : {frmCreateArret.cbo_ArretExistant.SelectedItem} \r\n";
-                listArret.Add((frmCreateArret.cbo_ArretExistant.SelectedItem.ToString(), frmCreateArret.dtp_HorairePremierBus.Text));
+                ClassStockage.listArret.Add((frmCreateArret.cbo_ArretExistant.SelectedItem.ToString(), frmCreateArret.dtp_HorairePremierBus.Text));
             }
             else
             {
                 txt_AfficheArretCree.Text += $" {name} : {frmCreateArret.txt_NomArret.Text} \r\n";
-                listArret.Add((frmCreateArret.txt_NomArret.Text, frmCreateArret.dtp_HorairePremierBus.Text));
-                arretCree.Add(frmCreateArret.txt_NomArret.Text);
+                ClassStockage.listArret.Add((frmCreateArret.txt_NomArret.Text, frmCreateArret.dtp_HorairePremierBus.Text));
+                ClassStockage.arretCree.Add(frmCreateArret.txt_NomArret.Text);
             }
 
             //supprime le button du dernier arret crée
@@ -204,8 +202,8 @@ namespace SAE2_1
                 cmd_Annuler.Enabled = false;
                 cmd_Terminer.Enabled = false;
 
-                arretCree.Clear();
-                listArret.Clear();
+                ClassStockage.arretCree.Clear();
+                ClassStockage.listArret.Clear();
             }
         }
 
@@ -216,7 +214,7 @@ namespace SAE2_1
             ClassMySql.connection();
 
             //insére les arrets crée dans la base de donnée
-            foreach (string arret in arretCree)
+            foreach (string arret in ClassStockage.arretCree)
             {
                 ClassMySql.RequeteSQl($"INSERT INTO Arret (nom_arret,nb_ligne_desservi) VALUES('{arret}', 1);");
 
@@ -231,7 +229,7 @@ namespace SAE2_1
             ClassMySql.connection();
 
             //insére les id arret dans la tablea ligne
-            ClassMySql.RequeteSQl($"INSERT INTO Ligne (nom_ligne,nb_arret,id_arret_depart,id_arret_fin) VALUES('{txt_NomLigneCree.Text}',{listArret.Count()},{arret_intervalle[0]},{arret_intervalle[arret_intervalle.Count() - 1]});");
+            ClassMySql.RequeteSQl($"INSERT INTO Ligne (nom_ligne,nb_arret,id_arret_depart,id_arret_fin) VALUES('{txt_NomLigneCree.Text}',{ClassStockage.listArret.Count()},{arret_intervalle[0]},{arret_intervalle[arret_intervalle.Count() - 1]});");
 
             ClassMySql.CommandeExecute();
 
@@ -255,9 +253,9 @@ namespace SAE2_1
             ClassMySql.connection();
 
             //insére tout les donnée recuppérer dans la table correspondance
-            for (int i = 0; i < listArret.Count; i++)
+            for (int i = 0; i < ClassStockage.listArret.Count; i++)
             {
-                ClassMySql.RequeteSQl($"INSERT INTO Correspondance (id_arret,id_ligne,rang_arret_ligne,heure_premier_bus,heure_dernier_bus) VALUES({arret_intervalle[i]},{id_ligne},{i + 1},'{listArret[i].Item2}','20:21');");
+                ClassMySql.RequeteSQl($"INSERT INTO Correspondance (id_arret,id_ligne,rang_arret_ligne,heure_premier_bus,heure_dernier_bus) VALUES({arret_intervalle[i]},{id_ligne},{i + 1},'{ClassStockage.listArret[i].Item2}','20:21');");
 
                 ClassMySql.CommandeExecute();
 
@@ -289,7 +287,7 @@ namespace SAE2_1
 
             while (ClassMySql.ISread())
             {
-                foreach ((string,string) c in listArret)
+                foreach ((string,string) c in ClassStockage.listArret)
                 {
                     if (c.Item1 == ClassMySql.Attribut(1))
                     {

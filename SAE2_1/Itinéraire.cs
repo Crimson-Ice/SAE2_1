@@ -16,10 +16,14 @@ namespace SAE2_1
         public Itinéraire()
         {
             InitializeComponent();
+        }
+
+        private void Itinéraire_Load(object sender, EventArgs e)
+        {
             //Connexion a la base
             ClassMySql.connection();
-           
-            
+
+
             //requete sql
             ClassMySql.RequeteSQl("select * from Arret");
 
@@ -29,53 +33,48 @@ namespace SAE2_1
             while (ClassMySql.ISread())
             {
                 string nom = ClassMySql.Attribut(1);
-                cbo1.Items.Add(nom);
-                cbo2.Items.Add(nom);
+                cbo_arretDepart.Items.Add(nom);
+                cbo_arret_fin.Items.Add(nom);
             }
 
             ClassMySql.CloseConnexion();
         }
 
-        private void chk1_Click(object sender, EventArgs e)
+        private void chk_FiltreHoraireDebut_Click(object sender, EventArgs e)
         {
-            if (chk1.Checked)
+            if (chk_FiltreHoraireDebut.Checked)
             {
-                Dtp1.Visible = true;
-                chk2.Checked = false;
-                Dtp2.Visible = false;
+                Dtp_hroaireDebut.Visible = true;
+                chk_FiltreHoraireFin.Checked = false;
+                Dtp_HoraireFin.Visible = false;
             }
-            else if(chk1.Checked == false)
+            else if(chk_FiltreHoraireDebut.Checked == false)
             {
-                Dtp1.Visible = false;
+                Dtp_hroaireDebut.Visible = false;
 
-                Dtp2.Visible = false;
+                Dtp_HoraireFin.Visible = false;
             }
         }
 
-        private void chk2_Click(object sender, EventArgs e)
+        private void chk_FiltreHoraireFin_Click(object sender, EventArgs e)
         {
-            if (chk2.Checked)
+            if (chk_FiltreHoraireFin.Checked)
             {
-                chk1.Checked = false;
-                Dtp2.Visible = true;
-                Dtp1.Visible = false;
+                chk_FiltreHoraireDebut.Checked = false;
+                Dtp_HoraireFin.Visible = true;
+                Dtp_hroaireDebut.Visible = false;
             }
-            else if(chk2.Checked == false)
+            else if(chk_FiltreHoraireFin.Checked == false)
             {
-                Dtp2.Visible = false;
+                Dtp_HoraireFin.Visible = false;
 
-                Dtp1.Visible = false;
+                Dtp_hroaireDebut.Visible = false;
             }
         }
 
         private void cmd1_Click(object sender, EventArgs e)
         {
-            //recherche d'itinéraire
-        }
-
-        private void cmd2_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            MessageBox.Show("Fonction non implémenté");
         }
     }
 }

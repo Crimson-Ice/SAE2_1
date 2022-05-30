@@ -21,15 +21,17 @@ namespace SAE2_1
         private void Frm_createArret_Load(object sender, EventArgs e)
         {
             //Remplisage de la comboBox ArretExistant avec les arrets crée précédamment
-            foreach (string s in CréationLigne.arretCree)
+            foreach (string s in ClassStockage.arretCree)
             {
                 cbo_ArretExistant.Items.Add(s);
             }
-            //Affiche l'horaire minimum à rentré sur le label précision et la selection d'horaire 
-            if(CréationLigne.time != null)
+
+            //verifie qui est le propriétaire de ce formulaire et change son conportement en conséquence
+            if(this.Owner.Name == "CréationLigne")
             {
-                lbl_PrecisionPremierHoraire.Text = $"L'horaire du premier bus doit être supérieur à {CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes)}";
-                dtp_HorairePremierBus.Text = $"{ CréationLigne.time.Hours} : {string.Format("{0:00}", CréationLigne.time.Minutes + 1)}";
+                //Affiche l'horaire minimum à rentré sur le label précision et la selection d'horaire 
+                lbl_PrecisionPremierHoraire.Text = $"L'horaire du premier bus doit être supérieur à {ClassStockage.time.Hours} : {string.Format("{0:00}", ClassStockage.time.Minutes)}";
+                dtp_HorairePremierBus.Text = $"{ ClassStockage.time.Hours} : {string.Format("{0:00}", ClassStockage.time.Minutes + 1)}";
             }
 
             RemplisageComboBox();
@@ -131,10 +133,14 @@ namespace SAE2_1
 
         private void cmd_Valider_Click(object sender, EventArgs e)
         {
-            //split de l'horaire en deux (heure, minute
-            string[] t = dtp_HorairePremierBus.Text.Split(':');
+            //verifie qui est le propriétaire de ce formulaire et change son conportement en conséquence
+            if (this.Owner.Name == "CréationLigne")
+            {
+                //split de l'horaire en deux (heure, minute)
+                string[] t = dtp_HorairePremierBus.Text.Split(':');
 
-            ValidationArret(t);
+                ValidationArret(t);
+            }
         }
 
         /// <summary>
@@ -143,32 +149,32 @@ namespace SAE2_1
         /// <param name="t"></param>
         private void ValidationArret(string[] t)
         {
-            if (double.Parse(t[0]) > CréationLigne.time.Hours)
+            if (double.Parse(t[0]) > ClassStockage.time.Hours)
             {
                 this.DialogResult = DialogResult.OK;
-                CréationLigne.time = new TimeSpan(int.Parse(t[0]), int.Parse(t[1]), 00);
+                ClassStockage.time = new TimeSpan(int.Parse(t[0]), int.Parse(t[1]), 00);
 
                 this.Close();
             }
-            else if (double.Parse(t[0]) == CréationLigne.time.Hours)
+            else if (double.Parse(t[0]) == ClassStockage.time.Hours)
             {
-                if (double.Parse(t[1]) > CréationLigne.time.Minutes)
+                if (double.Parse(t[1]) > ClassStockage.time.Minutes)
                 {
                     this.DialogResult = DialogResult.OK;
-                    CréationLigne.time = new TimeSpan(int.Parse(t[0]), int.Parse(t[1]), 00);
+                    ClassStockage.time = new TimeSpan(int.Parse(t[0]), int.Parse(t[1]), 00);
 
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show("non valid minute");
-                    errorProvider1.SetError(dtp_HorairePremierBus, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} :  {string.Format("{0:00}", CréationLigne.time.Minutes)}");
+                    errorProvider1.SetError(dtp_HorairePremierBus, $"Horaire du premier bus doit etre suprérieur a {ClassStockage.time.Hours} :  {string.Format("{0:00}", ClassStockage.time.Minutes)}");
                 }
             }
             else
             {
                 MessageBox.Show("non valid heure");
-                errorProvider1.SetError(dtp_HorairePremierBus, $"Horaire du premier bus doit etre suprérieur a {CréationLigne.time.Hours} :  {string.Format("{0:00}", CréationLigne.time.Minutes)}");
+                errorProvider1.SetError(dtp_HorairePremierBus, $"Horaire du premier bus doit etre suprérieur a {ClassStockage.time.Hours} :  {string.Format("{0:00}", ClassStockage.time.Minutes)}");
             }
         }
     }

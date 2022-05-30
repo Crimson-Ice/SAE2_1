@@ -39,7 +39,9 @@
             this.new_arret_btn = new System.Windows.Forms.Button();
             this.flp2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -117,18 +119,20 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(207, 176);
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.flowLayoutPanel1_DragDrop);
+            this.flowLayoutPanel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.flowLayoutPanel1_DragEnter);
             this.flowLayoutPanel1.DragOver += new System.Windows.Forms.DragEventHandler(this.flowLayoutPanel1_DragOver);
             this.flowLayoutPanel1.DragLeave += new System.EventHandler(this.flowLayoutPanel1_DragLeave);
             // 
             // new_arret_btn
             // 
-            this.new_arret_btn.Location = new System.Drawing.Point(411, 239);
+            this.new_arret_btn.BackColor = System.Drawing.Color.White;
+            this.new_arret_btn.Location = new System.Drawing.Point(3, 3);
             this.new_arret_btn.Name = "new_arret_btn";
             this.new_arret_btn.Size = new System.Drawing.Size(145, 26);
             this.new_arret_btn.TabIndex = 4;
             this.new_arret_btn.Text = "Nouvelle Arret";
-            this.new_arret_btn.UseVisualStyleBackColor = true;
-            this.new_arret_btn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMouseDown);
+            this.new_arret_btn.UseVisualStyleBackColor = false;
+            this.new_arret_btn.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_MouseMove);
             this.new_arret_btn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMouseUp);
             // 
             // flp2
@@ -143,7 +147,7 @@
             this.flp2.Size = new System.Drawing.Size(44, 41);
             this.flp2.TabIndex = 6;
             this.flp2.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel2_DragDrop);
-            this.flp2.DragOver += new System.Windows.Forms.DragEventHandler(this.panel2_DragOver);
+            this.flp2.DragEnter += new System.Windows.Forms.DragEventHandler(this.flp2_DragEnter);
             // 
             // lbl3
             // 
@@ -156,6 +160,15 @@
             this.lbl3.TabIndex = 7;
             this.lbl3.Text = "Gliser-déposer dans l\'enplacement gauche";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.new_arret_btn);
+            this.panel2.Location = new System.Drawing.Point(492, 204);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(187, 32);
+            this.panel2.TabIndex = 8;
+            // 
             // FormDeModifLigne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -163,9 +176,9 @@
             this.BackgroundImage = global::SAE2_1.Properties.Resources._6637000_simple_fond_bleu_abstraite_pour_la_conception_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbl3);
             this.Controls.Add(this.flp2);
-            this.Controls.Add(this.new_arret_btn);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.cmd2);
             this.Controls.Add(this.cmd1);
@@ -178,6 +191,7 @@
             this.Load += new System.EventHandler(this.FormDeModifLigne_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +209,6 @@
         private System.Windows.Forms.Button new_arret_btn;
         private System.Windows.Forms.FlowLayoutPanel flp2;
         private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Panel panel2;
     }
 }

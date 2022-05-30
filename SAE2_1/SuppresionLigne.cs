@@ -20,17 +20,12 @@ namespace SAE2_1
             InitializeComponent();
         }
 
-        private void cmd1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void cmd2_Click(object sender, EventArgs e)
+        private void cmd_Valider_Click(object sender, EventArgs e)
         {
             connexion.Close();   
             connexion.Open();
 
-            MySqlCommand mysqlcom = new MySqlCommand($"select id_ligne from Ligne where nom_ligne = '{cboligne.SelectedItem}';", connexion);
+            MySqlCommand mysqlcom = new MySqlCommand($"select id_ligne from Ligne where nom_ligne = '{cbo_ligne.SelectedItem}';", connexion);
 
             MySqlDataReader mysqlread = mysqlcom.ExecuteReader(CommandBehavior.CloseConnection);
 
@@ -75,14 +70,16 @@ namespace SAE2_1
             }
         }
 
-        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        private void cbo_ligne_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            btnvisualiser.Visible = true;
-            cmd2.Enabled = true;
+            //Si un element est selectionner dans la comboBox cbo_Ligne alors active le button valider et rend visible le button visualiser
+            cmd_visualiser.Visible = true;
+            cmd_Valider.Enabled = true;
         }
 
         private void SuppresionLigne_Load(object sender, EventArgs e)
         {
+            //Remplie la comboBox cbo_ligne avec les lignes de la base de donnée
             MySqlCommand mysqlcom = new MySqlCommand("select * from Ligne;", connexion);
 
             connexion.Open();
@@ -91,17 +88,18 @@ namespace SAE2_1
 
             while (mysqlread.Read())
             {
-                cboligne.Items.Add(mysqlread.GetString(1));
+                cbo_ligne.Items.Add(mysqlread.GetString(1));
             }
 
             connexion.Close();
         }
 
-        private void btnvisualiser_Click(object sender, EventArgs e)
+        private void cmd_visualiser_Click(object sender, EventArgs e)
         {
+            //crée un formulaire affichage qui affiche la ligne selectionner
             Form_affichage form_affiche = new Form_affichage();
 
-            form_affiche.Text = cboligne.SelectedItem.ToString();
+            form_affiche.Text = cbo_ligne.SelectedItem.ToString();
             
             form_affiche.ShowDialog();
         }

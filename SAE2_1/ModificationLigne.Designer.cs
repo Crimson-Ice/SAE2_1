@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_LigneModif = new System.Windows.Forms.Panel();
             this.cbo_choix_ligne = new System.Windows.Forms.ComboBox();
-            this.lbl2 = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.cmd1 = new System.Windows.Forms.Button();
+            this.lblLigne_a_Modifier = new System.Windows.Forms.Label();
+            this.lblTitreModifLigne = new System.Windows.Forms.Label();
+            this.cmd_Retour = new System.Windows.Forms.Button();
             this.cmd_modifier = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnl_LigneModif.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnl_LigneModif
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cbo_choix_ligne);
-            this.panel1.Controls.Add(this.lbl2);
-            this.panel1.Location = new System.Drawing.Point(48, 118);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(704, 204);
-            this.panel1.TabIndex = 0;
+            this.pnl_LigneModif.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_LigneModif.Controls.Add(this.cbo_choix_ligne);
+            this.pnl_LigneModif.Controls.Add(this.lblLigne_a_Modifier);
+            this.pnl_LigneModif.Location = new System.Drawing.Point(48, 118);
+            this.pnl_LigneModif.Name = "pnl_LigneModif";
+            this.pnl_LigneModif.Size = new System.Drawing.Size(704, 204);
+            this.pnl_LigneModif.TabIndex = 0;
             // 
             // cbo_choix_ligne
             // 
@@ -55,41 +55,41 @@
             this.cbo_choix_ligne.Name = "cbo_choix_ligne";
             this.cbo_choix_ligne.Size = new System.Drawing.Size(182, 24);
             this.cbo_choix_ligne.TabIndex = 3;
-            this.cbo_choix_ligne.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.cbo_choix_ligne.SelectionChangeCommitted += new System.EventHandler(this.cbo_choix_ligne_SelectionChangeCommitted);
             // 
-            // lbl2
+            // lblLigne_a_Modifier
             // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(236, 50);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(232, 32);
-            this.lbl2.TabIndex = 2;
-            this.lbl2.Text = "Ligne à modifier :";
+            this.lblLigne_a_Modifier.AutoSize = true;
+            this.lblLigne_a_Modifier.BackColor = System.Drawing.Color.Transparent;
+            this.lblLigne_a_Modifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLigne_a_Modifier.Location = new System.Drawing.Point(236, 50);
+            this.lblLigne_a_Modifier.Name = "lblLigne_a_Modifier";
+            this.lblLigne_a_Modifier.Size = new System.Drawing.Size(232, 32);
+            this.lblLigne_a_Modifier.TabIndex = 2;
+            this.lblLigne_a_Modifier.Text = "Ligne à modifier :";
             // 
-            // lbl1
+            // lblTitreModifLigne
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(169, 22);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(462, 54);
-            this.lbl1.TabIndex = 1;
-            this.lbl1.Text = "Modification de Ligne";
+            this.lblTitreModifLigne.AutoSize = true;
+            this.lblTitreModifLigne.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitreModifLigne.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitreModifLigne.Location = new System.Drawing.Point(169, 22);
+            this.lblTitreModifLigne.Name = "lblTitreModifLigne";
+            this.lblTitreModifLigne.Size = new System.Drawing.Size(462, 54);
+            this.lblTitreModifLigne.TabIndex = 1;
+            this.lblTitreModifLigne.Text = "Modification de Ligne";
             // 
-            // cmd1
+            // cmd_Retour
             // 
-            this.cmd1.BackColor = System.Drawing.Color.Gray;
-            this.cmd1.ForeColor = System.Drawing.Color.White;
-            this.cmd1.Location = new System.Drawing.Point(48, 355);
-            this.cmd1.Name = "cmd1";
-            this.cmd1.Size = new System.Drawing.Size(120, 66);
-            this.cmd1.TabIndex = 2;
-            this.cmd1.Text = "Retour";
-            this.cmd1.UseVisualStyleBackColor = false;
-            this.cmd1.Click += new System.EventHandler(this.cmd1_Click);
+            this.cmd_Retour.BackColor = System.Drawing.Color.Gray;
+            this.cmd_Retour.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cmd_Retour.ForeColor = System.Drawing.Color.White;
+            this.cmd_Retour.Location = new System.Drawing.Point(48, 355);
+            this.cmd_Retour.Name = "cmd_Retour";
+            this.cmd_Retour.Size = new System.Drawing.Size(120, 66);
+            this.cmd_Retour.TabIndex = 2;
+            this.cmd_Retour.Text = "Retour";
+            this.cmd_Retour.UseVisualStyleBackColor = false;
             // 
             // cmd_modifier
             // 
@@ -102,7 +102,7 @@
             this.cmd_modifier.TabIndex = 3;
             this.cmd_modifier.Text = "Modifier";
             this.cmd_modifier.UseVisualStyleBackColor = false;
-            this.cmd_modifier.Click += new System.EventHandler(this.cmd2_Click);
+            this.cmd_modifier.Click += new System.EventHandler(this.cmd_modifier_Click);
             // 
             // ModificationLigne
             // 
@@ -112,17 +112,17 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cmd_modifier);
-            this.Controls.Add(this.cmd1);
-            this.Controls.Add(this.lbl1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.cmd_Retour);
+            this.Controls.Add(this.lblTitreModifLigne);
+            this.Controls.Add(this.pnl_LigneModif);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "ModificationLigne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificationLigne";
             this.Load += new System.EventHandler(this.ModificationLigne_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnl_LigneModif.ResumeLayout(false);
+            this.pnl_LigneModif.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,11 +130,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl_LigneModif;
         private System.Windows.Forms.ComboBox cbo_choix_ligne;
-        private System.Windows.Forms.Label lbl2;
-        private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Button cmd1;
+        private System.Windows.Forms.Label lblLigne_a_Modifier;
+        private System.Windows.Forms.Label lblTitreModifLigne;
+        private System.Windows.Forms.Button cmd_Retour;
         private System.Windows.Forms.Button cmd_modifier;
     }
 }

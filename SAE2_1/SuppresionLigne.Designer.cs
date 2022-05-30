@@ -28,120 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.pnl1 = new System.Windows.Forms.Panel();
-            this.cboligne = new System.Windows.Forms.ComboBox();
-            this.lbl2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cmd1 = new System.Windows.Forms.Button();
-            this.cmd2 = new System.Windows.Forms.Button();
-            this.btnvisualiser = new System.Windows.Forms.Button();
-            this.pnl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblSuppresionLigne = new System.Windows.Forms.Label();
+            this.pnl_LigneSupp = new System.Windows.Forms.Panel();
+            this.cbo_ligne = new System.Windows.Forms.ComboBox();
+            this.lbl_Ligne_a_Supprimer = new System.Windows.Forms.Label();
+            this.lbl_Messager_Attention = new System.Windows.Forms.Label();
+            this.pic_Attention = new System.Windows.Forms.PictureBox();
+            this.cmd_Retour = new System.Windows.Forms.Button();
+            this.cmd_Valider = new System.Windows.Forms.Button();
+            this.cmd_visualiser = new System.Windows.Forms.Button();
+            this.pnl_LigneSupp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Attention)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbl1
+            // lblSuppresionLigne
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.BackColor = System.Drawing.Color.Transparent;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(186, 33);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(425, 51);
-            this.lbl1.TabIndex = 0;
-            this.lbl1.Text = "Suppression de ligne";
+            this.lblSuppresionLigne.AutoSize = true;
+            this.lblSuppresionLigne.BackColor = System.Drawing.Color.Transparent;
+            this.lblSuppresionLigne.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuppresionLigne.Location = new System.Drawing.Point(186, 33);
+            this.lblSuppresionLigne.Name = "lblSuppresionLigne";
+            this.lblSuppresionLigne.Size = new System.Drawing.Size(425, 51);
+            this.lblSuppresionLigne.TabIndex = 0;
+            this.lblSuppresionLigne.Text = "Suppression de ligne";
             // 
-            // pnl1
+            // pnl_LigneSupp
             // 
-            this.pnl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl1.Controls.Add(this.cboligne);
-            this.pnl1.Controls.Add(this.lbl2);
-            this.pnl1.Location = new System.Drawing.Point(51, 119);
-            this.pnl1.Name = "pnl1";
-            this.pnl1.Size = new System.Drawing.Size(699, 141);
-            this.pnl1.TabIndex = 1;
+            this.pnl_LigneSupp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_LigneSupp.Controls.Add(this.cbo_ligne);
+            this.pnl_LigneSupp.Controls.Add(this.lbl_Ligne_a_Supprimer);
+            this.pnl_LigneSupp.Location = new System.Drawing.Point(51, 119);
+            this.pnl_LigneSupp.Name = "pnl_LigneSupp";
+            this.pnl_LigneSupp.Size = new System.Drawing.Size(699, 141);
+            this.pnl_LigneSupp.TabIndex = 1;
             // 
-            // cboligne
+            // cbo_ligne
             // 
-            this.cboligne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboligne.FormattingEnabled = true;
-            this.cboligne.Location = new System.Drawing.Point(372, 57);
-            this.cboligne.Name = "cboligne";
-            this.cboligne.Size = new System.Drawing.Size(187, 24);
-            this.cboligne.TabIndex = 3;
-            this.cboligne.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.cbo_ligne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_ligne.FormattingEnabled = true;
+            this.cbo_ligne.Location = new System.Drawing.Point(372, 57);
+            this.cbo_ligne.Name = "cbo_ligne";
+            this.cbo_ligne.Size = new System.Drawing.Size(187, 24);
+            this.cbo_ligne.TabIndex = 3;
+            this.cbo_ligne.SelectionChangeCommitted += new System.EventHandler(this.cbo_ligne_SelectionChangeCommitted);
             // 
-            // lbl2
+            // lbl_Ligne_a_Supprimer
             // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(164, 52);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(205, 29);
-            this.lbl2.TabIndex = 2;
-            this.lbl2.Text = "Ligne à suprimer :";
+            this.lbl_Ligne_a_Supprimer.AutoSize = true;
+            this.lbl_Ligne_a_Supprimer.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Ligne_a_Supprimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Ligne_a_Supprimer.Location = new System.Drawing.Point(164, 52);
+            this.lbl_Ligne_a_Supprimer.Name = "lbl_Ligne_a_Supprimer";
+            this.lbl_Ligne_a_Supprimer.Size = new System.Drawing.Size(205, 29);
+            this.lbl_Ligne_a_Supprimer.TabIndex = 2;
+            this.lbl_Ligne_a_Supprimer.Text = "Ligne à suprimer :";
             // 
-            // label1
+            // lbl_Messager_Attention
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(105, 298);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(660, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Attention, toute suppression est définitive , vous ne pourrez donc pas revenir en" +
+            this.lbl_Messager_Attention.AutoSize = true;
+            this.lbl_Messager_Attention.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Messager_Attention.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Messager_Attention.Location = new System.Drawing.Point(105, 298);
+            this.lbl_Messager_Attention.Name = "lbl_Messager_Attention";
+            this.lbl_Messager_Attention.Size = new System.Drawing.Size(660, 20);
+            this.lbl_Messager_Attention.TabIndex = 2;
+            this.lbl_Messager_Attention.Text = "Attention, toute suppression est définitive , vous ne pourrez donc pas revenir en" +
     " arrière.";
             // 
-            // pictureBox1
+            // pic_Attention
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::SAE2_1.Properties.Resources.hidden_danger_1392698;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(67, 286);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pic_Attention.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Attention.BackgroundImage = global::SAE2_1.Properties.Resources.hidden_danger_1392698;
+            this.pic_Attention.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_Attention.Location = new System.Drawing.Point(67, 286);
+            this.pic_Attention.Name = "pic_Attention";
+            this.pic_Attention.Size = new System.Drawing.Size(32, 32);
+            this.pic_Attention.TabIndex = 3;
+            this.pic_Attention.TabStop = false;
             // 
-            // cmd1
+            // cmd_Retour
             // 
-            this.cmd1.BackColor = System.Drawing.Color.Gray;
-            this.cmd1.ForeColor = System.Drawing.Color.White;
-            this.cmd1.Location = new System.Drawing.Point(51, 355);
-            this.cmd1.Name = "cmd1";
-            this.cmd1.Size = new System.Drawing.Size(120, 66);
-            this.cmd1.TabIndex = 4;
-            this.cmd1.Text = "Retour";
-            this.cmd1.UseVisualStyleBackColor = false;
-            this.cmd1.Click += new System.EventHandler(this.cmd1_Click);
+            this.cmd_Retour.BackColor = System.Drawing.Color.Gray;
+            this.cmd_Retour.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cmd_Retour.ForeColor = System.Drawing.Color.White;
+            this.cmd_Retour.Location = new System.Drawing.Point(51, 355);
+            this.cmd_Retour.Name = "cmd_Retour";
+            this.cmd_Retour.Size = new System.Drawing.Size(120, 66);
+            this.cmd_Retour.TabIndex = 4;
+            this.cmd_Retour.Text = "Retour";
+            this.cmd_Retour.UseVisualStyleBackColor = false;
             // 
-            // cmd2
+            // cmd_Valider
             // 
-            this.cmd2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.cmd2.Enabled = false;
-            this.cmd2.ForeColor = System.Drawing.Color.White;
-            this.cmd2.Location = new System.Drawing.Point(630, 355);
-            this.cmd2.Name = "cmd2";
-            this.cmd2.Size = new System.Drawing.Size(120, 66);
-            this.cmd2.TabIndex = 5;
-            this.cmd2.Text = "Valider";
-            this.cmd2.UseVisualStyleBackColor = false;
-            this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
+            this.cmd_Valider.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.cmd_Valider.Enabled = false;
+            this.cmd_Valider.ForeColor = System.Drawing.Color.White;
+            this.cmd_Valider.Location = new System.Drawing.Point(630, 355);
+            this.cmd_Valider.Name = "cmd_Valider";
+            this.cmd_Valider.Size = new System.Drawing.Size(120, 66);
+            this.cmd_Valider.TabIndex = 5;
+            this.cmd_Valider.Text = "Valider";
+            this.cmd_Valider.UseVisualStyleBackColor = false;
+            this.cmd_Valider.Click += new System.EventHandler(this.cmd_Valider_Click);
             // 
-            // btnvisualiser
+            // cmd_visualiser
             // 
-            this.btnvisualiser.BackColor = System.Drawing.Color.White;
-            this.btnvisualiser.Location = new System.Drawing.Point(334, 355);
-            this.btnvisualiser.Name = "btnvisualiser";
-            this.btnvisualiser.Size = new System.Drawing.Size(113, 66);
-            this.btnvisualiser.TabIndex = 6;
-            this.btnvisualiser.Text = "Visualiser";
-            this.btnvisualiser.UseVisualStyleBackColor = false;
-            this.btnvisualiser.Visible = false;
-            this.btnvisualiser.Click += new System.EventHandler(this.btnvisualiser_Click);
+            this.cmd_visualiser.BackColor = System.Drawing.Color.White;
+            this.cmd_visualiser.Location = new System.Drawing.Point(334, 355);
+            this.cmd_visualiser.Name = "cmd_visualiser";
+            this.cmd_visualiser.Size = new System.Drawing.Size(113, 66);
+            this.cmd_visualiser.TabIndex = 6;
+            this.cmd_visualiser.Text = "Visualiser";
+            this.cmd_visualiser.UseVisualStyleBackColor = false;
+            this.cmd_visualiser.Visible = false;
+            this.cmd_visualiser.Click += new System.EventHandler(this.cmd_visualiser_Click);
             // 
             // SuppresionLigne
             // 
@@ -150,22 +150,22 @@
             this.BackgroundImage = global::SAE2_1.Properties.Resources._6637000_simple_fond_bleu_abstraite_pour_la_conception_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnvisualiser);
-            this.Controls.Add(this.cmd2);
-            this.Controls.Add(this.cmd1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pnl1);
-            this.Controls.Add(this.lbl1);
+            this.Controls.Add(this.cmd_visualiser);
+            this.Controls.Add(this.cmd_Valider);
+            this.Controls.Add(this.cmd_Retour);
+            this.Controls.Add(this.pic_Attention);
+            this.Controls.Add(this.lbl_Messager_Attention);
+            this.Controls.Add(this.pnl_LigneSupp);
+            this.Controls.Add(this.lblSuppresionLigne);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "SuppresionLigne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SuppresionLigne";
             this.Load += new System.EventHandler(this.SuppresionLigne_Load);
-            this.pnl1.ResumeLayout(false);
-            this.pnl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnl_LigneSupp.ResumeLayout(false);
+            this.pnl_LigneSupp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Attention)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,14 +173,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Panel pnl1;
-        private System.Windows.Forms.ComboBox cboligne;
-        private System.Windows.Forms.Label lbl2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button cmd1;
-        private System.Windows.Forms.Button cmd2;
-        private System.Windows.Forms.Button btnvisualiser;
+        private System.Windows.Forms.Label lblSuppresionLigne;
+        private System.Windows.Forms.Panel pnl_LigneSupp;
+        private System.Windows.Forms.ComboBox cbo_ligne;
+        private System.Windows.Forms.Label lbl_Ligne_a_Supprimer;
+        private System.Windows.Forms.Label lbl_Messager_Attention;
+        private System.Windows.Forms.PictureBox pic_Attention;
+        private System.Windows.Forms.Button cmd_Retour;
+        private System.Windows.Forms.Button cmd_Valider;
+        private System.Windows.Forms.Button cmd_visualiser;
     }
 }
