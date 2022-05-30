@@ -34,7 +34,7 @@ namespace SAE2_1
                 button.Text = mysqlread.GetString(1);
                 button.Click += Onclickbutton;
                 button.Height = 30;
-                button.Width = 280;
+                button.Width = pnl_btn.Width-30;
 
                 pnl_btn.Controls.Add(button);
 

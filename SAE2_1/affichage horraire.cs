@@ -16,6 +16,9 @@ namespace SAE2_1
     {
 
         public List<string> arret_horaire = new List<string>();
+
+        public List<string> paterne_base = new List<string>() { "01:00/00:45/00:13/00:47/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:18/00:20/00:22/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:20/00:28/00:32/00:30/00:30/00:30/00:30"
+                                                                ,"00:29/00:1/00:10/00:38/00:34/00:34/00:34/00:34/00:34/00:34/00:44/00:44/00:30/00:10/00:10/00:33/00:33/00:33/00:33/00:33/00:33/00:33/00:33/00:36/00:36/00:36/00:36/00:36/00:36" };
         public affichage_horraire()
         {
             InitializeComponent();
@@ -36,13 +39,44 @@ namespace SAE2_1
 
             ClassMySql.CloseConnexion();
 
+            string[] horaire = {};
             dgvHoraire.ColumnCount = 3;
+
+            if (this.Text == "Ligne 1")
+            {
+                horaire = paterne_base[0].Split('/');
+               
+                dgvHoraire.ColumnCount= horaire.Length;
+             
+            }else if (this.Text == "Ligne 2")
+            {
+                horaire = paterne_base[1].Split('/');
+
+                dgvHoraire.ColumnCount = horaire.Length;
+            }
 
             for (int i = 0; i < Form_affichage.arret.Count(); i++)
             {
                 dgvHoraire.Rows.Add(Form_affichage.arret[i]);
-                dgvHoraire.Rows[i].Cells[1].Value= arret_horaire[i];
+
+                for(int k = 1; k < horaire.Length; k++)
+                {
+                    
+                    if(k== 1)
+                    {
+                        dgvHoraire.Rows[i].Cells[k].Value = arret_horaire[i];
+                    }
+                    else
+                    {
+                        TimeSpan dt = TimeSpan.Parse(dgvHoraire.Rows[i].Cells[k - 1].Value.ToString());
+                        dgvHoraire.Rows[i].Cells[k].Value = dt + TimeSpan.Parse(horaire[k-2]);
+                        
+                    }
+                    
+                }
+                
             }
+            
         }
     }
 }

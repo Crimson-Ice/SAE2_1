@@ -37,7 +37,7 @@ namespace SAE2_1
             }
             connexion.Close();
 
-            string message = "Voulez vous vraiment supprimer cette Ligne ?";
+            string message = $"Voulez vous vraiment supprimer la ligne : {cboligne.SelectedItem} ?";
             string caption = "Ete-vous sûr ?";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, caption, buttons);
