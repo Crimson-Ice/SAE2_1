@@ -209,43 +209,15 @@ namespace SAE2_1
             //crée la ligne dans la base de  donnée
             int id_ligne=0;
 
-            ClassMySql.Insert_Create_Arret();
+            ClassMySql.Insert_Create_Arret_in_tab_arret();
 
-            ClassMySql.connection();
-            List<string> arret_intervalle = getAll_id_arret();
-            ClassMySql.CloseConnexion();
+            List<string> arret_intervalle = ClassMySql.getAll_id_arret();
 
-            ClassMySql.connection();
-            //insére les id arret dans la tablea ligne
-            ClassMySql.RequeteSQl($"INSERT INTO Ligne (nom_ligne,nb_arret,id_arret_depart,id_arret_fin) VALUES('{txt_NomLigneCree.Text}',{ClassStockage.listArret.Count()},{arret_intervalle[0]},{arret_intervalle[arret_intervalle.Count() - 1]});");
-            ClassMySql.CommandeExecute();
-            ClassMySql.CloseConnexion();
+            ClassMySql.Insert_id_in_tab_ligne(txt_NomLigneCree.Text, arret_intervalle);
 
-            ClassMySql.connection();
-            //Récuppère l'id de la ligne crée
-            ClassMySql.RequeteSQl("select * from Ligne;");
+            id_ligne = ClassMySql.get_id_ligne(txt_NomLigneCree.Text);
 
-            ClassMySql.Reading();
-
-            while (ClassMySql.ISread())
-            {
-                if (ClassMySql.Attribut(1) == txt_NomLigneCree.Text)
-                {
-                    id_ligne = int.Parse(ClassMySql.Attribut(0)); //mysqlread.GetInt32(0);
-                }
-            }
-            ClassMySql.CloseConnexion();
-
-            ClassMySql.connection();
-            //insére tout les donnée recuppérer dans la table correspondance
-            for (int i = 0; i < ClassStockage.listArret.Count; i++)
-            {
-                ClassMySql.RequeteSQl($"INSERT INTO Correspondance (id_arret,id_ligne,rang_arret_ligne,heure_premier_bus,heure_dernier_bus) VALUES({arret_intervalle[i]},{id_ligne},{i + 1},'{ClassStockage.listArret[i].Item2}','20:21');");
-
-                ClassMySql.CommandeExecute();
-
-            }
-            ClassMySql.CloseConnexion();
+            ClassMySql.insert_data_in_tab_correspondance(id_ligne, arret_intervalle);
         }
 
         private void flp_ArretCree_ControlRemoved(object sender, ControlEventArgs e)
@@ -256,32 +228,5 @@ namespace SAE2_1
                 cmd_Terminer.Enabled = true;
             }
         }
-
-        /// <summary>
-        /// Reccupère tous les id des arret de la ligne crée
-        /// </summary>
-        /// <returns></returns>
-        private List<string> getAll_id_arret()
-        {
-            List<string> arret = new List<string>();
-
-            ClassMySql.RequeteSQl($"select * from Arret;");
-
-            ClassMySql.Reading();
-
-            while (ClassMySql.ISread())
-            {
-                foreach ((string,string) c in ClassStockage.listArret)
-                {
-                    if (c.Item1 == ClassMySql.Attribut(1))
-                    {
-                        arret.Add(ClassMySql.Attribut(0));
-                    }
-                }
-                    
-            }
-
-            return arret;
-        } 
     }
 }
