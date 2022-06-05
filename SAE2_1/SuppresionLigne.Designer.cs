@@ -97,14 +97,14 @@
             // 
             // pic_Attention
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::SAE2_1.Properties.Resources.hidden_danger_1392698;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(67, 286);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pic_Attention.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Attention.BackgroundImage = global::SAE2_1.Properties.Resources.hidden_danger_1392698;
+            this.pic_Attention.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_Attention.Location = new System.Drawing.Point(67, 286);
+            this.pic_Attention.Name = "pictureBox1";
+            this.pic_Attention.Size = new System.Drawing.Size(32, 32);
+            this.pic_Attention.TabIndex = 3;
+            this.pic_Attention.TabStop = false;
             // 
             // cmd_Retour
             // 

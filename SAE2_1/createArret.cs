@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassSQL;
 
@@ -42,18 +36,10 @@ namespace SAE2_1
         /// </summary>
         private void RemplisageComboBox()
         {
-            ClassMySql.connection();
-
-            ClassMySql.RequeteSQl("select * from Arret");
-
-            ClassMySql.Reading();
-
-            while (ClassMySql.ISread())
-            {
-                cbo_ArretExistant.Items.Add(ClassMySql.Attribut(1));
-            }
-
-            ClassMySql.CloseConnexion();
+            List<string> stock_arret = ClassMySql.stockage_arret_existant();
+            
+            for (int i = 0; i < stock_arret.Count; i++)
+                cbo_ArretExistant.Items.Add(stock_arret[i]);
         }
 
         private void txt_NomArret_TextChanged(object sender, EventArgs e)
@@ -145,6 +131,7 @@ namespace SAE2_1
 
         /// <summary>
         /// valide l'arret si l'horaire remplie est valider
+        /// stock dans des listes les données remplie
         /// </summary>
         /// <param name="t"></param>
         private void ValidationArret(string[] t)

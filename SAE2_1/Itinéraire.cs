@@ -42,6 +42,7 @@ namespace SAE2_1
 
         private void chk_FiltreHoraireDebut_Click(object sender, EventArgs e)
         {
+            //affiche ou déactive des dateTimePicker avec fonction de si on check cette check box
             if (chk_FiltreHoraireDebut.Checked)
             {
                 Dtp_hroaireDebut.Visible = true;
@@ -58,6 +59,7 @@ namespace SAE2_1
 
         private void chk_FiltreHoraireFin_Click(object sender, EventArgs e)
         {
+            //affiche ou déactive des dateTimePicker avec fonction de si on check cette check box
             if (chk_FiltreHoraireFin.Checked)
             {
                 chk_FiltreHoraireDebut.Checked = false;

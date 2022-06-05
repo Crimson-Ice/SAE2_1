@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using System.Data;
 
@@ -75,6 +71,46 @@ namespace ClassSQL
         public static void CloseConnexion()
         {
             connexion.Close();
+        }
+
+
+        /// <summary>
+        /// Remplie une liste de chaine de caractère avec le nom de tout les arrêts existant dans la base de donnée
+        /// </summary>
+        /// <returns>revoie une liste de chaine de caratère</returns>
+        public static List<string> stockage_arret_existant()
+        {
+            List<string> stock_arret = new List<string>();
+
+            connection();
+
+            RequeteSQl("select * from Arret");
+
+            Reading();
+
+            while (ISread())
+            {
+                stock_arret.Add(Attribut(1));
+            }
+
+            CloseConnexion();
+
+            return stock_arret;
+        }
+
+        /// <summary>
+        /// insére les arrets crée dans la base de donnée
+        /// </summary>
+        public static void Insert_Create_Arret()
+        {
+            connection();
+            foreach (string arret in ClassStockage.arretCree)
+            {
+                RequeteSQl($"INSERT INTO Arret (nom_arret,nb_ligne_desservi) VALUES('{arret}', 1);");
+
+                CommandeExecute();
+            }
+            CloseConnexion();
         }
     }
 }

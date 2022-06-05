@@ -82,7 +82,9 @@ namespace SAE2_1
 
             if (result == DialogResult.OK)
             {
-                
+                btn.BackColor = Color.White;
+                btn.ForeColor = Color.Black;
+
                 if (frmCreateArret.chk_ArretExistant.Checked)
                 {
                     btn.Text = frmCreateArret.cbo_ArretExistant.SelectedItem.ToString();
@@ -93,19 +95,17 @@ namespace SAE2_1
                     btn.Text = frmCreateArret.txt_NomArret.Text.ToString();
                     btn.Tag = frmCreateArret.dtp_HorairePremierBus.Text;
                 }
-                
-                
             }
             
             frmCreateArret.Dispose();
-            
         }
 
         private void cmd2_Click(object sender, EventArgs e)
         {
             List<(string, string)> arretLigneModif = new List<(string,string)>();
             bool ModifValide = true;
-
+            
+            //regarde que tous les arret soit remplie
             foreach (Button btnArret in flowLayoutPanel1.Controls)
             {
                 if (btnArret.Tag == null || btnArret.Text == "Nouvelle Arret")
@@ -114,13 +114,16 @@ namespace SAE2_1
                 }
             }
 
+            //envoie une message si les arret ne sont pas remplie
             if(ModifValide)
             {
+                //stock les données dans une liste
                 foreach (Button btnArret in flowLayoutPanel1.Controls)
                 {
                     arretLigneModif.Add((btnArret.Text, (string)btnArret.Tag));
                 }
 
+                //stockage Base !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 MessageBox.Show("vaider");
 
                 //changement de nom
@@ -155,6 +158,8 @@ namespace SAE2_1
             button.MouseMove += new MouseEventHandler(btn_MouseMove);
             button.MouseUp += btnMouseUp;
             button.Size = new Size(flowLayoutPanel1.Width - 25, 23);
+            button.ForeColor = Color.White;
+            button.BackColor = SystemColors.HotTrack;
             panel2.Controls.Add(button);
         }
 

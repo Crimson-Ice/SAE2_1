@@ -48,6 +48,7 @@ namespace SAE2_1
 
         private void Onclickbutton(object sender, EventArgs e)
         {
+            //crée le formulaire d'affichage de la ligne choisie
             Button button = (Button)sender;
 
             Form_affichage form = new Form_affichage();

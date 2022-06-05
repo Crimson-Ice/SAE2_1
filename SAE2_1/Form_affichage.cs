@@ -74,10 +74,6 @@ namespace SAE2_1
                 
                 flagGraphics.DrawEllipse(pen, Xronddeb, (hauteur_panel / 2) - (diametrecercle / 2), diametrecercle, diametrecercle);
                 
-                    
-                
-                
-
                 if (i != nb_arret - 1)
                 {
                     pen = new Pen(brushligne, 3);

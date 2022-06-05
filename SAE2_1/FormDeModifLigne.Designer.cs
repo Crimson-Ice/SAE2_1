@@ -125,7 +125,8 @@
             // 
             // new_arret_btn
             // 
-            this.new_arret_btn.BackColor = System.Drawing.Color.White;
+            this.new_arret_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.new_arret_btn.ForeColor = System.Drawing.Color.White;
             this.new_arret_btn.Location = new System.Drawing.Point(3, 3);
             this.new_arret_btn.Name = "new_arret_btn";
             this.new_arret_btn.Size = new System.Drawing.Size(145, 26);

@@ -22,6 +22,7 @@ namespace SAE2_1
 
         private void cmd_Valider_Click(object sender, EventArgs e)
         {
+            
             connexion.Close();   
             connexion.Open();
 
@@ -37,7 +38,7 @@ namespace SAE2_1
             }
             connexion.Close();
 
-            string message = $"Voulez vous vraiment supprimer la ligne : {cboligne.SelectedItem} ?";
+            string message = $"Voulez vous vraiment supprimer la ligne : {cbo_ligne.SelectedItem} ?";
             string caption = "Ete-vous sûr ?";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, caption, buttons);

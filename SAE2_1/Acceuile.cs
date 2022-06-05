@@ -12,6 +12,7 @@ namespace SAE2_1
 
         private void cmdRechercheItineraire_Click(object sender, EventArgs e)
         {
+            //ouvre le formulaire d'itinéraire
             Itinéraire frmItinéraire = new Itinéraire();
             frmItinéraire.ShowDialog();
             frmItinéraire.Dispose();
@@ -19,6 +20,7 @@ namespace SAE2_1
 
         private void cmd_ListeLigne_Click(object sender, EventArgs e)
         {
+            //ouvre le formulaire d'affichage de ligne
             Liste_lignes formLigneAffiche = new Liste_lignes();
             formLigneAffiche.ShowDialog();
             formLigneAffiche.Dispose();
@@ -26,6 +28,7 @@ namespace SAE2_1
 
         private void cmd_CreationLigne_Click(object sender, EventArgs e)
         {
+            //ouvre le formulaire de création de ligne
             CréationLigne frmCreationLinge = new CréationLigne();
             frmCreationLinge.ShowDialog();
             frmCreationLinge.Dispose();
@@ -33,6 +36,7 @@ namespace SAE2_1
 
         private void cmd_ModifLigne_Click(object sender, EventArgs e)
         {
+            //ouvre le formulaire de modification de ligne
             ModificationLigne frmModif = new ModificationLigne();
             frmModif.ShowDialog();
             frmModif.Dispose();
@@ -40,6 +44,7 @@ namespace SAE2_1
 
         private void cmd_SuppLigne_Click(object sender, EventArgs e)
         {
+            //ouvre le formulaire de suppresion de ligne
             SuppresionLigne frmSuppLigne = new SuppresionLigne();
             frmSuppLigne.ShowDialog();
             frmSuppLigne.Dispose();

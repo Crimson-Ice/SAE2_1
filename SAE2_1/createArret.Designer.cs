@@ -81,6 +81,7 @@
             // cmd_Valider
             // 
             this.cmd_Valider.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.cmd_Valider.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.cmd_Valider.Enabled = false;
             this.cmd_Valider.ForeColor = System.Drawing.SystemColors.Control;
             this.cmd_Valider.Location = new System.Drawing.Point(544, 333);

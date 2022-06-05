@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -13,7 +11,6 @@ namespace SAE2_1
     {
         private bool validerButton;
         
-
         public CréationLigne()
         {
             InitializeComponent();
@@ -211,31 +208,20 @@ namespace SAE2_1
         {
             //crée la ligne dans la base de  donnée
             int id_ligne=0;
+
+            ClassMySql.Insert_Create_Arret();
+
             ClassMySql.connection();
-
-            //insére les arrets crée dans la base de donnée
-            foreach (string arret in ClassStockage.arretCree)
-            {
-                ClassMySql.RequeteSQl($"INSERT INTO Arret (nom_arret,nb_ligne_desservi) VALUES('{arret}', 1);");
-
-                ClassMySql.CommandeExecute();
-            }
-            ClassMySql.CloseConnexion();
-            ClassMySql.connection();
-
             List<string> arret_intervalle = getAll_id_arret();
-
             ClassMySql.CloseConnexion();
-            ClassMySql.connection();
 
+            ClassMySql.connection();
             //insére les id arret dans la tablea ligne
             ClassMySql.RequeteSQl($"INSERT INTO Ligne (nom_ligne,nb_arret,id_arret_depart,id_arret_fin) VALUES('{txt_NomLigneCree.Text}',{ClassStockage.listArret.Count()},{arret_intervalle[0]},{arret_intervalle[arret_intervalle.Count() - 1]});");
-
             ClassMySql.CommandeExecute();
-
             ClassMySql.CloseConnexion();
-            ClassMySql.connection();
 
+            ClassMySql.connection();
             //Récuppère l'id de la ligne crée
             ClassMySql.RequeteSQl("select * from Ligne;");
 
@@ -248,10 +234,9 @@ namespace SAE2_1
                     id_ligne = int.Parse(ClassMySql.Attribut(0)); //mysqlread.GetInt32(0);
                 }
             }
-
             ClassMySql.CloseConnexion();
-            ClassMySql.connection();
 
+            ClassMySql.connection();
             //insére tout les donnée recuppérer dans la table correspondance
             for (int i = 0; i < ClassStockage.listArret.Count; i++)
             {
@@ -260,7 +245,6 @@ namespace SAE2_1
                 ClassMySql.CommandeExecute();
 
             }
-
             ClassMySql.CloseConnexion();
         }
 
