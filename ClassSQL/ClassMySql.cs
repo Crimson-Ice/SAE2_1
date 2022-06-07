@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Diagnostics;
 
 namespace ClassSQL
 {
@@ -73,7 +74,6 @@ namespace ClassSQL
             connexion.Close();
         }
 
-
         /// <summary>
         /// Remplie une liste de chaine de caractère avec le nom de tout les arrêts existant dans la base de donnée
         /// </summary>
@@ -119,8 +119,19 @@ namespace ClassSQL
         /// <returns></returns>
         public static List<string> getAll_id_arret()
         {
-            connection();
             List<string> arret = new List<string>();
+
+            foreach ((string, string) c in ClassStockage.listArret)
+            {
+                arret.Add(get_id_arret(c.Item1).ToString());
+            }
+
+            return arret;
+        }
+
+        public static int get_id_arret(string name_arret)
+        {
+            connection();
 
             RequeteSQl($"select * from Arret;");
 
@@ -128,22 +139,18 @@ namespace ClassSQL
 
             while (ISread())
             {
-                foreach ((string, string) c in ClassStockage.listArret)
+                if (name_arret == Attribut(1))
                 {
-                    if (c.Item1 == Attribut(1))
-                    {
-                        arret.Add(Attribut(0));
-                    }
+                    return int.Parse(Attribut(0));
                 }
-
             }
 
             CloseConnexion();
-            return arret;
+            return -1;
         }
 
         /// <summary>
-        /// insére les id arret dans la table ligne
+        /// insére les id arret(debut, fin) dans la table ligne
         /// </summary>
         /// <param name="txt_NomLigneCree"></param>
         /// <param name="arret_intervalle"></param>
@@ -195,10 +202,89 @@ namespace ClassSQL
             for (int i = 0; i < ClassStockage.listArret.Count; i++)
             {
                 RequeteSQl($"INSERT INTO Correspondance (id_arret,id_ligne,rang_arret_ligne,heure_premier_bus,heure_dernier_bus) VALUES({arret_intervalle[i]},{id_ligne},{i + 1},'{ClassStockage.listArret[i].Item2}','20:21');");
-
                 CommandeExecute();
 
             }
+            CloseConnexion();
+        }
+
+        /// <summary>
+        /// recupère les noms des lignes dans une liste
+        /// </summary>
+        /// <returns>Liste de chaine caractère qui contient le noms des lignes</returns>
+        public static List<string> Get_ligne_name()
+        {
+            List<string> ligne_name = new List<string>();
+
+            connection();
+
+            RequeteSQl("select nom_ligne from Ligne");
+
+            Reading();
+
+            while (ISread())
+            {
+                ligne_name.Add(Attribut(0));
+            }
+
+            CloseConnexion();
+
+            return ligne_name;
+        }
+
+        /// <summary>
+        /// Ajoute tous les arrets de la ligne a une liste
+        /// </summary>
+        public static List<string> Liste_arret(string ligne_name)
+        {
+            List<string> arret = new List<string>();
+            connection();
+            RequeteSQl("select Arret.nom_arret from Correspondance,Ligne,Arret where Correspondance.id_ligne = Ligne.id_ligne and Correspondance.id_arret = Arret.id_arret and Ligne.nom_ligne =" + '\u0022' + ligne_name + '\u0022' + " order by rang_arret_ligne;");
+
+            Reading();
+
+            while (ISread())
+            {
+                string nom = Attribut(0);
+                arret.Add(nom);
+            }
+
+            return arret;
+        }
+
+        /// <summary>
+        /// suppprime les arret de correspondance qui l'id correspondant
+        /// </summary>
+        /// <param name="id">id de la ligne des arrets des arrets a supprimer</param>
+        public static void Delete_from_cresspondance(int id)
+        {
+            connection();
+
+            RequeteSQl($"delete from Correspondance where id_ligne = '{id}';");
+            Reading();
+
+            while (ISread())
+            {
+            }
+
+            CloseConnexion();
+        }
+
+        /// <summary>
+        /// suppprime la ligne de la table ligne avec l'id correspondant
+        /// </summary>
+        /// <param name="id">id de la ligne a suprimer</param>
+        public static void Delete_from_Ligne(int id)
+        {
+            connection();
+
+            RequeteSQl($"delete from Ligne where id_ligne = '{id}';");
+
+            Reading();
+            while (ISread())
+            {
+            }
+
             CloseConnexion();
         }
     }

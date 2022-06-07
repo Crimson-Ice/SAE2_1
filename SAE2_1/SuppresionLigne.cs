@@ -1,20 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using ClassSQL;
 
 namespace SAE2_1
 {
     public partial class SuppresionLigne : Form
     {
-
-        public MySqlConnection connexion = new MySqlConnection("database=baseb1; server=10.1.139.236; user id=b1; pwd=nouveau_mdp");
         public SuppresionLigne()
         {
             InitializeComponent();
@@ -22,49 +14,19 @@ namespace SAE2_1
 
         private void cmd_Valider_Click(object sender, EventArgs e)
         {
-            
-            connexion.Close();   
-            connexion.Open();
-
-            MySqlCommand mysqlcom = new MySqlCommand($"select id_ligne from Ligne where nom_ligne = '{cbo_ligne.SelectedItem}';", connexion);
-
-            MySqlDataReader mysqlread = mysqlcom.ExecuteReader(CommandBehavior.CloseConnection);
-
-            int id = 0;
-
-            if (mysqlread.Read())
-            {
-                id = int.Parse(mysqlread.GetString(0));
-            }
-            connexion.Close();
+            //Récuppère l'id de la ligne a supprimer
+            int id = ClassMySql.get_id_ligne(cbo_ligne.SelectedItem.ToString());
 
             string message = $"Voulez vous vraiment supprimer la ligne : {cbo_ligne.SelectedItem} ?";
             string caption = "Ete-vous sûr ?";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, caption, buttons);
 
-            connexion.Open();
-
-            MySqlDataReader MyReader2;
-
             if (result == DialogResult.Yes)
             {
-                MySqlCommand delete1 = new MySqlCommand($"delete from Correspondance where id_ligne = '{id}';", connexion);
-                MyReader2 = delete1.ExecuteReader();
-                while (MyReader2.Read())
-                {
-                }
+                ClassMySql.Delete_from_cresspondance(id);
 
-                connexion.Close();
-
-                connexion.Open();
-                MySqlCommand delete2 = new MySqlCommand($"delete from Ligne where id_ligne = '{id}';", connexion);
-                MyReader2 = delete2.ExecuteReader();
-                while (MyReader2.Read())
-                {
-                }
-
-                connexion.Close();
+                ClassMySql.Delete_from_Ligne(id);
 
                 MessageBox.Show("Ligne supprimer");
                 this.Close();
@@ -81,18 +43,10 @@ namespace SAE2_1
         private void SuppresionLigne_Load(object sender, EventArgs e)
         {
             //Remplie la comboBox cbo_ligne avec les lignes de la base de donnée
-            MySqlCommand mysqlcom = new MySqlCommand("select * from Ligne;", connexion);
+            List<string> ligne_name = ClassMySql.Get_ligne_name();
 
-            connexion.Open();
-
-            MySqlDataReader mysqlread = mysqlcom.ExecuteReader(CommandBehavior.CloseConnection);
-
-            while (mysqlread.Read())
-            {
-                cbo_ligne.Items.Add(mysqlread.GetString(1));
-            }
-
-            connexion.Close();
+            for (int i = 0; i < ligne_name.Count; i++)
+                cbo_ligne.Items.Add(ligne_name[i]);
         }
 
         private void cmd_visualiser_Click(object sender, EventArgs e)

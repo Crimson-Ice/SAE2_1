@@ -1,48 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using ClassSQL;
 
 namespace SAE2_1
 {
     public partial class Liste_lignes : Form
     {
-
-        MySqlConnection connexion = new MySqlConnection("database=baseb1; server=10.1.139.236; user id=b1; pwd=nouveau_mdp");
         public Liste_lignes()
         {
             InitializeComponent();
-
-            connexion.Open();
         }
 
         private void Liste_lignes_Load(object sender, EventArgs e)
         {
-            MySqlCommand mysqlcom = new MySqlCommand("select * from Ligne", connexion);
-
-            MySqlDataReader mysqlread = mysqlcom.ExecuteReader(CommandBehavior.CloseConnection);
-
-            while (mysqlread.Read())
+            List<string> ligne_name = ClassMySql.Get_ligne_name();
+            
+            //crée des buttons pour les lignes de la base de donéee
+            for(int i = 0; i < ligne_name.Count; i++)
             {
                 Button button = new Button();
-                button.Text = mysqlread.GetString(1);
+                button.Text = ligne_name[i];
                 button.Click += Onclickbutton;
                 button.Height = 30;
-                button.Width = pnl_btn.Width-30;
+                button.Width = pnl_btn.Width - 30;
 
                 pnl_btn.Controls.Add(button);
-
-
             }
-
-            mysqlread.Close();
-            connexion.Close();
         }
 
 

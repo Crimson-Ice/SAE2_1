@@ -50,9 +50,17 @@ namespace SAE2_1
                     {
                         if(verifTextValid(txt_NomLigneCree.Text))
                         {
-                            errorProvider1.SetError(txt_NombreArret, "");
-                            spawnButton(n);
-                            cmd_Valider.Enabled = false;
+                            List<String> ligne_name = ClassMySql.Get_ligne_name();
+                            if(ligne_name.Contains(txt_NomLigneCree.Text) == false)
+                            {
+                                errorProvider1.SetError(txt_NombreArret, "");
+                                spawnButton(n);
+                                cmd_Valider.Enabled = false;
+                            }
+                            else
+                            {
+                                errorProvider1.SetError(txt_NomLigneCree, "Nom de ligne déjà existant");
+                            }
                         }
                         else
                         {
@@ -218,6 +226,11 @@ namespace SAE2_1
             id_ligne = ClassMySql.get_id_ligne(txt_NomLigneCree.Text);
 
             ClassMySql.insert_data_in_tab_correspondance(id_ligne, arret_intervalle);
+
+            ClassStockage.arretCree.Clear();
+            ClassStockage.listArret.Clear();
+            MessageBox.Show("Ligne crée");
+            this.Close();
         }
 
         private void flp_ArretCree_ControlRemoved(object sender, ControlEventArgs e)

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using ClassSQL;
+using System.Diagnostics;
 
 namespace SAE2_1
 {
@@ -32,8 +34,6 @@ namespace SAE2_1
             new_arret_btn.Width = flowLayoutPanel1.Width-25;
             new_arret_btn.Height = 23;
             lbl_titre.Text = $"Modification de la ligne : {this.Text}";
-
-            
             
             MySqlCommand arretcom = new MySqlCommand("select Arret.nom_arret,heure_premier_bus from Correspondance,Ligne,Arret where Correspondance.id_ligne = Ligne.id_ligne and Correspondance.id_arret = Arret.id_arret and Ligne.nom_ligne =" + '\u0022' + this.Text + '\u0022' + " order by rang_arret_ligne;", connexion);
 
@@ -94,6 +94,7 @@ namespace SAE2_1
                 {
                     btn.Text = frmCreateArret.txt_NomArret.Text.ToString();
                     btn.Tag = frmCreateArret.dtp_HorairePremierBus.Text;
+                    ClassStockage.arretCree.Add(frmCreateArret.txt_NomArret.Text.ToString());
                 }
             }
             
@@ -102,7 +103,6 @@ namespace SAE2_1
 
         private void cmd2_Click(object sender, EventArgs e)
         {
-            List<(string, string)> arretLigneModif = new List<(string,string)>();
             bool ModifValide = true;
             
             //regarde que tous les arret soit remplie
@@ -120,17 +120,34 @@ namespace SAE2_1
                 //stock les données dans une liste
                 foreach (Button btnArret in flowLayoutPanel1.Controls)
                 {
-                    arretLigneModif.Add((btnArret.Text, (string)btnArret.Tag));
+                    ClassStockage.listArret.Add((btnArret.Text, (string)btnArret.Tag));
                 }
 
                 //stockage Base !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                MessageBox.Show("vaider");
+
+                //suppresion
+                int id_ligne = ClassMySql.get_id_ligne(this.Text);
+                ClassMySql.Delete_from_cresspondance(id_ligne);
+                ClassMySql.Delete_from_Ligne(id_ligne);
+
+                //crée la ligne dans la base de  donnée
+                ClassMySql.Insert_Create_Arret_in_tab_arret();
+                /*
+                foreach ((string, string) c in ClassStockage.listArret)
+                    MessageBox.Show(c.Item1);
+                */
+
+                List<string> arret_intervalle = ClassMySql.getAll_id_arret();
+              
+                ClassMySql.Insert_id_in_tab_ligne(this.Text, arret_intervalle);
+
+                id_ligne = ClassMySql.get_id_ligne(this.Text);
+                ClassMySql.insert_data_in_tab_correspondance(id_ligne, arret_intervalle);
 
                 //changement de nom
                 if (!String.IsNullOrEmpty(txt_new_nom.Text))
                 {
                     connexion.Open();
-
 
                     MySqlCommand update = new MySqlCommand($"UPDATE Ligne SET nom_ligne = '{txt_new_nom.Text} ' WHERE nom_ligne = '{this.Text} '; ", connexion);
 
@@ -140,15 +157,15 @@ namespace SAE2_1
                     connexion.Close();
                 }
 
+                MessageBox.Show("Ligne modifier");
+                ClassStockage.arretCree.Clear();
+                ClassStockage.listArret.Clear();
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Des Arret de la rajouter ne sont pas remplie");
             }
-
-            
-            
         }
 
         private void SpawnNouveauxArret_button()
@@ -173,7 +190,6 @@ namespace SAE2_1
                     
             
         }
-
 
         private void flowLayoutPanel1_DragDrop(object sender, DragEventArgs e)
         {

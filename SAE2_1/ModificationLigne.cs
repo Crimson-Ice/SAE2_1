@@ -36,15 +36,11 @@ namespace SAE2_1
 
         private void ModificationLigne_Load(object sender, EventArgs e)
         {
-            //Met les lignes de la base de donnée dans la comboBox cbo_choix_ligne
-            ClassMySql.connection();
-            ClassMySql.RequeteSQl("select * from Ligne;");
-            ClassMySql.Reading();
-            
-            while (ClassMySql.ISread())
-            {
-                cbo_choix_ligne.Items.Add(ClassMySql.Attribut(1));
-            }
+            List<string> ligne_name = ClassMySql.Get_ligne_name();
+
+            //remplie la comboBox cbo_coix_ligne avec les lignes existantes
+            for(int i = 0; i < ligne_name.Count; i++)
+                cbo_choix_ligne.Items.Add(ligne_name[i]);
         }
     }
 }

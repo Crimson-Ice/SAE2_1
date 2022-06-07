@@ -106,20 +106,9 @@ namespace SAE2_1
 
         private void Form_affichage_Load(object sender, EventArgs e)
         {
-
             arret.Clear();
-            ClassMySql.connection();
-            ClassMySql.RequeteSQl("select Arret.nom_arret from Correspondance,Ligne,Arret where Correspondance.id_ligne = Ligne.id_ligne and Correspondance.id_arret = Arret.id_arret and Ligne.nom_ligne =" + '\u0022' + this.Text + '\u0022' + " order by rang_arret_ligne;");
 
-            ClassMySql.Reading();
-
-            //Ajoute tous les arrets de la ligne a une liste
-
-            while (ClassMySql.ISread())
-            {
-                string nom = ClassMySql.Attribut(0);
-                arret.Add(nom);
-            }
+            arret = ClassMySql.Liste_arret(this.Text);
 
             int haut = pb_LigneAffiche.Height;
             int nbarret = arret.Count();
@@ -134,7 +123,6 @@ namespace SAE2_1
         private void cmd_horaire_Click(object sender, EventArgs e)
         {
             //creer un formulaire pour l'affichage des horaires
-
             affichage_horraire horraire_from = new affichage_horraire();
             horraire_from.Text = this.Text;
             horraire_from.ShowDialog();
