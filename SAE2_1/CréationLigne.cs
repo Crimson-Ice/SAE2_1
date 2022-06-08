@@ -219,11 +219,11 @@ namespace SAE2_1
 
             ClassMySql.Insert_Create_Arret_in_tab_arret();
 
-            List<string> arret_intervalle = ClassMySql.getAll_id_arret();
+            List<string> arret_intervalle = ClassMySql.GetAll_id_arret();
 
             ClassMySql.Insert_id_in_tab_ligne(txt_NomLigneCree.Text, arret_intervalle);
 
-            id_ligne = ClassMySql.get_id_ligne(txt_NomLigneCree.Text);
+            id_ligne = ClassMySql.Get_id_ligne(txt_NomLigneCree.Text);
 
             ClassMySql.insert_data_in_tab_correspondance(id_ligne, arret_intervalle);
 

@@ -36,7 +36,7 @@ namespace SAE2_1
         /// </summary>
         private void RemplisageComboBox()
         {
-            List<string> stock_arret = ClassMySql.stockage_arret_existant();
+            List<string> stock_arret = ClassMySql.Stockage_arret_existant();
             
             for (int i = 0; i < stock_arret.Count; i++)
                 cbo_ArretExistant.Items.Add(stock_arret[i]);

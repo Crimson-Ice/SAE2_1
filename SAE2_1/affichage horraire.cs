@@ -26,7 +26,7 @@ namespace SAE2_1
 
         private void affichage_horraire_Load_1(object sender, EventArgs e)
         {
-            ClassMySql.connection();
+            ClassMySql.Connection();
 
             ClassMySql.RequeteSQl("select * from Correspondance,Ligne,Arret where Correspondance.id_ligne = Ligne.id_ligne and Correspondance.id_arret = Arret.id_arret and Ligne.nom_ligne =" + '\u0022' + this.Text + '\u0022' + " order by rang_arret_ligne;");
 

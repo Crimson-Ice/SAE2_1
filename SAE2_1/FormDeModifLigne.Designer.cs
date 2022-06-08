@@ -31,24 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDeModifLigne));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_new_nom = new System.Windows.Forms.TextBox();
-            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl_nouveaux_nom_de_ligne = new System.Windows.Forms.Label();
             this.lbl_titre = new System.Windows.Forms.Label();
-            this.cmd1 = new System.Windows.Forms.Button();
-            this.cmd2 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cmd_retour = new System.Windows.Forms.Button();
+            this.cmd_valider = new System.Windows.Forms.Button();
+            this.flp_arret = new System.Windows.Forms.FlowLayoutPanel();
             this.new_arret_btn = new System.Windows.Forms.Button();
-            this.flp2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbl3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.flp_poubelle = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbl_explication = new System.Windows.Forms.Label();
+            this.pnl_nouvelle_arret = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnl_nouvelle_arret.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txt_new_nom);
-            this.panel1.Controls.Add(this.lbl2);
+            this.panel1.Controls.Add(this.lbl_nouveaux_nom_de_ligne);
             this.panel1.Controls.Add(this.lbl_titre);
             this.panel1.Location = new System.Drawing.Point(12, 26);
             this.panel1.Name = "panel1";
@@ -62,15 +62,15 @@
             this.txt_new_nom.Size = new System.Drawing.Size(164, 22);
             this.txt_new_nom.TabIndex = 2;
             // 
-            // lbl2
+            // lbl_nouveaux_nom_de_ligne
             // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl2.Location = new System.Drawing.Point(27, 69);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(238, 25);
-            this.lbl2.TabIndex = 1;
-            this.lbl2.Text = "Nouveau nom de la ligne :";
+            this.lbl_nouveaux_nom_de_ligne.AutoSize = true;
+            this.lbl_nouveaux_nom_de_ligne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nouveaux_nom_de_ligne.Location = new System.Drawing.Point(27, 69);
+            this.lbl_nouveaux_nom_de_ligne.Name = "lbl_nouveaux_nom_de_ligne";
+            this.lbl_nouveaux_nom_de_ligne.Size = new System.Drawing.Size(238, 25);
+            this.lbl_nouveaux_nom_de_ligne.TabIndex = 1;
+            this.lbl_nouveaux_nom_de_ligne.Text = "Nouveau nom de la ligne :";
             // 
             // lbl_titre
             // 
@@ -82,46 +82,46 @@
             this.lbl_titre.TabIndex = 0;
             this.lbl_titre.Text = "Modification Ligne";
             // 
-            // cmd1
+            // cmd_retour
             // 
-            this.cmd1.BackColor = System.Drawing.Color.Gray;
-            this.cmd1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cmd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmd1.ForeColor = System.Drawing.Color.White;
-            this.cmd1.Location = new System.Drawing.Point(29, 381);
-            this.cmd1.Name = "cmd1";
-            this.cmd1.Size = new System.Drawing.Size(108, 57);
-            this.cmd1.TabIndex = 1;
-            this.cmd1.Text = "Retour";
-            this.cmd1.UseVisualStyleBackColor = false;
-            this.cmd1.Click += new System.EventHandler(this.cmd1_Click);
+            this.cmd_retour.BackColor = System.Drawing.Color.Gray;
+            this.cmd_retour.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cmd_retour.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cmd_retour.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_retour.ForeColor = System.Drawing.Color.White;
+            this.cmd_retour.Location = new System.Drawing.Point(29, 381);
+            this.cmd_retour.Name = "cmd_retour";
+            this.cmd_retour.Size = new System.Drawing.Size(108, 57);
+            this.cmd_retour.TabIndex = 1;
+            this.cmd_retour.Text = "Retour";
+            this.cmd_retour.UseVisualStyleBackColor = false;
             // 
-            // cmd2
+            // cmd_valider
             // 
-            this.cmd2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.cmd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmd2.ForeColor = System.Drawing.Color.White;
-            this.cmd2.Location = new System.Drawing.Point(642, 381);
-            this.cmd2.Name = "cmd2";
-            this.cmd2.Size = new System.Drawing.Size(146, 57);
-            this.cmd2.TabIndex = 2;
-            this.cmd2.Text = "Valider";
-            this.cmd2.UseVisualStyleBackColor = false;
-            this.cmd2.Click += new System.EventHandler(this.cmd2_Click);
+            this.cmd_valider.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.cmd_valider.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_valider.ForeColor = System.Drawing.Color.White;
+            this.cmd_valider.Location = new System.Drawing.Point(598, 381);
+            this.cmd_valider.Name = "cmd_valider";
+            this.cmd_valider.Size = new System.Drawing.Size(146, 57);
+            this.cmd_valider.TabIndex = 2;
+            this.cmd_valider.Text = "Valider";
+            this.cmd_valider.UseVisualStyleBackColor = false;
+            this.cmd_valider.Click += new System.EventHandler(this.cmd_valider_Click);
             // 
-            // flowLayoutPanel1
+            // flp_arret
             // 
-            this.flowLayoutPanel1.AllowDrop = true;
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 181);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(207, 176);
-            this.flowLayoutPanel1.TabIndex = 3;
-            this.flowLayoutPanel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.flowLayoutPanel1_DragDrop);
-            this.flowLayoutPanel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.flowLayoutPanel1_DragEnter);
-            this.flowLayoutPanel1.DragOver += new System.Windows.Forms.DragEventHandler(this.flowLayoutPanel1_DragOver);
-            this.flowLayoutPanel1.DragLeave += new System.EventHandler(this.flowLayoutPanel1_DragLeave);
+            this.flp_arret.AllowDrop = true;
+            this.flp_arret.AutoScroll = true;
+            this.flp_arret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flp_arret.Location = new System.Drawing.Point(12, 181);
+            this.flp_arret.Name = "flp_arret";
+            this.flp_arret.Size = new System.Drawing.Size(207, 176);
+            this.flp_arret.TabIndex = 3;
+            this.flp_arret.DragDrop += new System.Windows.Forms.DragEventHandler(this.flp_arret_DragDrop);
+            this.flp_arret.DragEnter += new System.Windows.Forms.DragEventHandler(this.flp_DragEnter);
+            this.flp_arret.DragOver += new System.Windows.Forms.DragEventHandler(this.flp_arret_DragOver);
+            this.flp_arret.DragLeave += new System.EventHandler(this.flp_arret_DragLeave);
             // 
             // new_arret_btn
             // 
@@ -136,39 +136,39 @@
             this.new_arret_btn.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_MouseMove);
             this.new_arret_btn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMouseUp);
             // 
-            // flp2
+            // flp_poubelle
             // 
-            this.flp2.AllowDrop = true;
-            this.flp2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.flp2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flp2.BackgroundImage")));
-            this.flp2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.flp2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flp2.Location = new System.Drawing.Point(283, 381);
-            this.flp2.Name = "flp2";
-            this.flp2.Size = new System.Drawing.Size(44, 41);
-            this.flp2.TabIndex = 6;
-            this.flp2.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel2_DragDrop);
-            this.flp2.DragEnter += new System.Windows.Forms.DragEventHandler(this.flp2_DragEnter);
+            this.flp_poubelle.AllowDrop = true;
+            this.flp_poubelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.flp_poubelle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("flp_poubelle.BackgroundImage")));
+            this.flp_poubelle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flp_poubelle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flp_poubelle.Location = new System.Drawing.Point(284, 381);
+            this.flp_poubelle.Name = "flp_poubelle";
+            this.flp_poubelle.Size = new System.Drawing.Size(48, 45);
+            this.flp_poubelle.TabIndex = 6;
+            this.flp_poubelle.DragDrop += new System.Windows.Forms.DragEventHandler(this.flp_poubelle_DragDrop);
+            this.flp_poubelle.DragEnter += new System.Windows.Forms.DragEventHandler(this.flp_DragEnter);
             // 
-            // lbl3
+            // lbl_explication
             // 
-            this.lbl3.AutoSize = true;
-            this.lbl3.BackColor = System.Drawing.Color.Transparent;
-            this.lbl3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl3.Location = new System.Drawing.Point(407, 299);
-            this.lbl3.Name = "lbl3";
-            this.lbl3.Size = new System.Drawing.Size(328, 20);
-            this.lbl3.TabIndex = 7;
-            this.lbl3.Text = "Gliser-déposer dans l\'enplacement gauche";
+            this.lbl_explication.AutoSize = true;
+            this.lbl_explication.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_explication.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_explication.Location = new System.Drawing.Point(407, 299);
+            this.lbl_explication.Name = "lbl_explication";
+            this.lbl_explication.Size = new System.Drawing.Size(328, 20);
+            this.lbl_explication.TabIndex = 7;
+            this.lbl_explication.Text = "Gliser-déposer dans l\'enplacement gauche";
             // 
-            // panel2
+            // pnl_nouvelle_arret
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.new_arret_btn);
-            this.panel2.Location = new System.Drawing.Point(492, 204);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(187, 32);
-            this.panel2.TabIndex = 8;
+            this.pnl_nouvelle_arret.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_nouvelle_arret.Controls.Add(this.new_arret_btn);
+            this.pnl_nouvelle_arret.Location = new System.Drawing.Point(492, 204);
+            this.pnl_nouvelle_arret.Name = "pnl_nouvelle_arret";
+            this.pnl_nouvelle_arret.Size = new System.Drawing.Size(187, 32);
+            this.pnl_nouvelle_arret.TabIndex = 8;
             // 
             // FormDeModifLigne
             // 
@@ -177,12 +177,12 @@
             this.BackgroundImage = global::SAE2_1.Properties.Resources._6637000_simple_fond_bleu_abstraite_pour_la_conception_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.lbl3);
-            this.Controls.Add(this.flp2);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.cmd2);
-            this.Controls.Add(this.cmd1);
+            this.Controls.Add(this.pnl_nouvelle_arret);
+            this.Controls.Add(this.lbl_explication);
+            this.Controls.Add(this.flp_poubelle);
+            this.Controls.Add(this.flp_arret);
+            this.Controls.Add(this.cmd_valider);
+            this.Controls.Add(this.cmd_retour);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -192,7 +192,7 @@
             this.Load += new System.EventHandler(this.FormDeModifLigne_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pnl_nouvelle_arret.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,14 +202,14 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_new_nom;
-        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lbl_nouveaux_nom_de_ligne;
         private System.Windows.Forms.Label lbl_titre;
-        private System.Windows.Forms.Button cmd1;
-        private System.Windows.Forms.Button cmd2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button cmd_retour;
+        private System.Windows.Forms.Button cmd_valider;
+        private System.Windows.Forms.FlowLayoutPanel flp_arret;
         private System.Windows.Forms.Button new_arret_btn;
-        private System.Windows.Forms.FlowLayoutPanel flp2;
-        private System.Windows.Forms.Label lbl3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.FlowLayoutPanel flp_poubelle;
+        private System.Windows.Forms.Label lbl_explication;
+        private System.Windows.Forms.Panel pnl_nouvelle_arret;
     }
 }

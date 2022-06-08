@@ -15,7 +15,7 @@ namespace SAE2_1
         private void cmd_Valider_Click(object sender, EventArgs e)
         {
             //Récuppère l'id de la ligne a supprimer
-            int id = ClassMySql.get_id_ligne(cbo_ligne.SelectedItem.ToString());
+            int id = ClassMySql.Get_id_ligne(cbo_ligne.SelectedItem.ToString());
 
             string message = $"Voulez vous vraiment supprimer la ligne : {cbo_ligne.SelectedItem} ?";
             string caption = "Ete-vous sûr ?";

@@ -21,7 +21,7 @@ namespace SAE2_1
         private void Itinéraire_Load(object sender, EventArgs e)
         {
             //Connexion a la base
-            ClassMySql.connection();
+            ClassMySql.Connection();
 
 
             //requete sql
